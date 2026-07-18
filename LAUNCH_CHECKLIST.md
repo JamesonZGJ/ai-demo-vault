@@ -21,10 +21,10 @@
 
 - `pnpm lint`：通过
 - `pnpm typecheck`：通过
-- `pnpm test:unit`：139 个通过
+- `pnpm test:unit`：142 个通过
 - Launch E2E：3 条通过（Chrome）
 - `pnpm build:local`：45 页构建通过
-- 无 Supabase Preview：`APP_DEPLOYMENT_TIER=preview pnpm build`，32 个路由构建通过
+- 无 Supabase Mock Mode：无 `APP_DEPLOYMENT_TIER`，仅带 Vercel Preview origin，43 个路由构建通过
 - Lighthouse 本地采样：Accessibility 100、Best Practices 100、CLS 0；Performance 59、SEO 66。该采样使用本地开发环境且首页带 `noindex`，不能当作公网评分。
 
 ## 公网发布前仍需完成
@@ -43,7 +43,7 @@
 ## Vercel Preview 操作
 
 1. 在 Vercel 导入 GitHub 仓库或使用 CLI 连接本地目录。
-2. 只在 **Preview** 环境设置 `APP_DEPLOYMENT_TIER=preview`。
+2. `APP_DEPLOYMENT_TIER=preview` 可选；即使不设置，只要缺少 Supabase 配置也会自动进入 Mock Mode。
 3. 不设置本地 Supabase URL，不填占位密钥，不填任何 Service Role Key。
 4. 使用 `pnpm install --frozen-lockfile` 安装，构建命令使用 `pnpm build`。
 5. 部署后验收 `/`、`/explore`、`/explore/color-extraction`、`/bundles`、`/library`、法律页、`/robots.txt`、`/sitemap.xml` 和随机 404。

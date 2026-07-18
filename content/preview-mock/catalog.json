@@ -1,0 +1,17 @@
+{
+  "mode": "preview-mock",
+  "version": "2026-07-19",
+  "demos": [
+    { "slug": "color-extraction", "capabilitySlug": "color-extraction", "status": "published" },
+    { "slug": "glass-surface", "capabilitySlug": "glass-surface", "status": "published" },
+    { "slug": "card-highlight", "capabilitySlug": "card-highlight", "status": "published" },
+    { "slug": "flip-card", "capabilitySlug": "flip-card", "status": "published" },
+    { "slug": "photo-scatter", "capabilitySlug": "photo-scatter", "status": "published" },
+    { "slug": "draw-card-animation", "capabilitySlug": "draw-card-animation", "status": "published" },
+    { "slug": "image-cropper", "capabilitySlug": "image-cropper", "status": "published" },
+    { "slug": "album-picker", "capabilitySlug": "album-picker", "status": "published" },
+    { "slug": "gradient-background", "capabilitySlug": "gradient-background", "status": "published" },
+    { "slug": "ticket-share-poster", "capabilitySlug": "ticket-share-poster", "status": "published" },
+    { "slug": "map-marker", "capabilitySlug": "map-marker", "status": "published" }
+  ]
+}

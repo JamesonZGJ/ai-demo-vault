@@ -1,14 +1,14 @@
 import { NextResponse, type NextRequest } from "next/server"
 
 import { canonicalStaticCatalogQueryString } from "@/lib/catalog/search-params"
-import { getSupabaseConfig, isStaticPreviewMode } from "@/lib/env"
+import { isStaticPreviewMode, requireSupabaseConfig } from "@/lib/env"
 import { refreshSession } from "@/lib/supabase/proxy"
 
 async function catalogSlugExists(
   table: "categories" | "tools",
   slug: string,
 ) {
-  const { publishableKey, url } = getSupabaseConfig()
+  const { publishableKey, url } = requireSupabaseConfig()
   const endpoint = new URL(`/rest/v1/${table}`, url)
   endpoint.searchParams.set("select", "slug")
   endpoint.searchParams.set("slug", `eq.${slug}`)

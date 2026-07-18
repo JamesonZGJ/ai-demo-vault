@@ -64,7 +64,7 @@ pnpm dev
 
 ## 部署方法
 
-在正式 Supabase 尚未配置时，可先用 Vercel Preview 模式公开演示：Preview 只使用仓库内的自研静态 Capability 数据，设置 `APP_DEPLOYMENT_TIER=preview` 即可；Vercel 自动提供的 `VERCEL_URL` 会作为站点 origin，不需要把本地 Supabase 地址填入公网环境。该模式不开放账号、收藏、Blueprint 试用、支付、订单或下载。
+在正式 Supabase 尚未配置时，可先用 Vercel Preview 模式公开演示：缺少 Supabase URL 或 Publishable/Anon Key 时会自动进入只读 Mock Mode，Demo、Capability 和 Package 页面使用仓库内静态数据；`APP_DEPLOYMENT_TIER=preview` 只是可选的显式标记。Vercel 自动提供的 `VERCEL_URL` 会作为站点 origin，不需要把本地 Supabase 地址填入公网环境。该模式不开放账号、收藏、Blueprint 试用、支付、订单或下载。
 
 使用 Vercel + 独立生产 Supabase。Web 运行时只配置 Supabase URL 和 Publishable Key，不放 Service Role Key。数据库迁移凭据只用于受控部署流程，不进入客户端、运行日志或仓库。上线前必须先建立干净提交并通过本地验证，再迁移和只读验收生产数据库；生产内容就绪后，设置完整 commit SHA 与 20 位 Supabase Project Ref，再运行 `pnpm release:preflight`。预检输出的 `RELEASE_PREFLIGHT_EVIDENCE` 必须原样进入发布记录；部署固定使用 `vercel@56.2.1`，不使用 `@latest`。自有 SMTP、精确回调白名单、唯一 canonical origin、生产统计排除和回滚步骤见 `DEPLOYMENT.md`。
 
@@ -86,7 +86,7 @@ Supabase Local、Postgres 和 Mailpit 启动后运行完整验证：
 pnpm verify
 ```
 
-第一次验证或 migration/seed 变化后，必须先明确执行 `pnpm exec supabase db reset`；该操作会清空 Supabase Local 数据，因此 `pnpm verify` 不会暗中代替你执行。Launch Version 已通过 139 个单元测试、3 条 Launch E2E（Chrome）、代码检查、类型检查和 Preview 模式 32 个路由构建；旧数据库契约仍通过 148 项便携 pgTAP、161 项正式 pgTAP。浏览器进程不会收到 Service Role Key。未安装 Playwright Chromium 时，可设置 `$env:PLAYWRIGHT_CHANNEL='chrome'` 使用本机 Chrome。便携 pgTAP 只是快速前置检查，正式结果以 Supabase Local PostgreSQL 为准。
+第一次验证或 migration/seed 变化后，必须先明确执行 `pnpm exec supabase db reset`；该操作会清空 Supabase Local 数据，因此 `pnpm verify` 不会暗中代替你执行。Launch Version 已通过 142 个单元测试、3 条 Launch E2E（Chrome）、代码检查、类型检查和无 Supabase Mock Mode 43 个路由构建；旧数据库契约仍通过 148 项便携 pgTAP、161 项正式 pgTAP。浏览器进程不会收到 Service Role Key。未安装 Playwright Chromium 时，可设置 `$env:PLAYWRIGHT_CHANNEL='chrome'` 使用本机 Chrome。便携 pgTAP 只是快速前置检查，正式结果以 Supabase Local PostgreSQL 为准。
 
 部署后只读验收使用：
 

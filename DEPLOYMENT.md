@@ -6,13 +6,13 @@ AI Demo Marketplace 使用独立的 Supabase 生产项目与 Vercel 项目。Web
 
 在正式 Supabase 建好之前，可以先部署只读 Preview，验证首页、Capability 目录、详情页、Bundle、My Library 空状态和法律/SEO 页面。Preview 不初始化 Supabase，不开放登录、收藏、Blueprint 试用、支付、订单或下载。
 
-Vercel 项目只需配置以下 Preview 环境变量：
+Vercel 项目无需配置 Supabase 环境变量即可进入 Mock Mode；如需显式标记 Preview，可配置以下变量：
 
 | 变量 | 值 |
 |---|---|
-| `APP_DEPLOYMENT_TIER` | `preview` |
+| `APP_DEPLOYMENT_TIER` | `preview`（可选） |
 
-Vercel 自动提供 `VERCEL_URL`，因此 Preview 可不设置 `NEXT_PUBLIC_SITE_URL`。应用会使用 `https://<VERCEL_URL>` 生成 canonical、Open Graph、sitemap 和 robots。不要把本地 Supabase 地址、占位密钥或任何 Service Role Key 填入 Preview。
+Vercel 自动提供 `VERCEL_URL`，因此 Preview 可不设置 `NEXT_PUBLIC_SITE_URL`。应用会使用 `https://<VERCEL_URL>` 生成 canonical、Open Graph、sitemap 和 robots。缺少 `NEXT_PUBLIC_SUPABASE_URL` 或 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` 时，所有公开 Demo、Capability 和 Package 页面使用仓库内静态 Mock JSON；只有真正访问账号、收藏或数据库功能时才要求 Supabase。不要把本地 Supabase 地址、占位密钥或任何 Service Role Key 填入 Preview。
 
 Preview 构建命令使用项目默认的 `pnpm build`，Install Command 使用 `pnpm install --frozen-lockfile`，Node.js 使用 `20.x` 或更高版本。生产环境不能保留 `APP_DEPLOYMENT_TIER=preview`。
 

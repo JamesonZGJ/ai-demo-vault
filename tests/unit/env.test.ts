@@ -4,7 +4,9 @@ import {
   getSiteUrl,
   getSupabaseConfig,
   isLocalBlueprintPilot,
+  isPreviewMockMode,
   isStaticPreviewMode,
+  requireSupabaseConfig,
 } from "@/lib/env"
 
 const originalEnv = { ...process.env }
@@ -56,10 +58,21 @@ describe("环境变量", () => {
     })
   })
 
-  it("密钥缺失时显式失败", () => {
+  it("密钥缺失时进入 Mock Mode，真正访问数据库时才失败", () => {
     process.env.NEXT_PUBLIC_SUPABASE_URL = "http://127.0.0.1:54321"
     delete process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-    expect(() => getSupabaseConfig()).toThrow(/NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/u)
+    expect(getSupabaseConfig()).toBeNull()
+    expect(isPreviewMockMode()).toBe(true)
+    expect(() => requireSupabaseConfig()).toThrow(/需要 Supabase/u)
+  })
+
+  it("兼容 Supabase legacy anon key", () => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = "http://127.0.0.1:54321"
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = "anon-key"
+    expect(getSupabaseConfig()).toEqual({
+      url: "http://127.0.0.1:54321",
+      publishableKey: "anon-key",
+    })
   })
 
   it("Vercel 生产环境拒绝 HTTP、回环地址和占位密钥", () => {
@@ -71,10 +84,10 @@ describe("环境变量", () => {
     process.env.NEXT_PUBLIC_SUPABASE_URL = "http://127.0.0.1:54321"
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY =
       "your-local-or-production-publishable-key"
-    expect(() => getSupabaseConfig()).toThrow(/公网 HTTPS origin/u)
+    expect(() => requireSupabaseConfig()).toThrow(/公网 HTTPS origin/u)
 
     process.env.NEXT_PUBLIC_SUPABASE_URL = "https://project.supabase.co"
-    expect(() => getSupabaseConfig()).toThrow(/Publishable Key/u)
+    expect(() => requireSupabaseConfig()).toThrow(/Publishable Key/u)
   })
 
   it("Vercel 生产环境接受公网 HTTPS 与 Supabase Publishable Key", () => {
@@ -109,6 +122,7 @@ describe("环境变量", () => {
     process.env.APP_DEPLOYMENT_TIER = "local"
     process.env.NEXT_PUBLIC_SITE_URL = "http://localhost:3000"
     process.env.NEXT_PUBLIC_SUPABASE_URL = "http://127.0.0.1:54321"
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY = "publishable-key"
     expect(isLocalBlueprintPilot()).toBe(true)
 
     process.env.APP_DEPLOYMENT_TIER = "preview"
@@ -153,6 +167,7 @@ describe("环境变量", () => {
     process.env.APP_DEPLOYMENT_TIER = "local"
     process.env.NEXT_PUBLIC_SITE_URL = siteUrl
     process.env.NEXT_PUBLIC_SUPABASE_URL = supabaseUrl
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY = "publishable-key"
     expect(() => isLocalBlueprintPilot()).toThrow(/本机 HTTP origin/u)
   })
 })

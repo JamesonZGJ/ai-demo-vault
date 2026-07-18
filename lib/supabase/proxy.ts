@@ -1,12 +1,12 @@
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
-import { getSupabaseConfig } from "@/lib/env"
+import { requireSupabaseConfig } from "@/lib/env"
 import type { Database } from "@/types/database"
 
 export async function refreshSession(request: NextRequest) {
   let response = NextResponse.next({ request })
-  const { url, publishableKey } = getSupabaseConfig()
+  const { url, publishableKey } = requireSupabaseConfig()
 
   const supabase = createServerClient<Database>(url, publishableKey, {
     cookies: {

@@ -13,8 +13,16 @@ function requireEnv(name: string): string {
 }
 
 export function getSupabaseConfig() {
-  const value = requireEnv("NEXT_PUBLIC_SUPABASE_URL")
-  const publishableKey = requireEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY")
+  const value = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim()
+  const publishableKey = (
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?.trim() ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim()
+  )
+
+  if (!value || !publishableKey) {
+    return null
+  }
+
   const url = parseOrigin(value, "NEXT_PUBLIC_SUPABASE_URL")
 
   if (isVercelProduction()) {
@@ -25,22 +33,44 @@ export function getSupabaseConfig() {
   return { url: url.origin, publishableKey }
 }
 
+export function requireSupabaseConfig() {
+  const config = getSupabaseConfig()
+  if (!config) {
+    throw new Error(
+      "当前请求需要 Supabase；请配置 NEXT_PUBLIC_SUPABASE_URL 与 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY 或 NEXT_PUBLIC_SUPABASE_ANON_KEY",
+    )
+  }
+  return config
+}
+
+export function isSupabaseConfigured() {
+  return getSupabaseConfig() !== null
+}
+
 export function getSiteUrl(): URL {
-  const configuredValue = process.env.NEXT_PUBLIC_SITE_URL?.trim()
+  const configuredRawValue = process.env.NEXT_PUBLIC_SITE_URL
+  const configuredValue = configuredRawValue?.trim()
   const vercelPreviewValue = process.env.VERCEL_URL?.trim()
   const value =
-    configuredValue ||
-    (process.env.VERCEL_ENV === "preview" && vercelPreviewValue
+    configuredRawValue !== undefined
+      ? configuredValue
+      : process.env.VERCEL_ENV === "preview" && vercelPreviewValue
       ? `https://${vercelPreviewValue}`
-      : undefined)
+      : undefined
 
-  if (!value) {
+  if (configuredRawValue !== undefined && !configuredValue) {
     throw new Error("缺少必需环境变量：NEXT_PUBLIC_SITE_URL")
   }
 
-  const url = parseOrigin(value, "NEXT_PUBLIC_SITE_URL")
+  const siteValue = value ?? "http://localhost:3000"
 
-  if (isVercelProduction()) {
+  const url = parseOrigin(siteValue, "NEXT_PUBLIC_SITE_URL")
+
+  if (!value && isVercelProduction()) {
+    throw new Error("缺少必需环境变量：NEXT_PUBLIC_SITE_URL")
+  }
+
+  if (isVercelProduction() && value) {
     assertProductionOrigin(url, "NEXT_PUBLIC_SITE_URL")
   }
 
@@ -59,6 +89,8 @@ export function isLocalBlueprintPilot(): boolean {
   if (process.env.VERCEL_ENV?.trim()) {
     throw new Error("Vercel 托管环境禁止开启本地 Blueprint 试用")
   }
+
+  if (!isSupabaseConfigured()) return false
 
   const siteUrl = parseOrigin(
     requireEnv("NEXT_PUBLIC_SITE_URL"),
@@ -95,7 +127,11 @@ export function isStaticPreviewMode(): boolean {
     throw new Error("Vercel 生产环境禁止开启静态 Preview 模式")
   }
 
-  return rawTier === "preview"
+  return rawTier === "preview" || !isSupabaseConfigured()
+}
+
+export function isPreviewMockMode(): boolean {
+  return !isSupabaseConfigured()
 }
 
 function parseOrigin(value: string, name: string): URL {

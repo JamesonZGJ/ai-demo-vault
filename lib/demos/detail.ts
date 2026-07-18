@@ -1,5 +1,7 @@
 import { cache } from "react";
 
+import { isPreviewMockMode } from "../env";
+import { getMockDemoBySlug } from "./mock";
 import { createClient } from "../supabase/server";
 import type {
   CaseKind,
@@ -86,6 +88,8 @@ function evidenceLabel(kind: string) {
 export const getPublishedDemoBySlug = cache(
   async (slug: string): Promise<DemoDetailData | null> => {
     if (!slugPattern.test(slug) || slug.length > 120) return null;
+
+    if (isPreviewMockMode()) return getMockDemoBySlug(slug);
 
     const supabase = await createClient();
     const { data: demo, error: demoError } = await supabase

@@ -1,5 +1,12 @@
 import { createClient } from "../supabase/server";
 import { createPublicClient } from "../supabase/public";
+import { isPreviewMockMode } from "../env";
+import {
+  getMockCatalogFilterOptions,
+  getMockHomeData,
+  getMockPublishedSlugs,
+  searchMockCatalog,
+} from "./mock";
 import type {
   CaseKind,
   CatalogFilterOptions,
@@ -274,6 +281,8 @@ async function getFeaturedRows(): Promise<SearchResult[]> {
 }
 
 export async function getCatalogFilterOptions(): Promise<CatalogFilterOptions> {
+  if (isPreviewMockMode()) return getMockCatalogFilterOptions();
+
   const supabase = await createClient();
   const [categoryResult, toolResult] = await Promise.all([
     supabase.from("categories").select("name_zh, slug").order("sort_order"),
@@ -297,6 +306,8 @@ export async function getCatalogFilterOptions(): Promise<CatalogFilterOptions> {
 }
 
 export async function searchCatalog(filters: CatalogFilters): Promise<CatalogResult> {
+  if (isPreviewMockMode()) return searchMockCatalog(filters);
+
   const rows = await runSearch(filters);
   const total = rows[0]?.totalCount ?? 0;
 
@@ -325,6 +336,8 @@ function hongKongDayIndex(length: number) {
 const homeFilters: CatalogFilters = { page: 1, sort: "newest" };
 
 export async function getHomeData(): Promise<HomeData> {
+  if (isPreviewMockMode()) return getMockHomeData();
+
   const [featuredRows, latestRows, favoritedRows, editorRows] = await Promise.all([
     getFeaturedRows(),
     runSearch(homeFilters),
@@ -349,6 +362,8 @@ export async function getHomeData(): Promise<HomeData> {
 }
 
 export async function getPublishedSlugs() {
+  if (isPreviewMockMode()) return getMockPublishedSlugs();
+
   const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("demos")

@@ -1,8 +1,11 @@
 import { createClient } from "../supabase/server";
+import { isPreviewMockMode } from "../env";
 
 export async function getFavoriteState(
   demoIds: string[],
 ): Promise<Set<string> | null> {
+  if (isPreviewMockMode()) return null;
+
   const supabase = await createClient();
   const {
     data: { user },

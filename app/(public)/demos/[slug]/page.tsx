@@ -29,7 +29,7 @@ interface DetailPageProps {
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  if (isStaticPreviewMode()) return [];
+  if (isStaticPreviewMode()) return getPublishedSlugs();
 
   const demos = await getPublishedSlugs();
   return [
