@@ -6,7 +6,7 @@
 
 本轮新增 `APP_DEPLOYMENT_TIER=preview` 静态预览层：Vercel Preview 可只依赖仓库内静态 Capability 数据，自动使用 `VERCEL_URL` 生成公开 origin，不初始化 Supabase，也不开放账号、收藏、Blueprint 试用、支付、订单或下载。
 
-发布预检发现当前目录没有 GitHub remote、没有 HEAD commit 或分支跟踪；GitHub 连接器账号可用但返回 0 个可访问仓库。Vercel CLI 需通过 `pnpm dlx vercel@56.2.1` 使用，本机没有登录令牌或 `.vercel` 项目绑定。
+GitHub 已连接并完成首个提交：`6bf13d7de76981929b0bd27d26608c6790b0b3a0` 已推送到 `origin/main`，远端为公开仓库 `JamesonZGJ/ai-demo-vault`。远端只包含安全的 `.env.example`，没有 `.env`、缓存、构建产物、报告、日志或证书文件。Vercel CLI 需通过 `pnpm dlx vercel@56.2.1` 使用，本机仍没有登录令牌或 `.vercel` 项目绑定。
 
 ## 上一阶段已完成
 
