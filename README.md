@@ -1,36 +1,36 @@
-# AI Demo Marketplace
+# AI Build Blocks Marketplace
 
-这是一个以 **Capability Package（能力模块包）**为中心的 AI Demo Marketplace。用户搜索一个 Hover、动画、取色、AI 状态或 Prompt 工作流，先在线体验 Demo Preview，再购买自研源码、Cursor/Claude Prompt、README、参数和 Integration Guide。完整 App Blueprint 保留为高级商品类型，不再主导首页。
+这是一个以 **Build Block Package（能力模块包）**为中心的 AI Build Blocks Marketplace。用户搜索一个 Hover、动画、取色、AI 状态或 Prompt 工作流，先在线体验 Demo Preview，再获取自研源码、Cursor/Claude Prompt、README、参数、License 和 Integration Guide。完整 App Blueprint 保留为高级商品类型，不再主导首页。
 
-产品边界：`Capability = 能力定义`，`Demo Preview = 免费预览`，`Capability Package = 独立能力模块商品`，`Bundle = 模块组合商品`，`App Blueprint = 完整产品高级商品`，`Library Item = 用户已获取的版本化资产`。首阶段只做本站自营精选商品，不做第三方卖家、分账或提现。
+产品边界：`Build Block = 能力定义`，`Demo Preview = 免费预览`，`Build Block Package = 独立能力模块商品`，`Bundle = 模块组合商品`，`App Blueprint = 完整产品高级商品`，`Library Item = 用户已获取的版本化资产`。首阶段只做本站自营精选商品，不做第三方卖家、分账或提现。
 
-当前状态：**Launch Version 已完成本地公开演示闭环。** 首页和 `/explore` 已围绕 Capability 搜索、Preview 和 Package 状态组织；Color Extraction 的自研 Package 资产已加入仓库。旧 `/demos` 与 Blueprint 路由保留兼容。真实支付、订单、会员和生产下载均未开放。
+当前状态：**Launch Version 已完成公开演示闭环。** 首页和 `/explore` 已围绕 Build Block 搜索、Preview、Mock Price 和 Package 状态组织；Color Extraction 的自研 Package 资产已加入仓库。旧 `/demos` 与 Blueprint 路由保留兼容。真实支付、订单、会员和生产下载均未开放。
 
 ## 最新产品决定
 
-- 首页默认入口改为搜索优先的 Demo Marketplace，优先发现一个个可复制能力模块。
-- Demo 永远只是免费 Preview；Capability Package 才是商品和价格的承载对象。
+- 首页默认入口改为搜索优先的 Build Blocks Marketplace，优先发现一个个可复制能力模块。
+- Demo 永远只是免费 Preview；Build Block Package 才是商品和价格的承载对象。
 - 单个模块主价格带为 ¥1.9–9.9；Bundle 后续单独设计。
-- Capability 详情页展示在线 Demo、Package 资产、Cursor Prompt、Claude Prompt、AI 生成 Prompt、README、参数和 Integration Guide。
+- Build Block 详情页展示在线 Demo、Mock Price、Package Included 清单、Cursor Prompt、Claude Prompt、README、参数、License 和 Integration Guide。
 - ColorSnap Blueprint #001 拆为多个独立 Capability，完整 Blueprint 只作为高级组合商品。
 - 本轮先改信息架构，不新增第二个商品，不接支付、会员或后台。
-- Launch Version 只保证可信展示、搜索、Preview、Package 状态、Library 空状态、SEO 和移动端；支付、会员、评论、排行榜、推荐和复杂后台延期。
+- Launch Version 只保证可信展示、搜索、Preview、商品化详情、Mock Price、Library 空状态、SEO 和移动端；支付、会员、评论、排行榜、推荐和复杂后台延期。
 
 ## Launch Version 已实现
 
-- 搜索优先首页：热门搜索、开发者分类、精选 Capability、最新 Capability、透明的热度空状态、Bundle 规划和最后的 Blueprint 入口。
-- Capability 目录与详情：在线 Preview、用途、问题、技术栈、源码状态、Prompt、README、参数、Integration Guide 和 Package 状态。
+- 搜索优先首页：Popular Searches、UI/Animation/AI/Image 等开发者分类、Featured/Newest/Free/Popular Build Blocks、Why Build Blocks、Bundle 和最后的 Blueprint 入口。
+- Build Block 目录与详情：在线 Preview、用途、问题、技术栈、源码状态、Mock Price、Included 清单、Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
 - Color Extraction 是第一个资产完整的自研 Package，真实包含源码、Cursor/Claude Prompt、README、参数和接入指南；支付、订单、下载仍关闭。
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
 
-当前代码尚未实现真实支付、订单、客户权益、付费下载、会员、自动爬虫、管理后台、用户评论和社区。页面不会伪造购买成功、下载完成、拥有源码或真实热度。新的 Capability Package 商品结构见 `MARKETPLACE_IA.md`；未来商品、支付、权益和交付遵守 `COMMERCE_SPEC.md`。
+当前代码尚未实现真实支付、订单、客户权益、付费下载、会员、自动爬虫、管理后台、用户评论和社区。页面不会伪造购买成功、下载完成、拥有源码或真实热度；Mock Price 和统计均明确标注。新的 Build Block 商品结构见 `MARKETPLACE_IA.md`；未来商品、支付、权益和交付遵守 `COMMERCE_SPEC.md`。
 
 ## 当前本地闭环与目标交易结构
 
 ```text
-当前本地：Landing → Search Capability → Demo Preview → Capability Package 状态 → My Library 空状态
-目标生产：搜索 Capability → Demo Preview → Capability Package 详情 → 精确价格结账 → 支付确认 → 订单与权益 → My Library → 私有资产 → 退款与对账
+当前本地：Landing → Search Build Blocks → Demo Preview → Build Block 商品详情 → Mock Price / Get Block（未连接）→ Library 空状态
+目标生产：搜索 Build Block → Demo Preview → Build Block Package 详情 → 精确价格结账 → 支付确认 → 订单与权益 → My Library → 私有资产 → 退款与对账
 兼容预览：免费 Demo → App Blueprint 详情 → 本地不扣款试用（仅 local）
 ```
 
@@ -126,7 +126,7 @@ pnpm test:production:public
 
 ## 已完成
 
-- Marketplace MVP 视觉与信息架构：首页、导航、Featured/Popular/Latest/Categories、搜索、Blueprint Score 和商品 CTA 已改为 Marketplace-first。
+- Build Blocks Marketplace 视觉与信息架构：首页 Hero、双 CTA、Popular Searches、分类、Featured/Newest/Free/Popular、Why Build Blocks、商品卡片 Included/Mock Price、商品详情 Get Block/Save/Share、Bundles、Blueprints、Library 已改为 Marketplace-first。
 - ColorSnap Blueprint #001 本地商品闭环：免费 Demo、商品目录/详情、12 个决策区块、Market Opportunity、评分、Build Timeline、What's Included、模拟获取、Launch Dashboard 和样品导出。
 - 生产双闸门：应用非 `local` 时路由关闭；数据库 migration 默认关闭试用且不写入商品数据。
 - RLS 与 RPC：匿名只能读取本地开放的商品摘要；资料和访问权仅本人可读；客户端不能直接写访问权。

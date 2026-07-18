@@ -12,7 +12,7 @@ export default function Loading() {
           </div>
         ))}
       </div>
-      <span className="sr-only">正在加载 Capability Marketplace</span>
+      <span className="sr-only">正在加载 Build Blocks Marketplace</span>
     </main>
   );
 }

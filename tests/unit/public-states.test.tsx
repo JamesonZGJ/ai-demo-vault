@@ -12,7 +12,7 @@ afterEach(() => {
 
 describe("公开页面状态", () => {
   it.each([
-    [GlobalLoading, "正在加载 Capability Marketplace"],
+    [GlobalLoading, "正在加载 Build Blocks Marketplace"],
     [CatalogLoading, "正在加载案例库"],
     [DetailLoading, "正在加载案例详情"],
   ])("%s 明确标记正在加载而不是显示空结果", (LoadingState, label) => {

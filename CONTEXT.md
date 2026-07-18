@@ -1,8 +1,8 @@
 # 当前进度
 
-2026-07-18 进入 Launch Mode。产品目标是公开上线一个可信、可演示的 **AI Demo Marketplace**：Demo Preview 只是免费预览，Capability Package 才是商品；完整 App Blueprint 保留为高级组合商品。最后一轮回归已通过，当前停在“等待生产部署凭据”。
+2026-07-19 完成 Launch Marketplace 视觉与信息架构升级。产品定位统一为 **AI Build Blocks Marketplace**：Demo Preview 只是免费预览，Build Block Package 才是商品；Blueprint 和 Bundle 作为更高层组合商品。当前代码已通过规范、单元测试、零配置构建和 Launch E2E。
 
-当前代码已新增搜索优先首页、`/explore` Capability 目录和详情、Bundle 规划页、My Library 空状态、About/License/Copyright、favicon/OG、更新后的 sitemap/robots，以及 Color Extraction 自研 Package 资产；旧 `/demos` 与 Blueprint 路由保留兼容。真实支付、订单、下载和会员仍未开放。
+当前代码已新增 Build Blocks Marketplace 首页、搜索优先目录和商品化详情页：Hero 双 CTA、Popular Searches、分类、Featured/Newest/Free/Popular、Mock 价格、Included 清单、Get Block/Save/Share 状态、Why Build Blocks、Bundle/Blueprint 入口和公开 Library 空状态；旧 `/demos` 路由保留兼容。真实支付、订单、下载和会员仍未开放。
 
 本轮新增自动 Preview Mock Mode：缺少 `NEXT_PUBLIC_SUPABASE_URL` 或 Publishable/Anon Key 时，Vercel Preview 可只依赖仓库内静态 Demo、Capability 和 Package 数据，自动使用 `VERCEL_URL` 生成公开 origin，不初始化 Supabase，也不开放账号、收藏、Blueprint 试用、支付、订单或下载。`APP_DEPLOYMENT_TIER=preview` 只是可选显式标记。
 
@@ -16,15 +16,16 @@ GitHub 已连接并完成首个提交：`6bf13d7de76981929b0bd27d26608c6790b0b3a
 
 ## 本轮重新定义
 
-- Capability 是可复用能力定义，Demo Preview 是免费预览，Capability Package 才承载价格、资产和购买权益。
+- Build Block 是可复用能力定义，Demo Preview 是免费预览，Build Block Package 才承载价格、资产和购买权益。
 - Capability Package 的主价格带为 ¥1.9–9.9，交付自研源码、Cursor/Claude/AI Prompt、README、参数和 Integration Guide。
 - 首页以搜索和开发者分类为主，不按行业分类；Bundle 后续组合多个 Package。
 - ColorSnap 已在 IA 中拆为 11 个独立 Capability；完整 Blueprint 只通过组合关系引用它们，不占据首页第一主位。
-- 本轮只完成信息架构和记录同步，没有新增商品、支付、会员、后台或下载系统。
+- 首页 Mock 数据明确标注 editorial snapshot；商品价格统一显示 mock price，Get Block、Save、Share 均不伪造成功结果。
+- Blueprint 入口在 Preview 环境公开展示准备中状态，避免 CTA 进入 404；真实 Blueprint 内容只在本地试用条件满足时读取。
 
 ## Launch Mode 已完成
 
-- 首页第一动作是 Search，包含热门搜索、开发者分类、精选 Capability、最新 Capability、真实热度空状态、Bundle 规划和最后的 Blueprint 入口。
+- 首页第一动作是 Search，包含热门搜索、Build Block 分类、Featured/Newest/Free/Popular 商品架、Why Build Blocks、Bundle 和最后的 Blueprint 入口。
 - `Capability → Demo Preview → Capability Package → My Library` 已形成公开页面链路；Color Extraction、Glass Surface、Card Highlight 有可交互 Preview，其余 ColorSnap 能力明确标记为 planned。
 - Color Extraction 的自研源码、Cursor/Claude Prompt、README、参数和 Integration Guide 已放入 `packages/color-extraction`；页面显示资产已就绪，但支付和下载仍关闭。
 - 公开静态页已补齐 About、License、Copyright、Privacy、404；基础 SEO、Open Graph、favicon、sitemap 和 robots 已更新。
@@ -38,7 +39,7 @@ GitHub 已连接并完成首个提交：`6bf13d7de76981929b0bd27d26608c6790b0b3a
 # 验证
 
 - 142 个单元测试通过。
-- 3 条 Chrome Launch E2E（首页、搜索、移动端、SEO/404）通过。
+- 3 条 Chrome Launch E2E（首页、搜索、商品详情、移动端、SEO/404）通过。
 - TypeScript、lint、`pnpm build:local`（45 个路由）通过。
 - `git diff --check` 通过。
 - 本地 Lighthouse：Accessibility 100、Best Practices 100、CLS 0；Performance 59、SEO 66。该结果来自开发服务器，不能替代公网生产评分。

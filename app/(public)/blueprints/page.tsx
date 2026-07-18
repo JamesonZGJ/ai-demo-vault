@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import { BlueprintCard } from "../../../components/blueprint/blueprint-card";
 import { getBlueprintCatalog } from "../../../lib/blueprints/catalog";
@@ -17,7 +16,6 @@ export default async function BlueprintsPage({
 }: {
   searchParams: Promise<{ q?: string; category?: string }>;
 }) {
-  if (!isLocalBlueprintPilot()) notFound();
   const products = await getBlueprintCatalog();
   const params = await searchParams;
   const query = (params.q ?? "").trim().toLowerCase();
@@ -27,6 +25,20 @@ export default async function BlueprintsPage({
     const matchesCategory = !category || category === "AI Design" || [product.name, product.tagline, product.summary].join(" ").toLowerCase().includes(category.toLowerCase());
     return matchesQuery && matchesCategory;
   });
+
+  if (!isLocalBlueprintPilot() || products.length === 0) {
+    return (
+      <main className="site-shell blueprint-catalog-page" id="main-content" tabIndex={-1}>
+        <header className="blueprint-catalog-header marketplace-catalog-header-v2">
+          <span className="eyebrow">Advanced products</span>
+          <h1>Blueprints are the whole-product layer.</h1>
+          <p>Blueprints assemble Build Blocks into a complete product direction. This public preview keeps the catalog visible while the first verified Blueprint package is being prepared.</p>
+          <Link className="button button-primary" href="/explore">Browse Build Blocks ↗</Link>
+        </header>
+        <section className="empty-state" aria-label="Blueprint status"><span className="state-kicker">COMING SOON</span><h2>Blueprint catalog is not open in this preview.</h2><p>No product, payment or access claim is shown until the Blueprint package is verified.</p></section>
+      </main>
+    );
+  }
 
   return (
     <main className="site-shell blueprint-catalog-page" id="main-content" tabIndex={-1}>

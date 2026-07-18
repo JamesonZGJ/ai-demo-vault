@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
-  description: "AI Demo Marketplace 的公开访问统计、账号数据边界与内容来源规则。",
+  description: "AI Build Blocks Marketplace 的公开访问统计、账号数据边界与内容来源规则。",
   title: "数据与隐私说明",
 };
 
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         <span className="eyebrow">数据与隐私</span>
         <h1>只收集验证产品是否被看见所需的最少数据</h1>
         <p>
-              公开访问统计、账号收藏和 Capability 来源是三类不同数据。我们不把它们混在一起，也不把访问量包装成留存、热度或商业成功。
+              公开访问统计、账号收藏和 Build Block 来源是三类不同数据。我们不把它们混在一起，也不把访问量包装成留存、热度或商业成功。
         </p>
       </header>
 

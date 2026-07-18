@@ -8,7 +8,7 @@ import { SiteHeader } from "../components/layout/site-header";
 import { getSiteUrl } from "../lib/catalog/site-url";
 
 const description =
-  "AI Demo Marketplace：搜索、预览并复用 AI 前端能力、交互效果、动画和 AI Workflow。";
+  "AI Build Blocks Marketplace：搜索、预览并复用 AI 产品的 UI、Prompt、代码和交互模块。";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -18,15 +18,15 @@ export const metadata: Metadata = {
   openGraph: {
     description,
     locale: "zh_CN",
-    images: [{ alt: "AI Demo Marketplace", height: 630, url: "/og-image.svg", width: 1200 }],
-    siteName: "AI Demo Marketplace",
-    title: "AI Demo Marketplace｜Find the capability your next build needs",
+    images: [{ alt: "AI Build Blocks Marketplace", height: 630, url: "/og-image.svg", width: 1200 }],
+    siteName: "AI Build Blocks Marketplace",
+    title: "AI Build Blocks Marketplace｜Build AI products faster",
     type: "website",
     url: "/",
   },
   title: {
-    default: "AI Demo Marketplace｜Find the capability your next build needs",
-    template: "%s｜AI Demo Marketplace",
+    default: "AI Build Blocks Marketplace｜Build AI products faster",
+    template: "%s｜AI Build Blocks Marketplace",
   },
 };
 

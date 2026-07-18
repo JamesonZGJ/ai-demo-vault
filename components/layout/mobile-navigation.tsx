@@ -5,10 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 export function MobileNavigation({
-  blueprintPilot,
   loggedIn,
 }: {
-  blueprintPilot: boolean;
   loggedIn: boolean;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -65,13 +63,12 @@ export function MobileNavigation({
           </button>
         </div>
         <nav aria-label="移动端主导航">
-          {blueprintPilot ? (
-            <Link href="/blueprints" onClick={() => closeForNavigation("/blueprints")}>App Blueprints</Link>
-          ) : null}
-          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>Search Capabilities</Link>
+          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>Explore</Link>
+          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>Build Blocks</Link>
+          <Link href="/blueprints" onClick={() => closeForNavigation("/blueprints")}>Blueprints</Link>
           <Link href="/bundles" onClick={() => closeForNavigation("/bundles")}>Bundles</Link>
-          {loggedIn ? <Link href="/library" onClick={() => closeForNavigation("/library")}>My Library</Link> : null}
-          <Link href="/demos" onClick={() => closeForNavigation("/demos")}>Reference Demos</Link>
+          <Link href="/about" onClick={() => closeForNavigation("/about")}>Resources</Link>
+          <Link href="/library" onClick={() => closeForNavigation("/library")}>Library</Link>
           {loggedIn ? (
             <Link href="/favorites" onClick={() => closeForNavigation("/favorites")}>
               我的收藏
