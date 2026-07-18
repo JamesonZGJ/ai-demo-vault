@@ -1,0 +1,42 @@
+# dependencies
+/node_modules/
+
+# next.js
+/.next/
+/out/
+
+# tests
+/coverage/
+/playwright-report/
+/test-results/
+/blob-report/
+/reports/
+/.lighthouse-tmp/
+/dev-server.log
+
+# local environment (keep the documented template)
+.env*
+!.env.example
+
+# deployment and local services
+/.vercel/
+/supabase/.temp/
+/supabase/.branches/
+
+# 本地编辑候选素材（未进入权属清单或公开内容）
+/public/media/previews/pptagent-candidate-2.jpg
+/public/media/previews/pptagent-preview.jpg
+/public/media/previews/presenton-chatgpt-2-1.png
+/public/media/previews/presenton-cloud-banner.png
+/public/media/previews/presenton-features-1.png
+/public/media/previews/presenton-preview.mp4
+/public/media/previews/presenton-preview.png
+/public/media/previews/wan22-preview.mp4
+
+# editors and operating systems
+.DS_Store
+Thumbs.db
+*.swp
+
+# TypeScript
+*.tsbuildinfo

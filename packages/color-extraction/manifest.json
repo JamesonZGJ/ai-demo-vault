@@ -1,0 +1,19 @@
+{
+  "capability": "color-extraction",
+  "version": "0.1.0-preview",
+  "source": "self_reimplemented",
+  "rightsStatus": "owned",
+  "assets": {
+    "sourceCode": { "status": "ready", "path": "src/index.ts" },
+    "cursorPrompt": { "status": "ready", "path": "prompts/cursor.md" },
+    "claudePrompt": { "status": "ready", "path": "prompts/claude.md" },
+    "readme": { "status": "ready", "path": "README.md" },
+    "parameters": { "status": "ready", "path": "parameters.json" },
+    "integrationGuide": { "status": "ready", "path": "INTEGRATION_GUIDE.md" }
+  },
+  "commerce": {
+    "priceStatus": "display_strategy_only",
+    "payment": "not_connected",
+    "download": "not_open"
+  }
+}

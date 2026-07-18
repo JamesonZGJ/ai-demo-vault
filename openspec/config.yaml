@@ -1,0 +1,22 @@
+schema: spec-driven
+
+context: |
+  AI Product Blueprint Marketplace using Next.js 16, TypeScript, Supabase Auth/Postgres/RLS, pnpm and Vercel.
+  The implemented foundation is a free Chinese Demo catalog with 12 evidence-backed public cases and privacy-focused public-page analytics. The target product sells first-party or explicitly licensed Blueprint packages; Demo remains the free discovery layer and Entitlement controls post-purchase access.
+  Payments, downloads, membership and Blueprint product pages are not implemented yet. Do not describe the public site as a working marketplace until one production purchase, entitlement, private download, refund and reconciliation loop has passed.
+  The first commerce stage is a first-party curated store, not a multi-vendor marketplace.
+  Never fabricate popularity, users, revenue, rankings or product validation. Public content requires an official primary source and approved original/licensed cover.
+  Web runtime must not hold a Supabase Service Role Key. Do not create a branch or worktree without user approval.
+
+rules:
+  proposal:
+    - Use explicit From, To, Reason and Impact entries for every material change.
+    - Separate the implemented free Demo foundation from unimplemented Blueprint, commerce, membership and scoring phases.
+  specs:
+    - Keep requirements behavior-first and testable; do not name internal functions or libraries.
+    - Use GIVEN, WHEN, THEN and AND scenario bullets.
+  design:
+    - Define RLS, publication predicates, source traceability and external-service boundaries.
+    - Prefer the smallest architecture that satisfies the approved behavior.
+  tasks:
+    - Every implementation group must name files, action, verification and done condition.

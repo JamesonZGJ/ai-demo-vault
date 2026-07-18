@@ -1,0 +1,20 @@
+{
+  "input": {
+    "type": "ImageData",
+    "required": true,
+    "description": "浏览器 Canvas 的像素数据"
+  },
+  "options": {
+    "alphaThreshold": {
+      "type": "number",
+      "default": 24,
+      "min": 0,
+      "max": 255
+    }
+  },
+  "output": {
+    "hex": "#506f88",
+    "rgb": { "r": 80, "g": 111, "b": 136 },
+    "sampleCount": 1
+  }
+}

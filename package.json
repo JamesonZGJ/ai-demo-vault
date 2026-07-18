@@ -1,0 +1,62 @@
+{
+  "name": "ai-demo-vault",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An AI Demo Marketplace for reusable front-end capabilities, interactions, animations and AI workflows.",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:local": "node scripts/run-with-local-supabase.mjs build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:seed": "node scripts/validate-content-seed.mjs",
+    "test:db:portable": "node scripts/validate-db-contract-portable.mjs",
+    "test:db:lint": "supabase db lint --local --fail-on warning",
+    "test:e2e": "node scripts/run-with-local-supabase.mjs e2e",
+    "test:production:public": "playwright test --config playwright.production.config.ts",
+    "test:production:db": "node scripts/verify-production-database.mjs",
+    "test:db": "supabase test db",
+    "release:preflight": "node scripts/release-preflight.mjs",
+    "verify": "pnpm test:seed && pnpm test:db:portable && pnpm test:db:lint && pnpm test:db && pnpm lint && pnpm typecheck && pnpm test:unit && pnpm test:e2e && pnpm build:local"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.3",
+    "@supabase/supabase-js": "2.110.6",
+    "@vercel/analytics": "2.0.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.24.0",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "tailwind-merge": "3.6.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.61.1",
+    "@tailwindcss/postcss": "4.3.2",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.10",
+    "jsdom": "29.1.1",
+    "supabase": "2.109.1",
+    "tailwindcss": "4.3.2",
+    "typescript": "6.0.3",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  }
+}
