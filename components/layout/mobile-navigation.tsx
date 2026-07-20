@@ -63,7 +63,6 @@ export function MobileNavigation({
           </button>
         </div>
         <nav aria-label="移动端主导航">
-          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>Explore</Link>
           <Link href="/explore" onClick={() => closeForNavigation("/explore")}>Build Blocks</Link>
           <Link href="/blueprints" onClick={() => closeForNavigation("/blueprints")}>Blueprints</Link>
           <Link href="/bundles" onClick={() => closeForNavigation("/bundles")}>Bundles</Link>

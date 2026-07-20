@@ -20,7 +20,6 @@ export async function SiteHeader() {
           <span>AI Build Blocks</span>
         </Link>
         <nav aria-label="主导航" className="desktop-navigation">
-          <Link href="/explore">Explore</Link>
           <Link href="/explore">Build Blocks</Link>
           <Link href="/bundles">Bundles</Link>
           <Link href="/blueprints">Blueprints</Link>

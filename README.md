@@ -9,6 +9,7 @@
 ## 最新产品决定
 
 - 首页默认入口改为搜索优先的 Build Blocks Marketplace，优先发现一个个可复制能力模块。
+- 首页转化原则是首屏只有搜索这一个核心动作；分类用于检索，Featured/New 用于建立内容可信度，Bundle/Blueprint 只作为组合层入口。
 - Demo 永远只是免费 Preview；Build Block Package 才是商品和价格的承载对象。
 - 单个模块主价格带为 ¥1.9–9.9；Bundle 后续单独设计。
 - Build Block 详情页展示在线 Demo、Mock Price、Package Included 清单、Cursor Prompt、Claude Prompt、README、参数、License 和 Integration Guide。
@@ -20,9 +21,10 @@
 
 - 搜索优先首页：Popular Searches、UI/Animation/AI/Image 等开发者分类、Featured/Newest/Free/Popular Build Blocks、Why Build Blocks、Bundle 和最后的 Blueprint 入口。
 - Build Block 目录与详情：在线 Preview、用途、问题、技术栈、源码状态、Mock Price、Included 清单、Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
-- Color Extraction 是第一个资产完整的自研 Package，真实包含源码、Cursor/Claude Prompt、README、参数和接入指南；支付、订单、下载仍关闭。
+- Color Extraction 与 Glass Surface 已具备完整的自研 Package 资产；本系列第001期指定为 Glass Surface（展示名“玻璃拟态卡片”），支付、订单、下载仍关闭。
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
+- 《每天拆一个 AI 产品》第001期已完成：Build Block #001“玻璃拟态卡片”包含在线交互预览、自研源码、Cursor/Claude Prompt、README、参数、接入说明和 License；视频、字幕、封面与三平台文案位于 `video/ai-demo-vault-intro/episodes/001-glass-card`。
 
 当前代码尚未实现真实支付、订单、客户权益、付费下载、会员、自动爬虫、管理后台、用户评论和社区。页面不会伪造购买成功、下载完成、拥有源码或真实热度；Mock Price 和统计均明确标注。新的 Build Block 商品结构见 `MARKETPLACE_IA.md`；未来商品、支付、权益和交付遵守 `COMMERCE_SPEC.md`。
 
@@ -45,7 +47,7 @@
 - Vercel Web Analytics，只统计公开页面的匿名聚合访问与来源。
 - Vitest、Playwright、pgTAP 验证。
 
-详细职责与调用关系见 `ARCHITECTURE.md`；目标商品信息架构见 `MARKETPLACE_IA.md`；Launch 交付门槛见 `LAUNCH_CHECKLIST.md`；当前免费基础层页面见 `UI_SPEC.md`；首发证据见 `LAUNCH_CONTENT.md`；发现渠道见 `SOURCE_REGISTRY.md`；内容发布门槛见 `EDITORIAL_GUIDE.md`；完整路线见 `ROADMAP.md`；逐项终局验收见 `GOAL_COVERAGE.md`；商品、订单、权益、下载和支付共同遵守 `COMMERCE_SPEC.md`。
+详细职责与调用关系见 `ARCHITECTURE.md`；目标商品信息架构见 `MARKETPLACE_IA.md`；日常内容生产 SOP 见 `CONTENT_PIPELINE.md`；Launch 交付门槛见 `LAUNCH_CHECKLIST.md`；当前免费基础层页面见 `UI_SPEC.md`；首发证据见 `LAUNCH_CONTENT.md`；发现渠道见 `SOURCE_REGISTRY.md`；内容发布门槛见 `EDITORIAL_GUIDE.md`；完整路线见 `ROADMAP.md`；逐项终局验收见 `GOAL_COVERAGE.md`；商品、订单、权益、下载和支付共同遵守 `COMMERCE_SPEC.md`。产品介绍视频工程见 `video/ai-demo-vault-intro/README.md`。
 
 ## 本地运行方法
 
@@ -126,7 +128,7 @@ pnpm test:production:public
 
 ## 已完成
 
-- Build Blocks Marketplace 视觉与信息架构：首页 Hero、双 CTA、Popular Searches、分类、Featured/Newest/Free/Popular、Why Build Blocks、商品卡片 Included/Mock Price、商品详情 Get Block/Save/Share、Bundles、Blueprints、Library 已改为 Marketplace-first。
+- Build Blocks Marketplace 视觉与信息架构：首页 Hero、单一搜索 CTA、Popular Searches、6 个核心分类、Featured/New、商品卡片 Included/Preview Price、商品详情 Get Block、Bundles、Blueprints、Library 已改为 Marketplace-first。
 - ColorSnap Blueprint #001 本地商品闭环：免费 Demo、商品目录/详情、12 个决策区块、Market Opportunity、评分、Build Timeline、What's Included、模拟获取、Launch Dashboard 和样品导出。
 - 生产双闸门：应用非 `local` 时路由关闭；数据库 migration 默认关闭试用且不写入商品数据。
 - RLS 与 RPC：匿名只能读取本地开放的商品摘要；资料和访问权仅本人可读；客户端不能直接写访问权。

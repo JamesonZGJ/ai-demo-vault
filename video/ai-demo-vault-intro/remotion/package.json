@@ -1,0 +1,24 @@
+{
+  "name": "ai-demo-vault-intro-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:voice": "remotion render src/index.ts AI-Demo-Vault-WithVoice renders/ai-demo-vault-intro-voice.mp4",
+    "render:captions": "remotion render src/index.ts AI-Demo-Vault-Captions renders/ai-demo-vault-intro-captions.mp4",
+    "render:episode001": "remotion render src/index.ts Daily-AI-Product-001-GlassCard renders/episode-001-glass-card.mp4",
+    "render:episode001:captions": "remotion render src/index.ts Daily-AI-Product-001-GlassCard-Captions renders/episode-001-glass-card-captions.mp4"
+  },
+  "dependencies": {
+    "@remotion/media": "4.0.493",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "remotion": "4.0.493"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.493",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "typescript": "6.0.3"
+  }
+}

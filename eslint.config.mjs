@@ -11,5 +11,6 @@ export default defineConfig([
     "playwright-report/**",
     "test-results/**",
     "supabase/.temp/**",
+    "video-staging/**",
   ]),
 ]);

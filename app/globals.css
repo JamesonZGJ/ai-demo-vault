@@ -19,6 +19,10 @@
     "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
+.glass-preview-controls { display: grid; gap: 2px; }
+.glass-preview-controls .capability-slider { margin-top: 8px; }
+.glass-preview-panel { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+
 * {
   box-sizing: border-box;
 }
@@ -3244,6 +3248,43 @@ h3 {
 .marketplace-hero-product-preview .home-palette i:nth-child(2) { background: #d3b89c; }
 .marketplace-hero-product-preview .home-palette i:nth-child(3) { background: #f5efe6; }
 
+.marketplace-hero-product-preview-glass {
+  background: linear-gradient(145deg, #182c3d, #6a7a89);
+}
+
+.hero-glass-sample {
+  background: radial-gradient(circle at 72% 24%, #e6b790, transparent 29%), radial-gradient(circle at 28% 82%, #71c7b5, transparent 36%), #25364a;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 13px;
+  height: 74px;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-glass-sample::after {
+  backdrop-filter: blur(8px);
+  background: rgb(255 255 255 / 14%);
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 10px;
+  content: "";
+  inset: 14px 22px;
+  position: absolute;
+}
+
+.hero-glass-sample i {
+  background: rgb(255 255 255 / 55%);
+  border-radius: 999px;
+  height: 4px;
+  position: absolute;
+  width: 22px;
+  z-index: 1;
+}
+
+.hero-glass-sample i:nth-child(1) { left: 35px; top: 29px; }
+.hero-glass-sample i:nth-child(2) { left: 35px; top: 41px; width: 42px; }
+.hero-glass-sample i:nth-child(3) { right: 36px; top: 35px; width: 13px; }
+
 .marketplace-data-note {
   color: rgb(255 255 255 / 48%);
   font-size: .65rem;
@@ -3324,6 +3365,63 @@ h3 {
 
 .capability-card-footer > div:first-child span {
   line-height: 1.35;
+}
+
+.marketplace-get-block {
+  width: 100%;
+}
+
+.marketplace-next-layer {
+  align-items: center;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .8fr);
+  padding-block: 74px 96px;
+}
+
+.marketplace-next-layer h2 {
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  letter-spacing: -.06em;
+  margin-block: 10px;
+}
+
+.marketplace-next-layer p {
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 560px;
+}
+
+.marketplace-next-layer-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.marketplace-next-layer-links a {
+  background: #f0f1ee;
+  border: 1px solid #deded8;
+  border-radius: 14px;
+  display: grid;
+  gap: 7px;
+  padding: 20px;
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.marketplace-next-layer-links a:hover {
+  border-color: #afb3b4;
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.marketplace-next-layer-links strong {
+  font-size: 1rem;
+}
+
+.marketplace-next-layer-links span {
+  color: var(--text-muted);
+  font-size: .76rem;
 }
 
 .marketplace-why {
@@ -3625,6 +3723,10 @@ h3 {
     align-items: start;
     flex-direction: column;
   }
+
+  .marketplace-next-layer {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -3680,6 +3782,11 @@ h3 {
 
   .marketplace-price-row span {
     text-align: left;
+  }
+
+  .marketplace-next-layer-links {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 }
 

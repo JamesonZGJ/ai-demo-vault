@@ -1,5 +1,6 @@
 # dependencies
 /node_modules/
+**/node_modules/
 
 # next.js
 /.next/
@@ -20,6 +21,14 @@
 
 # deployment and local services
 /.vercel/
+/video-staging/
+/video/ai-demo-vault-intro/remotion/qa-*
+/video/ai-demo-vault-intro/remotion/renders/qa-*
+/video/ai-demo-vault-intro/remotion/remotion-still-*
+/video/ai-demo-vault-intro/remotion/remotion-still*
+/video/ai-demo-vault-intro/hyperframes/snapshots/
+**/colorsnap-blueprint.png
+/dev-episode001*.log
 /supabase/.temp/
 /supabase/.branches/
 

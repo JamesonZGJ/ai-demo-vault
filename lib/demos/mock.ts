@@ -47,9 +47,10 @@ function claim(
 
 function buildMockDemo(capability: (typeof capabilities)[number], index: number): DemoDetailData {
   const categorySlug = slugify(capability.category);
+  const displayName = capability.displayNameZh ?? capability.name;
   const id = `preview-${capability.id}`;
   const media = {
-    alt: `${capability.name} capability preview`,
+    alt: `${displayName}能力预览`,
     id: `${id}:preview`,
     kind: "image" as const,
     role: "product_preview" as const,
@@ -57,8 +58,8 @@ function buildMockDemo(capability: (typeof capabilities)[number], index: number)
     summary: capability.description,
     url: "/og-image.svg",
   };
-  const productOverview = `${capability.name} 是一个可复用的 ${capability.category} 能力模块，先用在线 Preview 验证交互，再决定是否接入自己的项目。`;
-  const solution = `把 ${capability.name} 拆成明确的输入、状态和输出，并用 ${capability.stack.join("、")} 保持接入边界清晰。`;
+  const productOverview = `${displayName} 是一个可复用的 ${capability.categoryZh ?? capability.category} 能力模块，先用在线 Preview 验证交互，再决定是否接入自己的项目。`;
+  const solution = `把 ${displayName} 拆成明确的输入、状态和输出，并用 ${capability.stack.join("、")} 保持接入边界清晰。`;
   const targetUsers = `${capability.useCases.join("、")} 的独立开发者、设计师和前端团队。`;
   const coreFeatures = capability.useCases;
   const claims: DemoClaim[] = [
@@ -90,7 +91,7 @@ function buildMockDemo(capability: (typeof capabilities)[number], index: number)
     },
     coreFeatures,
     cover: {
-      alt: `${capability.name} cover`,
+      alt: `${displayName}封面`,
       id: `${id}:cover`,
       kind: "image",
       role: "cover",
@@ -135,7 +136,7 @@ function buildMockDemo(capability: (typeof capabilities)[number], index: number)
     ],
     maturity: capability.previewStatus === "preview_ready" ? "interactive_prototype" : "concept",
     media: [media],
-    name: capability.name,
+    name: displayName,
     problem: capability.problem,
     productOverview,
     publishedAt: previewDate,
@@ -160,7 +161,7 @@ function buildMockDemo(capability: (typeof capabilities)[number], index: number)
     tools: capability.stack.map((name) => ({ name, slug: slugify(name) })),
     ventureAdaptation: {
       changeAudience: "独立开发者 → 产品团队",
-      changeContent: `${capability.name} → 可配置的业务模块`,
+      changeContent: `${displayName} → 可配置的业务模块`,
       changeContext: "个人 Demo → 生产项目",
       newOpportunity: "为团队提供一套可复制、可验证的前端能力资产。",
     },

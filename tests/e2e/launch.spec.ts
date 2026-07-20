@@ -8,12 +8,12 @@ async function expectNoBlockingA11y(page: Page) {
 
 test("Launch 首页围绕 Build Blocks 和搜索展示", async ({ page }) => {
   await page.goto("/")
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Build AI products faster with reusable UI, prompts and code.")
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Build faster with reusable UI, prompts and code.")
   await expect(page.getByRole("searchbox", { name: "Search Build Blocks" })).toBeVisible()
   await expect(page.getByRole("heading", { level: 2, name: "Featured Build Blocks" })).toBeVisible()
+  await expect(page.getByRole("heading", { level: 2, name: "New Build Blocks" })).toBeVisible()
   await expect(page.getByRole("link", { name: "Glass" }).first()).toHaveAttribute("href", "/explore?q=Glass")
-  await expect(page.getByRole("link", { name: "Explore Blueprint" }).first()).toHaveAttribute("href", "/blueprints")
-  await expect(page.getByText("120+").first()).toBeVisible()
+  await expect(page.getByText("120+")).toHaveCount(0)
   await expect(page.locator("article.capability-card").first()).toBeVisible()
   await expectNoBlockingA11y(page)
 })
@@ -21,11 +21,11 @@ test("Launch 首页围绕 Build Blocks 和搜索展示", async ({ page }) => {
 test("Launch 搜索、Preview、Package 状态和移动端路径可用", async ({ page }) => {
   await page.goto("/explore?q=Glass")
   await expect(page.getByRole("heading", { level: 2, name: "1 Build Blocks" })).toBeVisible()
-  await page.getByRole("link", { name: "Glass Surface" }).first().click()
+  await page.getByRole("link", { name: "玻璃拟态卡片" }).first().click()
   await expect(page).toHaveURL(/\/explore\/glass-surface$/u)
-  await expect(page.getByRole("heading", { level: 1, name: "Glass Surface" })).toBeVisible()
-  await expect(page.getByText("Preview only", { exact: true })).toBeVisible()
-  await expect(page.getByText("No purchase or download yet", { exact: true })).toBeVisible()
+  await expect(page.getByRole("heading", { level: 1, name: "玻璃拟态卡片" })).toBeVisible()
+  await expect(page.getByText("Source package ready", { exact: true })).toBeVisible()
+  await expect(page.getByText("Checkout and download remain closed", { exact: true })).toBeVisible()
   await expect(page.getByRole("heading", { level: 2, name: "From preview to your project." })).toBeVisible()
   await expect(page.getByRole("button", { name: "Get Block" })).toBeDisabled()
 

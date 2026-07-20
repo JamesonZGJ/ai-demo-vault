@@ -1,8 +1,10 @@
 # 当前进度
 
-2026-07-19 完成 Launch Marketplace 视觉与信息架构升级。产品定位统一为 **AI Build Blocks Marketplace**：Demo Preview 只是免费预览，Build Block Package 才是商品；Blueprint 和 Bundle 作为更高层组合商品。当前代码已通过规范、单元测试、零配置构建和 Launch E2E。
+2026-07-20 完成《每天拆一个 AI 产品》第001期“玻璃拟态卡片”：自研 Glass Surface 交互 Demo、中文商品包、封面、42 秒竖屏旁白版与字幕版成片，以及小红书/抖音/X 发布文案。Build Block #001 已接入 `/explore/glass-surface`；真实支付和第二期均未启动。
 
-当前代码已新增 Build Blocks Marketplace 首页、搜索优先目录和商品化详情页：Hero 双 CTA、Popular Searches、分类、Featured/Newest/Free/Popular、Mock 价格、Included 清单、Get Block/Save/Share 状态、Why Build Blocks、Bundle/Blueprint 入口和公开 Library 空状态；旧 `/demos` 路由保留兼容。真实支付、订单、下载和会员仍未开放。
+2026-07-19 完成一次 Conversion Optimization。产品定位仍为 **AI Build Blocks Marketplace**：Demo Preview 只是免费预览，Build Block Package 才是商品；Blueprint 和 Bundle 作为更高层组合商品。首页已按“先搜索、再预览、最后理解组合层”重新收敛，当前代码已通过规范、单元测试、零配置构建和 Launch E2E。
+
+当前代码已新增 Build Blocks Marketplace 首页、搜索优先目录和商品化详情页：单一搜索 CTA、Popular Searches、6 个核心分类、Featured/New、Mock 价格、Included 清单、Get Block 状态、Bundle/Blueprint 组合层入口和公开 Library 空状态；旧 `/demos` 路由保留兼容。真实支付、订单、下载和会员仍未开放。
 
 本轮新增自动 Preview Mock Mode：缺少 `NEXT_PUBLIC_SUPABASE_URL` 或 Publishable/Anon Key 时，Vercel Preview 可只依赖仓库内静态 Demo、Capability 和 Package 数据，自动使用 `VERCEL_URL` 生成公开 origin，不初始化 Supabase，也不开放账号、收藏、Blueprint 试用、支付、订单或下载。`APP_DEPLOYMENT_TIER=preview` 只是可选显式标记。
 
@@ -21,6 +23,8 @@ GitHub 已连接并完成首个提交：`6bf13d7de76981929b0bd27d26608c6790b0b3a
 - 首页以搜索和开发者分类为主，不按行业分类；Bundle 后续组合多个 Package。
 - ColorSnap 已在 IA 中拆为 11 个独立 Capability；完整 Blueprint 只通过组合关系引用它们，不占据首页第一主位。
 - 首页 Mock 数据明确标注 editorial snapshot；商品价格统一显示 mock price，Get Block、Save、Share 均不伪造成功结果。
+- 首页不再展示 120+ 等 Mock 统计，不用虚构规模换取信任；价格仅在商品上下文以 Preview price 呈现。
+- 首页删除重复的 Free/Popular/Why 商品解释，仅保留 Featured/New 两个浏览架；Bundle/Blueprint 合并为一个轻量组合层说明。
 - Blueprint 入口在 Preview 环境公开展示准备中状态，避免 CTA 进入 404；真实 Blueprint 内容只在本地试用条件满足时读取。
 
 ## Launch Mode 已完成
@@ -48,6 +52,9 @@ GitHub 已连接并完成首个提交：`6bf13d7de76981929b0bd27d26608c6790b0b3a
 
 # 下一站
 
+- 已建立 `CONTENT_PIPELINE.md`：覆盖 Discover、Evaluate、Breakdown、Rebuild、Packaging、Publish、Marketing 和 Database 维护；本轮只新增运营文档，不修改网站页面或功能。
+- 已建立独立视频工程 `video/ai-demo-vault-intro`：真实公网截图、DESIGN、口播、分镜、HyperFrames 开场源、Remotion 竖屏工程和两条约 42 秒 MP4 均已生成；视频目录不参与 Next.js/Vercel 构建。
+- 第001期素材集中在 `video/ai-demo-vault-intro/episodes/001-glass-card`，源码包集中在 `packages/glass-surface`；全部展示标题和 README 标题使用中文，`Glass Surface` 只保留为内部命名。
 - 先连接 GitHub、创建 Vercel 项目并设置 Preview 的 `APP_DEPLOYMENT_TIER=preview`，生成公网 Preview URL；再配置生产 Supabase、正式站点域名和 Vercel 凭据，执行生产部署和公网冒烟。
 - 后续只做一个真实 Package 的支付/下载闭环，再决定是否开放 Bundle、会员和更多模块。
 - 真实商品价格、支付和生产权益仍需独立 change。

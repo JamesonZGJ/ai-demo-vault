@@ -42,11 +42,42 @@ function ColorExtractionPreview() {
 
 function GlassSurfacePreview() {
   const [blur, setBlur] = useState(18);
+  const [opacity, setOpacity] = useState(0.16);
+  const [borderOpacity, setBorderOpacity] = useState(0.3);
+  const [shadowOpacity, setShadowOpacity] = useState(0.28);
+  const [glowOpacity, setGlowOpacity] = useState(0.26);
+  const [pointer, setPointer] = useState({ x: 50, y: 45 });
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <div className="capability-preview capability-preview-glass">
-      <div className="capability-preview-heading"><span>GLASS SURFACE</span><span>PARAMETERIZED</span></div>
-      <div className="glass-preview-stage"><div className="glass-preview-orb glass-preview-orb-one" /><div className="glass-preview-orb glass-preview-orb-two" /><div className="glass-preview-panel" style={{ backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}><span>VISION / 01</span><strong>Make the surface reusable.</strong><small>blur {blur}px · opacity 0.62</small></div></div>
-      <label className="capability-slider">Blur <input max="32" min="4" onChange={(event) => setBlur(Number(event.target.value))} type="range" value={blur} /><output>{blur}px</output></label>
+      <div className="capability-preview-heading"><span>玻璃拟态卡片 · GLASS CARD</span><span>可调参数</span></div>
+      <div
+        className="glass-preview-stage"
+        onPointerEnter={() => setIsHovering(true)}
+        onPointerLeave={() => {
+          setIsHovering(false);
+          setPointer({ x: 50, y: 45 });
+        }}
+        onPointerMove={(event) => {
+          const rect = event.currentTarget.getBoundingClientRect();
+          setPointer({ x: ((event.clientX - rect.left) / rect.width) * 100, y: ((event.clientY - rect.top) / rect.height) * 100 });
+        }}
+        style={{ background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgb(255 255 255 / ${glowOpacity}), transparent 36%), radial-gradient(circle at 70% 25%, #d8b38a, transparent 35%), radial-gradient(circle at 30% 80%, #699999, transparent 42%), #1e2c3e` }}
+      >
+        <div className="glass-preview-orb glass-preview-orb-one" />
+        <div className="glass-preview-orb glass-preview-orb-two" />
+        <div className="glass-preview-panel" style={{ backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)`, background: `rgb(255 255 255 / ${opacity})`, borderColor: `rgb(255 255 255 / ${borderOpacity})`, boxShadow: `0 24px 64px rgb(0 0 0 / ${shadowOpacity}), inset 0 1px 0 rgb(255 255 255 / ${Math.min(borderOpacity + 0.1, 1)})`, transform: `translate(-50%, -50%) perspective(1000px) rotateX(${isHovering ? (pointer.y - 50) * -0.045 : 0}deg) rotateY(${isHovering ? (pointer.x - 50) * 0.045 : 0}deg) translateY(${isHovering ? -2 : 0}px)` }}>
+          <span>BUILD BLOCK · 001</span><strong>让表面变得可复用。</strong><small>blur {blur}px · pointer glow</small>
+        </div>
+      </div>
+      <div className="glass-preview-controls" aria-label="玻璃拟态参数">
+        <label className="capability-slider">模糊 <input max="32" min="4" onChange={(event) => setBlur(Number(event.target.value))} type="range" value={blur} /><output>{blur}px</output></label>
+        <label className="capability-slider">透明度 <input max="0.32" min="0.08" onChange={(event) => setOpacity(Number(event.target.value))} step="0.01" type="range" value={opacity} /><output>{Math.round(opacity * 100)}%</output></label>
+        <label className="capability-slider">边框 <input max="0.65" min="0.12" onChange={(event) => setBorderOpacity(Number(event.target.value))} step="0.01" type="range" value={borderOpacity} /><output>{Math.round(borderOpacity * 100)}%</output></label>
+        <label className="capability-slider">阴影 <input max="0.45" min="0.08" onChange={(event) => setShadowOpacity(Number(event.target.value))} step="0.01" type="range" value={shadowOpacity} /><output>{Math.round(shadowOpacity * 100)}%</output></label>
+        <label className="capability-slider">高光 <input max="0.4" min="0.08" onChange={(event) => setGlowOpacity(Number(event.target.value))} step="0.01" type="range" value={glowOpacity} /><output>{Math.round(glowOpacity * 100)}%</output></label>
+      </div>
     </div>
   );
 }

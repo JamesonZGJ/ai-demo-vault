@@ -1,0 +1,24 @@
+{
+  "component": "GlassCard",
+  "version": "0.1.0-preview",
+  "defaults": {
+    "blur": 18,
+    "opacity": 0.16,
+    "borderOpacity": 0.3,
+    "shadowOpacity": 0.28,
+    "glowOpacity": 0.26
+  },
+  "ranges": {
+    "blur": { "min": 4, "max": 32, "unit": "px", "description": "背景模糊半径" },
+    "opacity": { "min": 0.08, "max": 0.32, "unit": "alpha", "description": "卡片填充透明度" },
+    "borderOpacity": { "min": 0.12, "max": 0.65, "unit": "alpha", "description": "边框透明度" },
+    "shadowOpacity": { "min": 0.08, "max": 0.45, "unit": "alpha", "description": "外阴影透明度" },
+    "glowOpacity": { "min": 0.08, "max": 0.4, "unit": "alpha", "description": "指针高光透明度" }
+  },
+  "interaction": {
+    "pointerTracking": true,
+    "tiltDegrees": 2.25,
+    "resetOnLeave": true,
+    "prefersReducedMotion": "consuming_app_should_handle"
+  }
+}

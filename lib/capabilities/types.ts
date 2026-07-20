@@ -10,6 +10,14 @@ export interface CapabilityAssetStatus {
 
 export interface Capability {
   category: string;
+  /** 面向中文读者的展示标题；name 保留英文 internal 命名。 */
+  displayNameZh?: string;
+  categoryZh?: string;
+  series?: {
+    nameZh: string;
+    episode: number;
+    subtitleZh: string;
+  };
   description: string;
   difficulty: "easy" | "medium" | "advanced";
   id: string;
