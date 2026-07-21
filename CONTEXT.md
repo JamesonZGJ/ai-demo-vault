@@ -6,6 +6,8 @@
 
 旧的产品介绍视频不再注册为可渲染 composition，Remotion 工程默认只保留两期平台内容，避免误把站外宣传片当成栏目成片。
 
+2026-07-21 已将视频口径同步到网站：首页、搜索页、能力模块卡片、`/explore/[slug]` 详情页、预览控件、资产状态、导航和页脚改为中文优先；英文只保留 Glass Surface、Magic Card、React、CSS 等内部或技术名称。第001期和第002期内容说明也补充了中文模块信息、交付状态和接入指引。
+
 2026-07-21 已完成《每天拆一个 AI 产品》第002期“玻璃光斑卡片”：新增自研 `Magic Card` Build Block #002、在线交互 Preview、源码包、Prompt、参数、Integration Guide、License、中文内容说明和来源版权边界。新增 `/explore/magic-card`，未接入支付、订单或下载。
 
 2026-07-21 已使用 HyperFrames Kokoro 中文旁白与 Remotion 生成第002期 42秒竖屏成片：`video/ai-demo-vault-intro/remotion/renders/episode-002-magic-card.mp4` 和字幕版 `episode-002-magic-card-captions.mp4`。当前未发布视频，等待人工审核。

@@ -28,9 +28,9 @@ function ColorExtractionPreview() {
 
   return (
     <div className="capability-preview capability-preview-color">
-      <div className="capability-preview-heading"><span>IMAGE → PALETTE</span><span>LOCAL PREVIEW</span></div>
+      <div className="capability-preview-heading"><span>图片 → 配色</span><span>本地预览</span></div>
       <button className="capability-upload" onClick={() => inputRef.current?.click()} type="button">
-        <span aria-hidden="true">＋</span><strong>Drop an image to extract color</strong><small>or click to choose a file</small>
+        <span aria-hidden="true">＋</span><strong>拖入图片，提取主要颜色</strong><small>或点击选择图片</small>
       </button>
       <input accept="image/*" className="sr-only" onChange={(event) => { const file = event.target.files?.[0]; if (file) readImage(file); }} ref={inputRef} type="file" />
       <div className="capability-palette" aria-label="提取出的颜色">
@@ -51,7 +51,7 @@ function GlassSurfacePreview() {
 
   return (
     <div className="capability-preview capability-preview-glass">
-      <div className="capability-preview-heading"><span>玻璃拟态卡片 · GLASS CARD</span><span>可调参数</span></div>
+      <div className="capability-preview-heading"><span>玻璃拟态卡片 · Glass Surface</span><span>可调参数</span></div>
       <div
         className="glass-preview-stage"
         onPointerEnter={() => setIsHovering(true)}
@@ -68,7 +68,7 @@ function GlassSurfacePreview() {
         <div className="glass-preview-orb glass-preview-orb-one" />
         <div className="glass-preview-orb glass-preview-orb-two" />
         <div className="glass-preview-panel" style={{ backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)`, background: `rgb(255 255 255 / ${opacity})`, borderColor: `rgb(255 255 255 / ${borderOpacity})`, boxShadow: `0 24px 64px rgb(0 0 0 / ${shadowOpacity}), inset 0 1px 0 rgb(255 255 255 / ${Math.min(borderOpacity + 0.1, 1)})`, transform: `translate(-50%, -50%) perspective(1000px) rotateX(${isHovering ? (pointer.y - 50) * -0.045 : 0}deg) rotateY(${isHovering ? (pointer.x - 50) * 0.045 : 0}deg) translateY(${isHovering ? -2 : 0}px)` }}>
-          <span>BUILD BLOCK · 001</span><strong>让表面变得可复用。</strong><small>blur {blur}px · pointer glow</small>
+          <span>第 001 期 · 玻璃拟态</span><strong>让表面变得可复用。</strong><small>模糊 {blur}px · 指针高光</small>
         </div>
       </div>
       <div className="glass-preview-controls" aria-label="玻璃拟态参数">
@@ -86,8 +86,8 @@ function CardHighlightPreview() {
   const [position, setPosition] = useState({ x: 50, y: 45 });
   return (
     <div className="capability-preview capability-preview-card">
-      <div className="capability-preview-heading"><span>CARD HIGHLIGHT</span><span>POINTER AWARE</span></div>
-      <div className="highlight-demo" onPointerMove={(event) => { const rect = event.currentTarget.getBoundingClientRect(); setPosition({ x: ((event.clientX - rect.left) / rect.width) * 100, y: ((event.clientY - rect.top) / rect.height) * 100 }); }} style={{ background: `radial-gradient(circle at ${position.x}% ${position.y}%, rgb(255 255 255 / 0.35), transparent 32%), linear-gradient(135deg, #111827, #334155)` }}><span>HOVER TO MOVE</span><strong>Details feel physical.</strong><small>pointer → radial highlight</small></div>
+      <div className="capability-preview-heading"><span>卡片高光</span><span>指针跟随</span></div>
+      <div className="highlight-demo" onPointerMove={(event) => { const rect = event.currentTarget.getBoundingClientRect(); setPosition({ x: ((event.clientX - rect.left) / rect.width) * 100, y: ((event.clientY - rect.top) / rect.height) * 100 }); }} style={{ background: `radial-gradient(circle at ${position.x}% ${position.y}%, rgb(255 255 255 / 0.35), transparent 32%), linear-gradient(135deg, #111827, #334155)` }}><span>移动指针预览</span><strong>让细节产生空间感。</strong><small>指针 → 径向高光</small></div>
     </div>
   );
 }
@@ -101,7 +101,7 @@ function MagicCardPreview() {
 
   return (
     <div className="capability-preview capability-preview-magic-card">
-      <div className="capability-preview-heading"><span>MAGIC CARD</span><span>POINTER AWARE</span></div>
+      <div className="capability-preview-heading"><span>玻璃光斑卡片 · Magic Card</span><span>指针跟随</span></div>
       <div
         className="magic-card-stage"
         onPointerEnter={() => setIsHovering(true)}
@@ -124,10 +124,10 @@ function MagicCardPreview() {
             transform: `perspective(900px) rotateX(${isHovering ? (pointer.y - 50) * -tilt / 50 : 0}deg) rotateY(${isHovering ? (pointer.x - 50) * tilt / 50 : 0}deg) translateY(${isHovering ? -3 : 0}px)`,
           }}
         >
-          <span className="magic-card-demo-kicker">BUILD BLOCK #002</span>
-          <strong>Move your cursor.</strong>
-          <p>The border follows the light.</p>
-          <span className="magic-card-demo-meta">spotlight · border · tilt</span>
+          <span className="magic-card-demo-kicker">第 002 期 · 玻璃光斑</span>
+          <strong>移动指针。</strong>
+          <p>边框跟着光亮起来。</p>
+          <span className="magic-card-demo-meta">光斑 · 边框 · 倾斜</span>
         </div>
       </div>
       <div className="magic-card-controls" aria-label="光斑卡片参数">
@@ -143,8 +143,8 @@ function FlipCardPreview() {
   const [flipped, setFlipped] = useState(false);
   return (
     <div className="capability-preview capability-preview-flip">
-      <div className="capability-preview-heading"><span>FLIP CARD</span><span>PLANNED PREVIEW</span></div>
-      <button className={`flip-demo-card${flipped ? " is-flipped" : ""}`} onClick={() => setFlipped((value) => !value)} type="button"><span>{flipped ? "BACK / REWARD" : "FRONT / PROMPT"}</span><strong>{flipped ? "Reveal the useful state." : "Tap to preview"}</strong><small>{flipped ? "click to return" : "one interaction, two surfaces"}</small></button>
+      <div className="capability-preview-heading"><span>双面翻卡</span><span>计划中的预览</span></div>
+      <button className={`flip-demo-card${flipped ? " is-flipped" : ""}`} onClick={() => setFlipped((value) => !value)} type="button"><span>{flipped ? "背面 / 奖励" : "正面 / 提示"}</span><strong>{flipped ? "查看揭示后的状态。" : "点击预览翻面"}</strong><small>{flipped ? "点击返回" : "一次交互，两面内容"}</small></button>
     </div>
   );
 }
@@ -155,5 +155,5 @@ export function CapabilityPreview({ slug }: { slug: string }) {
   if (slug === "card-highlight") return <CardHighlightPreview />;
   if (slug === "magic-card") return <MagicCardPreview />;
   if (slug === "flip-card") return <FlipCardPreview />;
-  return <div className="capability-preview capability-preview-planned"><span className="state-kicker">PREVIEW IN PREPARATION</span><strong>This Capability is mapped in the catalog.</strong><p>The interactive preview will be published after its self-owned implementation is verified.</p></div>;
+  return <div className="capability-preview capability-preview-planned"><span className="state-kicker">预览准备中</span><strong>这个能力模块已经加入内容目录。</strong><p>完成自研实现和验证后，会补充在线交互预览。</p></div>;
 }

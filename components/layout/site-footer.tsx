@@ -9,25 +9,25 @@ export function SiteFooter() {
             <span aria-hidden="true" className="brand-mark">
               BB
             </span>
-            <span>AI Build Blocks Marketplace</span>
+            <span>AI 能力模块库</span>
           </Link>
           <p>
-            搜索一个 Build Block，在线预览，再把可复用的 UI、Prompt 和代码带回自己的项目。
+            搜索一个能力模块，在线预览，再把可复用的界面、提示词和代码带回自己的项目。
           </p>
         </div>
         <nav aria-label="页脚导航">
-          <Link href="/explore">Explore Build Blocks</Link>
-          <Link href="/blueprints">Blueprints</Link>
-          <Link href="/bundles">Bundles</Link>
-          <Link href="/library">Library</Link>
-          <Link href="/about">Resources</Link>
-          <Link href="/about">About</Link>
-          <Link href="/license">License</Link>
-          <Link href="/copyright">Copyright</Link>
+          <Link href="/explore">浏览能力模块</Link>
+          <Link href="/blueprints">产品蓝图</Link>
+          <Link href="/bundles">组合包</Link>
+          <Link href="/library">我的资源</Link>
+          <Link href="/about">资源说明</Link>
+          <Link href="/about">关于项目</Link>
+          <Link href="/license">许可证</Link>
+          <Link href="/copyright">版权声明</Link>
           <Link href="/privacy">隐私说明</Link>
         </nav>
         <p className="footer-disclaimer">
-          当前公开版本使用 Preview 数据；价格为展示用 Mock Price，不扣款、不创建订单。没有自研实现和权利记录的内容不会显示为可售 Package。
+          当前公开版本使用预览数据；价格仅用于展示，不扣款、不创建订单。没有自研实现和权利记录的内容不会显示为可售模块。
         </p>
       </div>
     </footer>

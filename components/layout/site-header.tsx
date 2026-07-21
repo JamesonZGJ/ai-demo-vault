@@ -17,14 +17,14 @@ export async function SiteHeader() {
           <span aria-hidden="true" className="brand-mark">
             BB
           </span>
-          <span>AI Build Blocks</span>
+          <span>AI 能力模块库</span>
         </Link>
         <nav aria-label="主导航" className="desktop-navigation">
-          <Link href="/explore">Build Blocks</Link>
-          <Link href="/bundles">Bundles</Link>
-          <Link href="/blueprints">Blueprints</Link>
-          <Link href="/about">Resources</Link>
-          <Link href="/library">Library</Link>
+          <Link href="/explore">能力模块</Link>
+          <Link href="/bundles">组合包</Link>
+          <Link href="/blueprints">产品蓝图</Link>
+          <Link href="/about">资源</Link>
+          <Link href="/library">我的资源</Link>
           {user ? <Link href="/favorites">我的收藏</Link> : null}
           {user ? (
             <form action="/auth/signout" method="post">

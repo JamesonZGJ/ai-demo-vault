@@ -8,7 +8,7 @@ import { SiteHeader } from "../components/layout/site-header";
 import { getSiteUrl } from "../lib/catalog/site-url";
 
 const description =
-  "AI Build Blocks Marketplace：搜索、预览并复用 AI 产品的 UI、Prompt、代码和交互模块。";
+  "AI 能力模块库：搜索、预览并复用 AI 产品的界面、提示词、代码和交互模块。";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -18,15 +18,15 @@ export const metadata: Metadata = {
   openGraph: {
     description,
     locale: "zh_CN",
-    images: [{ alt: "AI Build Blocks Marketplace", height: 630, url: "/og-image.svg", width: 1200 }],
-    siteName: "AI Build Blocks Marketplace",
-    title: "AI Build Blocks Marketplace｜Build AI products faster",
+    images: [{ alt: "AI 能力模块库", height: 630, url: "/og-image.svg", width: 1200 }],
+    siteName: "AI 能力模块库",
+    title: "AI 能力模块库｜更快做出 AI 产品",
     type: "website",
     url: "/",
   },
   title: {
-    default: "AI Build Blocks Marketplace｜Build AI products faster",
-    template: "%s｜AI Build Blocks Marketplace",
+    default: "AI 能力模块库｜更快做出 AI 产品",
+    template: "%s｜AI 能力模块库",
   },
 };
 
