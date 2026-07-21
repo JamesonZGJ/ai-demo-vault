@@ -1,5 +1,9 @@
 # 当前进度
 
+2026-07-21 已完成《每天拆一个 AI 产品》第002期“玻璃光斑卡片”：新增自研 `Magic Card` Build Block #002、在线交互 Preview、源码包、Prompt、参数、Integration Guide、License、中文内容说明和来源版权边界。新增 `/explore/magic-card`，未接入支付、订单或下载。
+
+2026-07-21 已使用 HyperFrames Kokoro 中文旁白与 Remotion 生成第002期 42秒竖屏成片：`video/ai-demo-vault-intro/remotion/renders/episode-002-magic-card.mp4` 和字幕版 `episode-002-magic-card-captions.mp4`。当前未发布视频，等待人工审核。
+
 2026-07-20 完成《每天拆一个 AI 产品》第001期“玻璃拟态卡片”：自研 Glass Surface 交互 Demo、中文商品包、封面、42 秒竖屏旁白版与字幕版成片，以及小红书/抖音/X 发布文案。Build Block #001 已接入 `/explore/glass-surface`；真实支付和第二期均未启动。
 
 2026-07-19 完成一次 Conversion Optimization。产品定位仍为 **AI Build Blocks Marketplace**：Demo Preview 只是免费预览，Build Block Package 才是商品；Blueprint 和 Bundle 作为更高层组合商品。首页已按“先搜索、再预览、最后理解组合层”重新收敛，当前代码已通过规范、单元测试、零配置构建和 Launch E2E。

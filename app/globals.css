@@ -4262,6 +4262,18 @@ h3 {
 .capability-empty-inline .eyebrow,
 .capability-empty-inline .text-link { color: #a7f3d0; }
 .capability-empty-inline p { color: #d5dee8; }
+
+/* Build Block #002: pointer-following spotlight card */
+.capability-preview-magic-card { background: #0e1b2a; }
+.magic-card-stage { background: radial-gradient(circle at 18% 20%, rgb(80 192 170 / 22%), transparent 32%), radial-gradient(circle at 84% 82%, rgb(65 117 255 / 28%), transparent 38%), #101c2c; border: 1px solid rgb(255 255 255 / 10%); border-radius: 18px; height: 270px; margin-top: 25px; overflow: hidden; padding: 22px; position: relative; }
+.magic-card-grid { background-image: linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px); background-size: 28px 28px; inset: 0; mask-image: linear-gradient(to bottom, black, transparent 88%); opacity: .5; position: absolute; }
+.magic-card-demo { border: 1px solid rgb(191 255 235 / 70%); border-radius: 18px; color: #f8fafc; display: flex; flex-direction: column; height: 190px; justify-content: end; padding: 22px; position: relative; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.magic-card-demo-kicker, .magic-card-demo-meta { color: #a7f3d0; font-size: .63rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.magic-card-demo strong { font-size: 1.45rem; letter-spacing: -.04em; margin-top: 9px; }
+.magic-card-demo p { color: #cbd5e1; font-size: .78rem; margin: 5px 0 14px; }
+.magic-card-demo-meta { color: #9db1c8; font-size: .58rem; }
+.magic-card-controls { display: grid; gap: 2px; }
+@media (prefers-reduced-motion: reduce) { .magic-card-demo { transition: none; } }
 .capability-home-category-grid span { color: #56616d; }
 .capability-home-category-grid small { color: #52606c; }
 .capability-home-section-heading p,

@@ -92,6 +92,53 @@ function CardHighlightPreview() {
   );
 }
 
+function MagicCardPreview() {
+  const [pointer, setPointer] = useState({ x: 50, y: 45 });
+  const [spotlightSize, setSpotlightSize] = useState(32);
+  const [glow, setGlow] = useState(0.72);
+  const [tilt, setTilt] = useState(1.8);
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <div className="capability-preview capability-preview-magic-card">
+      <div className="capability-preview-heading"><span>MAGIC CARD</span><span>POINTER AWARE</span></div>
+      <div
+        className="magic-card-stage"
+        onPointerEnter={() => setIsHovering(true)}
+        onPointerLeave={() => {
+          setIsHovering(false);
+          setPointer({ x: 50, y: 45 });
+        }}
+        onPointerMove={(event) => {
+          const rect = event.currentTarget.getBoundingClientRect();
+          setPointer({ x: ((event.clientX - rect.left) / rect.width) * 100, y: ((event.clientY - rect.top) / rect.height) * 100 });
+        }}
+      >
+        <div className="magic-card-grid" />
+        <div
+          className="magic-card-demo"
+          style={{
+            background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgb(183 255 232 / ${glow}), transparent ${spotlightSize}%), linear-gradient(145deg, rgb(255 255 255 / .2), rgb(255 255 255 / .04))`,
+            borderColor: `rgb(191 255 235 / ${Math.min(glow + 0.08, 1)})`,
+            boxShadow: `0 28px 70px rgb(4 12 28 / .34), 0 0 ${Math.round(spotlightSize * 0.55)}px rgb(125 255 219 / ${glow * 0.42})`,
+            transform: `perspective(900px) rotateX(${isHovering ? (pointer.y - 50) * -tilt / 50 : 0}deg) rotateY(${isHovering ? (pointer.x - 50) * tilt / 50 : 0}deg) translateY(${isHovering ? -3 : 0}px)`,
+          }}
+        >
+          <span className="magic-card-demo-kicker">BUILD BLOCK #002</span>
+          <strong>Move your cursor.</strong>
+          <p>The border follows the light.</p>
+          <span className="magic-card-demo-meta">spotlight · border · tilt</span>
+        </div>
+      </div>
+      <div className="magic-card-controls" aria-label="光斑卡片参数">
+        <label className="capability-slider">光斑 <input max="52" min="18" onChange={(event) => setSpotlightSize(Number(event.target.value))} type="range" value={spotlightSize} /><output>{spotlightSize}%</output></label>
+        <label className="capability-slider">强度 <input max="0.95" min="0.28" onChange={(event) => setGlow(Number(event.target.value))} step="0.01" type="range" value={glow} /><output>{Math.round(glow * 100)}%</output></label>
+        <label className="capability-slider">倾斜 <input max="3" min="0" onChange={(event) => setTilt(Number(event.target.value))} step="0.1" type="range" value={tilt} /><output>{tilt.toFixed(1)}°</output></label>
+      </div>
+    </div>
+  );
+}
+
 function FlipCardPreview() {
   const [flipped, setFlipped] = useState(false);
   return (
@@ -106,6 +153,7 @@ export function CapabilityPreview({ slug }: { slug: string }) {
   if (slug === "color-extraction") return <ColorExtractionPreview />;
   if (slug === "glass-surface") return <GlassSurfacePreview />;
   if (slug === "card-highlight") return <CardHighlightPreview />;
+  if (slug === "magic-card") return <MagicCardPreview />;
   if (slug === "flip-card") return <FlipCardPreview />;
   return <div className="capability-preview capability-preview-planned"><span className="state-kicker">PREVIEW IN PREPARATION</span><strong>This Capability is mapped in the catalog.</strong><p>The interactive preview will be published after its self-owned implementation is verified.</p></div>;
 }

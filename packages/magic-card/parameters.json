@@ -1,0 +1,19 @@
+{
+  "component": "MagicCard",
+  "version": "0.1.0-preview",
+  "defaults": {
+    "spotlightSize": 32,
+    "glowOpacity": 0.72,
+    "tiltDegrees": 1.8
+  },
+  "ranges": {
+    "spotlightSize": { "min": 18, "max": 52, "unit": "%", "description": "光斑覆盖范围" },
+    "glowOpacity": { "min": 0.28, "max": 0.95, "unit": "alpha", "description": "光斑与边框强度" },
+    "tiltDegrees": { "min": 0, "max": 3, "unit": "deg", "description": "指针反馈的最大倾斜角度" }
+  },
+  "interaction": {
+    "pointerTracking": true,
+    "resetOnLeave": true,
+    "reducedMotion": "disables_tilt"
+  }
+}
