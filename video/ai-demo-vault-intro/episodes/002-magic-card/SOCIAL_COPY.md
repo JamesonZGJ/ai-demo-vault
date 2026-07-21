@@ -1,36 +1,59 @@
-# 发布文案
+# 第 002 期平台内传播文案
 
 ## 小红书
 
-标题：鼠标一动就亮的卡片，为什么看起来更高级？
+### 标题
 
-正文：
+玻璃光斑卡片，为什么一动鼠标就有质感？
 
-今天拆的是 Magic UI 的 Magic Card。
+### 正文
 
-我把它拆成了 5 个可以复用的参数：
+这次拆一个跟随指针移动的卡片交互。
 
-- Pointer Tracking
-- Spotlight
-- Border Glow
-- Tilt
-- Reduced Motion
+它的反馈可以拆成五个参数：指针坐标、径向渐变、边框强度、轻微倾斜和减少动效。
 
-参考公开交互规律，用 Codex 重新写成自己的 React Demo，并整理成 Build Block #002。
+移动时光斑跟随，离开后回到中心，触摸设备也保持可读。
 
-来源：
-https://magicui.design/docs/components/magic-card
+你还想看哪个 AI 产品或交互？评论区告诉我。
+
+### 话题
+
+#每天拆一个AI产品 #玻璃光斑 #交互设计 #前端开发 #UI动效 #AI产品
 
 ## 抖音
 
-标题：Magic Card 拆解：一个光斑效果如何变成可复用组件
+### 标题
 
-作品描述：光斑跟随指针，边框即时反馈，离开后回到中心。今天用 Codex 自研复刻一个适合 AI 产品的卡片交互。
+这个卡片交互为什么让人想多移动几下？
+
+### 作品描述
+
+《每天拆一个 AI 产品》第 002 期：玻璃光斑卡片。
+
+光斑跟随、边框亮起、离开归位，三个动作让反馈变得清楚。再用五个参数控制强度和节奏。
+
+评论区告诉我，下一期想看哪个产品或交互。
+
+### 话题
+
+#AI开发 #前端开发 #交互设计 #UI动效 #玻璃光斑 #每天拆一个AI产品
 
 ## X
 
-I rebuilt a reusable pointer-following spotlight card from the interaction pattern behind Magic Card.
+### Post
 
-No third-party code or assets copied. The self-owned React implementation is now Build Block #002 in AI Demo Vault.
+每天拆一个 AI 产品｜第 002 期：玻璃光斑卡片
 
-Reference: https://magicui.design/docs/components/magic-card
+一个光效可以拆成五个参数：
+
+• 指针坐标
+• 径向渐变
+• 边框强度
+• 轻微倾斜
+• 减少动效
+
+移动时跟随，离开后归位。你还想看哪个交互？
+
+### 评论置顶
+
+下一期继续拆一个 AI 产品。把你想看的界面、动效或工作流写在评论区。

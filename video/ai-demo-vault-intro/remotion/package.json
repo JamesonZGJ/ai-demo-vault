@@ -4,8 +4,6 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render:voice": "remotion render src/index.ts AI-Demo-Vault-WithVoice renders/ai-demo-vault-intro-voice.mp4",
-    "render:captions": "remotion render src/index.ts AI-Demo-Vault-Captions renders/ai-demo-vault-intro-captions.mp4",
     "render:episode001": "remotion render src/index.ts Daily-AI-Product-001-GlassCard renders/episode-001-glass-card.mp4",
     "render:episode001:captions": "remotion render src/index.ts Daily-AI-Product-001-GlassCard-Captions renders/episode-001-glass-card-captions.mp4",
     "render:episode002": "remotion render src/index.ts Daily-AI-Product-002-MagicCard renders/episode-002-magic-card.mp4",

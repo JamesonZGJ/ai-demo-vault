@@ -1,70 +1,60 @@
-# AI Demo Vault Video Design
+# 《每天拆一个 AI 产品》视频规范
 
-## Overview
+## 栏目定位
 
-这条视频延续 AI Build Blocks Marketplace 的真实网站视觉：浅灰画布、白色内容面、黑色高对比标题、细边框和少量蓝绿色信息色。画面从“收藏很多但用不上”的问题开始，逐步进入真实首页、搜索页和商品详情页，再回到 Build Block 的核心概念。视频保持编辑器和独立开发者的可信感，不使用夸张的产品广告语言。
+栏目只做平台内的设计拆解、交互分析、前端实现和产品思考。视频负责讲清一个细节，让观众愿意看完、收藏和讨论；不承担站外推广、工具宣传或软件下载。
 
-## Format
+## 统一规格
 
-- **Canvas**: `1080 × 1920`
-- **Frame rate**: `30fps`
-- **Duration**: 45 seconds target
-- **Safe area**: top 150px and bottom 220px reserved for platform UI
-- **Subtitle area**: lower middle, never cover website controls
+- 画幅：1080 × 1920
+- 帧率：30fps
+- 时长：30–45 秒
+- 安全区：顶部 150px、底部 220px 不放关键信息
+- 字幕：下方安全区上方，单组 1–2 行，每行尽量不超过 16 个汉字
 
-## Colors
+## 统一视觉
 
-- **Canvas**: `#f7f7f4` — site background and quiet scenes
-- **Surface**: `#ffffff` — cards, device frames and panels
-- **Surface Muted**: `#f0f0ec` — secondary blocks and problem-state panels
-- **Text**: `#111111` — primary copy and strong contrast
-- **Text Muted**: `#575754` — explanations and metadata
-- **Border**: `#d6d6d0` — rules, card edges and dividers
-- **Accent**: `#1d4ed8` — labels, search focus and CTA emphasis
-- **Accent Soft**: `#eff6ff` — highlighted search and prompt chips
-- **Success**: `#067647` — real “ready” states only
-- **Dark Tour Surface**: `#111827` — used only behind the real product screenshots
+- 画布：`#f7f7f4`
+- 内容面：`#ffffff`
+- 文字：`#111111`
+- 辅助文字：`#575754`
+- 边框：`#d6d6d0`
+- 强调色：`#1d4ed8`
+- 深色场景：`#0d1421`
+- 柔和高光：`#9fe7d5`
 
-## Typography
+主标题使用中文，英文只保留为内部技术名或参数标签。页面留白充足，单个镜头只讲一个判断，不堆叠数据和品牌名。
 
-- **Primary**: `Inter`, falling back to `Segoe UI`, `PingFang SC`, `Microsoft YaHei`, sans-serif.
-- **Display**: 88–112px, weight 800–900, tight tracking `-0.05em`.
-- **Scene heading**: 58–76px, weight 800, line height 1.04.
-- **Body / narration support**: 30–38px, weight 450–600, line height 1.25.
-- **Metadata / labels**: 18–24px, weight 700, uppercase where useful, tracking `0.08em`.
-- **URL / technical text**: 24–30px, weight 650, tabular numerals where applicable.
+## 固定节奏
 
-## Subtitle style
+1. 0–3 秒：先展示效果，给出具体问题。
+2. 3–8 秒：说明它为什么值得关注。
+3. 8–15 秒：拆解视觉或交互规律。
+4. 15–30 秒：展示重新实现的过程和关键参数。
+5. 30–38 秒：展示前后结果，补充响应式或可用性判断。
+6. 38–45 秒：留下一个问题，引导关注和评论。
 
-- 简体中文，单组 1–2 行，每行尽量不超过 16 个汉字。
-- 位置在画面下方安全区上方约 250px，黑色半透明圆角底板。
-- 普通文字为 `#ffffff`，关键词使用 `#9fe7d5` 或 `#ffffff` 加细蓝线。
-- 每次只显示一组字幕；进入为 6–10 帧淡入和上移，结束为 4–6 帧淡出。
-- 纯字幕版仍保留背景音乐，但不放旁白。
+## 口播规则
 
-## Motion
+统一使用“参考效果、重新实现、复刻、交互规律、设计判断”等自然表达。不要提及任何开发工具、代码平台、站点、下载、源码地址、外部链接、二维码或站外行动。不要使用夸张营销词，不虚构热度、作者数据或产品成绩。
 
-- Remotion 所有运动由 `useCurrentFrame`、`interpolate`、`Sequence` 驱动。
-- HyperFrames 开场使用 GSAP 时间线；输出作为开场参考素材并保留源文件。
-- 入场 0.25–0.55 秒，强调词可用一次轻微 scale overshoot，镜头移动保持慢而清楚。
-- 页面截图使用单一父容器做入场，子图只做 Ken Burns，避免两个时间线同时控制同一 transform。
-- 场景之间使用淡入、轻微纵向推移或遮罩擦除，不使用跳跃式 3D、粒子或故障闪烁。
-- 不使用 CSS animation、CSS transition、随机数或无限循环。
+## 画面规则
 
-## Transitions
+- 只使用自制示意、原创代码画面和获得授权的素材。
+- 参考效果只用于短暂分析，不完整搬运第三方视频、Logo、插画或页面。
+- 动画由 Remotion 的 `useCurrentFrame`、`interpolate`、`Sequence` 驱动，不使用 CSS animation、CSS transition、随机数或无限循环。
+- Hover、光效、滚动等互动要用清楚的前后对比表现，移动端保留可读性。
+- 字幕不能遮住关键交互，背景音乐低于旁白，旁白要自然停顿。
 
-1. Scene 1 → 2：灰白遮罩向上推移，表达收藏堆积。
-2. Scene 2 → 3：蓝色细线扫过，产品名称在其后出现。
-3. Scene 3 → 4：截图卡片向前推近，进入真实网站浏览。
-4. Scene 4 → 5：白色内容面缩小成一个模块卡片。
-5. Scene 5 → 6：来源标签沿同一轨迹进入，形成新的卡片。
-6. Scene 6 → 7：所有卡片收束为网址和 CTA。
+## 固定结尾
 
-## What not to do
+使用“关注 AI 拆解局，下一期继续拆。评论区告诉我想看哪个。”或其简短变体。结尾只保留平台内关注和评论，不出现任何站外入口。
 
-- 不使用未经许可的第三方视频、Logo 或 UI 录屏；来源只用文字标签。
-- 不伪造下载成功、购买成功、用户数量、销量或完成状态。
-- 不把“Coming soon”内容说成已经交付的 Package。
-- 不使用廉价霓虹、满屏粒子、复杂 3D、过密数据和高频闪烁。
-- 不让字幕覆盖真实网站的搜索框、商品状态或导航。
-- 不使用“颠覆、赋能、重新定义、保证收益”等空泛营销词。
+## 发布前检查
+
+- [ ] 前三秒能看懂本期效果
+- [ ] 口播只讲拆解、实现和判断
+- [ ] 画面没有工具名、站点名、URL、二维码或下载表达
+- [ ] 没有虚构数据和未授权素材
+- [ ] 字幕、旁白、封面三者用词一致
+- [ ] 结尾只有关注和评论 CTA
