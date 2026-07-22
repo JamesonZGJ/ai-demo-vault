@@ -18,6 +18,8 @@
 - 第 001 期字幕版：`remotion/renders/episode-001-glass-card-captions.mp4`
 - 第 002 期：`remotion/renders/episode-002-magic-card.mp4`
 - 第 002 期字幕版：`remotion/renders/episode-002-magic-card-captions.mp4`
+- 第 003 期：`remotion/renders/episode-003-streaming-chat.mp4`
+- 第 003 期字幕版：`remotion/renders/episode-003-streaming-chat-captions.mp4`
 
 两期均为 1080×1920、30fps、42 秒竖屏视频。旁白使用 HyperFrames 的中文语音生成，背景音乐保持低音量。
 
@@ -32,6 +34,8 @@ npm run render:episode001
 npm run render:episode001:captions
 npm run render:episode002
 npm run render:episode002:captions
+npm run render:episode003
+npm run render:episode003:captions
 ```
 
 生成中文旁白时使用 HyperFrames CLI，输入文件为对应期数目录中的 `narration.txt`。如本机 Python 不在 PATH，再设置 `HYPERFRAMES_PYTHON`。

@@ -7,7 +7,9 @@
     "render:episode001": "remotion render src/index.ts Daily-AI-Product-001-GlassCard renders/episode-001-glass-card.mp4",
     "render:episode001:captions": "remotion render src/index.ts Daily-AI-Product-001-GlassCard-Captions renders/episode-001-glass-card-captions.mp4",
     "render:episode002": "remotion render src/index.ts Daily-AI-Product-002-MagicCard renders/episode-002-magic-card.mp4",
-    "render:episode002:captions": "remotion render src/index.ts Daily-AI-Product-002-MagicCard-Captions renders/episode-002-magic-card-captions.mp4"
+    "render:episode002:captions": "remotion render src/index.ts Daily-AI-Product-002-MagicCard-Captions renders/episode-002-magic-card-captions.mp4",
+    "render:episode003": "remotion render src/index.ts Daily-AI-Product-003-StreamingChat renders/episode-003-streaming-chat.mp4",
+    "render:episode003:captions": "remotion render src/index.ts Daily-AI-Product-003-StreamingChat-Captions renders/episode-003-streaming-chat-captions.mp4"
   },
   "dependencies": {
     "@remotion/media": "4.0.493",
