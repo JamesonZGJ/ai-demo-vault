@@ -46,7 +46,7 @@ test("无效凭据和不一致密码显示准确错误", async ({ page }) => {
   await page.getByLabel("邮箱").fill("mismatch@example.test")
   await page.locator("#register-password").fill("first-password")
   await page.locator("#register-password-confirmation").fill("second-password")
-  await page.getByRole("button", { name: "注册并发送确认邮件" }).click()
+  await page.getByRole("button", { name: "创建账号" }).click()
   await expect(page).toHaveURL(/\/register\?error=password-mismatch/u)
   await expect(page.locator("#register-error")).toHaveText("两次输入的密码不一致。")
 })
@@ -61,7 +61,7 @@ test("确认前不能登录，确认后密码登录且收藏跨会话保留", as
   await page.getByLabel("邮箱").fill(email)
   await page.locator("#register-password").fill(password)
   await page.locator("#register-password-confirmation").fill(password)
-  await page.getByRole("button", { name: "注册并发送确认邮件" }).click()
+  await page.getByRole("button", { name: "创建账号" }).click()
   await expect(page).toHaveURL(/\/auth\/check-email/u)
   await expect(page.getByRole("heading", { level: 1, name: "请检查确认邮件" })).toBeVisible()
   await expect(page.getByText("v***@example.test", { exact: false })).toBeVisible()
@@ -141,7 +141,7 @@ test("ColorSnap 模拟购买只创建本人的持久资料访问权", async ({ p
   await page.getByLabel("邮箱").fill(email)
   await page.locator("#register-password").fill(password)
   await page.locator("#register-password-confirmation").fill(password)
-  await page.getByRole("button", { name: "注册并发送确认邮件" }).click()
+  await page.getByRole("button", { name: "创建账号" }).click()
   await expect(page).toHaveURL(/\/auth\/check-email/u)
 
   let confirmationUrl = ""

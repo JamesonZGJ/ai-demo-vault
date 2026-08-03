@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
+import { registrationDestination } from "@/lib/auth/registration-destination"
 import { safeReturnTo } from "@/lib/auth/return-to"
 import { getSiteUrl } from "@/lib/env"
 import { createClient } from "@/lib/supabase/server"
@@ -57,7 +58,7 @@ export async function register(formData: FormData) {
   confirmUrl.searchParams.set("returnTo", returnTo)
 
   const supabase = await createClient()
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: { emailRedirectTo: confirmUrl.toString() },
@@ -67,10 +68,15 @@ export async function register(formData: FormData) {
     redirect(authErrorUrl("/register", "registration-failed", returnTo))
   }
 
-  const [localPart = "", domain = ""] = email.split("@")
-  const maskedRecipient =
-    localPart && domain ? `${localPart.slice(0, 1)}***@${domain}` : ""
-  const params = new URLSearchParams()
-  if (maskedRecipient) params.set("recipient", maskedRecipient)
-  redirect(`/auth/check-email?${params.toString()}`)
+  if (data.session) {
+    revalidatePath("/", "layout")
+  }
+
+  redirect(
+    registrationDestination({
+      email,
+      hasSession: Boolean(data.session),
+      returnTo,
+    }),
+  )
 }

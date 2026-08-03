@@ -10,7 +10,7 @@
 | `app/(account)` | 登录后收藏页，以及本地 Blueprint Launch Dashboard、启动清单、时间线和资料样品 |
 | `app/(account)/account/library/[slug]/download` | 仅本人可读的本地 Markdown 资料样品导出；不读取存储对象 |
 | `app/(auth)` | `/login` 与 `/register` 页面 |
-| `app/auth` | `/auth/check-email` 邮件提示、`/auth/confirm` 回调和退出流程 |
+| `app/auth` | `/auth/registered` 注册成功结果、`/auth/check-email` 邮件提示、`/auth/confirm` 回调和退出流程 |
 | `components/analytics` | 仅在成功渲染的首页、案例库和已发布详情页挂载匿名统计，并校验事件路径 |
 | `components/blueprint` | 当前 ColorSnap 商品视觉、商品卡、Blueprint Score、Build Timeline、免费 Demo 入口和 Demo→Blueprint 转化组件；尚未拆出 Capability、DemoPreview 和 CapabilityPackage 组件 |
 | `components/capabilities` | Launch Version 的高密度 Capability 卡片、可交互 Demo Preview、即时目录筛选、真实源码/Prompt 标签和 Package 状态 |

@@ -1,5 +1,7 @@
 # 当前进度
 
+2026-08-03 已为生产站接通独立 Supabase 项目与真实账号注册：新项目只承载 AI Demo Vault，现有 migration 和 seed 已完整迁移；Vercel Production 只配置公开 URL 与 Publishable Key，没有 Service Role Key、数据库密码或本地环境文件。由于 Launch 阶段尚未配置自有 SMTP，生产注册采用立即激活，提交后建立会话并显示“账号创建成功”，随后可进入原目标页；本地测试仍保留邮箱确认路径。Supabase 生产回调固定为 `https://ai-demo-vault.vercel.app/auth/confirm`，默认 OTP 频率和 MFA 设置未被本地测试配置覆盖。新增 2 个注册分流单元测试；191 个单元测试、lint、TypeScript 和 60 页生产构建通过，等待提交部署后做公网注册/登录验收。
+
 2026-08-03 已补齐《每天拆一个 AI 产品》第003期“流式聊天回复”的网站内容：新增自研 `Streaming Chat` Build Block、本地等待/生成/完成演示、逐段文字、自动滚动、中文源码说明、Cursor/Claude Prompt、参数、接入指南、许可证和免费公开 manifest。至此第001～017期均已同步到网站内容目录；189 个单元测试、17 条 Build Block / Launch E2E、lint、TypeScript 和无 Supabase 的 59 页生产构建通过。线上发布只包含网站源码和 Package，不包含登录状态、内容运营缓存、旁白音频或视频成片。
 
 2026-08-03 已将公开网站统一调整为免费内容库：已有真实资料的 Build Block 显示“免费开放”，卡片和详情页不再展示 Mock 价格或购买按钮，主按钮直接定位源码、Prompt 和接入说明；未完成内容继续显示“准备中”。Bundle 和 Blueprint 已移除价格及 checkout 入口，旧 `/checkout/[slug]` 只重定向回 Blueprint 内容页；About、Library、License、Copyright、Demo 目录、登录页和页脚同步删除收费表达。未新增下载、支付、会员或权益功能，旧商业化数据结构未删除。

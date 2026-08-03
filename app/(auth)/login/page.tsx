@@ -23,7 +23,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
   return (
     <section className="auth-card" aria-labelledby="login-title">
-      <p className="eyebrow">AI Product Blueprint Marketplace</p>
+      <p className="eyebrow">AI Build Blocks Library</p>
       <h1 id="login-title">登录后继续</h1>
       <p className="muted">用于保存收藏和后续个人资料；当前公开内容无需购买。</p>
       {message ? <p className="form-error" id="login-error" role="alert">{message}</p> : null}

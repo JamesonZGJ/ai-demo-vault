@@ -4,7 +4,7 @@
 
 产品边界：`Build Block = 能力定义`，`Demo Preview = 在线预览`，`Build Block Package = 免费可复用资料包`，`Bundle = 模块组合内容`，`App Blueprint = 完整产品高级内容`。当前只做本站自研内容，不做第三方卖家、分账或提现。
 
-当前状态：**Launch Version 已完成公开演示闭环。** 首页、`/explore` 和详情页已经按 Galaxy / Uiverse 的成熟组件市场骨架重构：搜索优先、AI 能力分类、高密度真实预览网格、预览/源码同屏工作台。27 个 Build Block 使用本地静态目录；已有真实资料的模块全部免费开放，不显示价格或购买入口。
+当前状态：**Launch Version 已完成公开演示闭环。** 首页、`/explore` 和详情页已经按 Galaxy / Uiverse 的成熟组件市场骨架重构：搜索优先、AI 能力分类、高密度真实预览网格、预览/源码同屏工作台。27 个 Build Block 使用本地静态目录；已有真实资料的模块全部免费开放，不显示价格或购买入口。生产站已连接独立 Supabase，支持真实邮箱密码注册、登录、退出和个人收藏。
 
 ## 最新产品决定
 
@@ -24,6 +24,7 @@
 - Build Block 目录与详情：固定分类栏、即时中英文搜索、技术栈/难度/资料状态/最新筛选、在线 Preview 与真实源码同屏工作台，以及 Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
 - 已具备真实资料的 Build Block 均可在详情页免费查看源码、Prompt 和接入说明；支付、订单和打包下载仍关闭。
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
+- 生产账号注册提交后立即建立会话并进入明确的“账号创建成功”结果页；当前未配置自有 SMTP，因此 Launch 阶段不发送确认邮件，本地 Auth 测试仍保留确认邮件流程。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
 - 《每天拆一个 AI 产品》第001–017期已完成并同步为网站自研 Build Block，包括第003期“流式聊天回复”的本地流式文本、状态反馈和自动滚动演示。每一期均可从目录进入在线 Preview；有真实资料的模块免费查看源码、Prompt、README、参数、接入指南和许可证。视频口播、字幕、封面和平台文案位于 `video/ai-demo-vault-intro/episodes`。
 
@@ -67,7 +68,7 @@ pnpm dev
 
 ## 部署方法
 
-在正式 Supabase 尚未配置时，可先用 Vercel Preview 模式公开演示：缺少 Supabase URL 或 Publishable/Anon Key 时会自动进入只读 Mock Mode，Demo、Capability 和 Package 页面使用仓库内静态数据；`APP_DEPLOYMENT_TIER=preview` 只是可选的显式标记。Vercel 自动提供的 `VERCEL_URL` 会作为站点 origin，不需要把本地 Supabase 地址填入公网环境。该模式不开放账号、收藏、Blueprint 试用、支付、订单或下载。
+Vercel Production 已连接独立 Supabase；运行时只使用公开 URL 与 Publishable Key。尚未配置 Supabase 的 Preview 环境继续自动进入只读 Preview Mode，Demo、Capability 和 Package 页面使用仓库内静态数据；`APP_DEPLOYMENT_TIER=preview` 只是可选显式标记。Preview Mode 不开放账号、收藏、Blueprint 试用、支付、订单或下载。
 
 使用 Vercel + 独立生产 Supabase。Web 运行时只配置 Supabase URL 和 Publishable Key，不放 Service Role Key。数据库迁移凭据只用于受控部署流程，不进入客户端、运行日志或仓库。上线前必须先建立干净提交并通过本地验证，再迁移和只读验收生产数据库；生产内容就绪后，设置完整 commit SHA 与 20 位 Supabase Project Ref，再运行 `pnpm release:preflight`。预检输出的 `RELEASE_PREFLIGHT_EVIDENCE` 必须原样进入发布记录；部署固定使用 `vercel@56.2.1`，不使用 `@latest`。自有 SMTP、精确回调白名单、唯一 canonical origin、生产统计排除和回滚步骤见 `DEPLOYMENT.md`。
 
