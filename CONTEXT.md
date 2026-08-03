@@ -1,5 +1,11 @@
 # 当前进度
 
+2026-08-04 `aibuildblocks.com` 已正式上线：阿里云 DNS 的根域名与 `www` 已指向 Vercel，根域名和 `www` HTTPS 均返回 200；Vercel Production/Preview 的 `NEXT_PUBLIC_SITE_URL`、Supabase Auth Site URL 与精确 `/auth/confirm` 白名单均已切换到新域名，QQ SMTP 与邮箱确认保持启用。重新部署后，首页、目录、详情、Library、登录、注册、注册结果、法律页、robots、sitemap 和 404 已完成公网检查；canonical、Open Graph、robots 和 sitemap 只使用新域名，不再输出旧 `vercel.app` 地址。下一步只需用户用无代理手机网络确认大陆实际访问。
+
+2026-08-04 已核对大陆访问的低成本方案：可靠独立域名没有适合正式公开项目的长期免费选项；建议在阿里云注册域名，先继续使用现有 Vercel 免费托管并绑定自有域名，以最小改动验证大陆手机访问。若仍不稳定，再评估腾讯 EdgeOne Pages 免费版；其系统预览域名不适合作为长期大陆公开地址，稳定使用仍需自有域名，启用中国大陆节点还需要 ICP 备案。阿里云中国大陆服务器同样需要备案，暂不作为无备案阶段的首选。
+
+2026-08-03 已排查生产站手机端无法访问：Vercel 部署状态为 Ready，公开首页从外部请求返回 200，Vercel 全局状态正常；故障不在网站构建或账号系统，而在中国大陆部分手机网络对 `vercel.app` 默认域名的拦截、限速或异常解析。短期可切换 Wi-Fi/移动网络验证，正式解决方案是绑定自有域名；若要求大陆长期稳定访问，则需要境内合规部署与 ICP 备案。
+
 2026-08-03 已为生产站接通独立 Supabase 项目与真实账号注册：新项目只承载 AI Demo Vault，现有 migration 和首发目录已迁移；Vercel Production 只配置公开 URL 与 Publishable Key，没有 Service Role Key、数据库密码或本地环境文件。生产 Auth 已连接 QQ SMTP（`smtp.qq.com:587` + TLS），授权码只保存在 Supabase Auth 配置中；直连测试邮件发送成功，邮箱确认已重新开启。正式流程为“注册 → 检查邮箱 → 点击确认 → 账号创建成功 → 返回原目标页”，Supabase 回调固定为 `https://ai-demo-vault.vercel.app/auth/confirm`。本地 Blueprint seed 已通过生产开关关闭，匿名用户不可读。192 个单元测试、lint、TypeScript、60 页生产构建和生产数据库契约通过；等待提交部署后由用户用真实 QQ 邮箱完成最终收件确认。旧公网回归脚本仍有首页旧文案与固定 Analytics 路径两条过时断言，不能作为当前页面验收依据。
 
 2026-08-03 已补齐《每天拆一个 AI 产品》第003期“流式聊天回复”的网站内容：新增自研 `Streaming Chat` Build Block、本地等待/生成/完成演示、逐段文字、自动滚动、中文源码说明、Cursor/Claude Prompt、参数、接入指南、许可证和免费公开 manifest。至此第001～017期均已同步到网站内容目录；189 个单元测试、17 条 Build Block / Launch E2E、lint、TypeScript 和无 Supabase 的 59 页生产构建通过。线上发布只包含网站源码和 Package，不包含登录状态、内容运营缓存、旁白音频或视频成片。

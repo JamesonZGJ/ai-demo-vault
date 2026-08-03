@@ -29,16 +29,16 @@
 
 ## 公网发布前仍需完成
 
-- [ ] 配置生产 Supabase URL 和 Publishable Key
-- [ ] 配置正式 HTTPS 域名和 `NEXT_PUBLIC_SITE_URL`
-- [ ] 建立首个 Git commit，绑定迁移和构建证据
-- [ ] 配置 Vercel 项目和部署凭据
-- [ ] 生产部署后检查 `/`、`/explore`、Capability 详情、`/about`、`/license`、`/copyright`、`/privacy`、`/robots.txt`、`/sitemap.xml`
-- [ ] 生产环境确认不启用 local Blueprint pilot
+- [x] 配置生产 Supabase URL 和 Publishable Key
+- [x] 配置正式 HTTPS 域名和 `NEXT_PUBLIC_SITE_URL`
+- [x] 建立首个 Git commit，绑定迁移和构建证据
+- [x] 配置 Vercel 项目和部署凭据
+- [x] 生产部署后检查 `/`、`/explore`、Capability 详情、`/about`、`/license`、`/copyright`、`/privacy`、`/robots.txt`、`/sitemap.xml`
+- [x] 生产环境确认不启用 local Blueprint pilot
 - [ ] 公网 Lighthouse 使用 production build 重跑
 - [ ] 再决定是否接入真实支付和 Package 私有下载
 
-当前公开预览地址：`http://localhost:3000`。由于生产 Supabase、正式域名和 Vercel 凭据尚未配置，本轮没有声称已经部署到公网。
+当前正式公开地址：`https://aibuildblocks.com`。本地预览地址仍为 `http://localhost:3000`。
 
 ## Vercel Preview 操作
 

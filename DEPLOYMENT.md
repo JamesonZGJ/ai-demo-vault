@@ -2,6 +2,8 @@
 
 AI Demo Marketplace 使用独立的 Supabase 生产项目与 Vercel 项目。Web 运行时只持有可公开密钥，不持有数据库密码或 Service Role Key。
 
+当前唯一生产 origin：`https://aibuildblocks.com`。根域名由阿里云 DNS 托管并指向 Vercel；Supabase Auth 的 Site URL 与精确回调白名单均已同步到该域名。
+
 ## 0. 无 Supabase 的 Vercel Preview
 
 在正式 Supabase 建好之前，可以先部署只读 Preview，验证首页、Capability 目录、详情页、Bundle、My Library 空状态和法律/SEO 页面。Preview 不初始化 Supabase，不开放登录、收藏、Blueprint 试用、支付、订单或下载。

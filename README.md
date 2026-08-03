@@ -4,7 +4,7 @@
 
 产品边界：`Build Block = 能力定义`，`Demo Preview = 在线预览`，`Build Block Package = 免费可复用资料包`，`Bundle = 模块组合内容`，`App Blueprint = 完整产品高级内容`。当前只做本站自研内容，不做第三方卖家、分账或提现。
 
-当前状态：**Launch Version 已完成公开演示闭环。** 首页、`/explore` 和详情页已经按 Galaxy / Uiverse 的成熟组件市场骨架重构：搜索优先、AI 能力分类、高密度真实预览网格、预览/源码同屏工作台。27 个 Build Block 使用本地静态目录；已有真实资料的模块全部免费开放，不显示价格或购买入口。生产站已连接独立 Supabase，支持真实邮箱密码注册、登录、退出和个人收藏。
+当前状态：**Launch Version 已完成公开演示闭环。** 正式地址为 [https://aibuildblocks.com](https://aibuildblocks.com)。首页、`/explore` 和详情页已经按 Galaxy / Uiverse 的成熟组件市场骨架重构：搜索优先、AI 能力分类、高密度真实预览网格、预览/源码同屏工作台。27 个 Build Block 使用本地静态目录；已有真实资料的模块全部免费开放，不显示价格或购买入口。生产站已连接独立 Supabase，支持真实邮箱密码注册、登录、退出和个人收藏。
 
 ## 最新产品决定
 
@@ -68,7 +68,7 @@ pnpm dev
 
 ## 部署方法
 
-Vercel Production 已连接独立 Supabase；运行时只使用公开 URL 与 Publishable Key。尚未配置 Supabase 的 Preview 环境继续自动进入只读 Preview Mode，Demo、Capability 和 Package 页面使用仓库内静态数据；`APP_DEPLOYMENT_TIER=preview` 只是可选显式标记。Preview Mode 不开放账号、收藏、Blueprint 试用、支付、订单或下载。
+Vercel Production 已绑定 `https://aibuildblocks.com` 并连接独立 Supabase；运行时只使用公开 URL 与 Publishable Key。尚未配置 Supabase 的 Preview 环境继续自动进入只读 Preview Mode，Demo、Capability 和 Package 页面使用仓库内静态数据；`APP_DEPLOYMENT_TIER=preview` 只是可选显式标记。Preview Mode 不开放账号、收藏、Blueprint 试用、支付、订单或下载。
 
 使用 Vercel + 独立生产 Supabase。Web 运行时只配置 Supabase URL 和 Publishable Key，不放 Service Role Key。数据库迁移凭据只用于受控部署流程，不进入客户端、运行日志或仓库。上线前必须先建立干净提交并通过本地验证，再迁移和只读验收生产数据库；生产内容就绪后，设置完整 commit SHA 与 20 位 Supabase Project Ref，再运行 `pnpm release:preflight`。预检输出的 `RELEASE_PREFLIGHT_EVIDENCE` 必须原样进入发布记录；部署固定使用 `vercel@56.2.1`，不使用 `@latest`。自有 SMTP、精确回调白名单、唯一 canonical origin、生产统计排除和回滚步骤见 `DEPLOYMENT.md`。
 
