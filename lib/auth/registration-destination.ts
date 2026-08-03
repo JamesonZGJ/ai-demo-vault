@@ -15,10 +15,7 @@ export function registrationDestination({
   returnTo,
 }: RegistrationDestinationInput) {
   if (hasSession) {
-    const params = new URLSearchParams()
-    if (returnTo !== "/") params.set("returnTo", returnTo)
-    const query = params.toString()
-    return `/auth/registered${query ? `?${query}` : ""}`
+    return registeredDestination(returnTo)
   }
 
   const params = new URLSearchParams()
@@ -26,4 +23,11 @@ export function registrationDestination({
   if (recipient) params.set("recipient", recipient)
   const query = params.toString()
   return `/auth/check-email${query ? `?${query}` : ""}`
+}
+
+export function registeredDestination(returnTo: string) {
+  const params = new URLSearchParams()
+  if (returnTo !== "/") params.set("returnTo", returnTo)
+  const query = params.toString()
+  return `/auth/registered${query ? `?${query}` : ""}`
 }

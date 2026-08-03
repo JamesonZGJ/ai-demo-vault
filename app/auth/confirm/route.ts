@@ -1,6 +1,7 @@
 import type { EmailOtpType } from "@supabase/supabase-js"
 import { NextResponse, type NextRequest } from "next/server"
 
+import { registeredDestination } from "@/lib/auth/registration-destination"
 import { safeReturnTo } from "@/lib/auth/return-to"
 import { createClient } from "@/lib/supabase/server"
 
@@ -26,5 +27,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(failed)
   }
 
-  return NextResponse.redirect(new URL(returnTo, request.nextUrl.origin))
+  return NextResponse.redirect(
+    new URL(registeredDestination(returnTo), request.nextUrl.origin),
+  )
 }

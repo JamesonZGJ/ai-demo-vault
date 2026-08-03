@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest"
 
-import { registrationDestination } from "@/lib/auth/registration-destination"
+import {
+  registeredDestination,
+  registrationDestination,
+} from "@/lib/auth/registration-destination"
 
 describe("registrationDestination", () => {
   it("注册已创建会话时进入明确的成功结果页", () => {
@@ -21,5 +24,12 @@ describe("registrationDestination", () => {
         returnTo: "/favorites",
       }),
     ).toBe("/auth/check-email?recipient=j***%40example.com")
+  })
+
+  it("确认邮件成功后先进入结果页再返回原目标", () => {
+    expect(registeredDestination("/favorites")).toBe(
+      "/auth/registered?returnTo=%2Ffavorites",
+    )
+    expect(registeredDestination("/")).toBe("/auth/registered")
   })
 })

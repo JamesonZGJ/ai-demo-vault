@@ -434,7 +434,7 @@ test("核心页面三档宽度无溢出，移动筛选与减少动态效果可�
   await page.getByLabel("邮箱").fill(email)
   await page.locator("#register-password").fill(password)
   await page.locator("#register-password-confirmation").fill(password)
-  await page.getByRole("button", { name: "创建账号" }).click()
+  await page.getByRole("button", { name: "创建账号并发送确认邮件" }).click()
   await expect(page).toHaveURL(/\/auth\/check-email/u)
 
   let confirmationUrl = ""

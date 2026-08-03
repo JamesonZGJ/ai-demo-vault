@@ -25,7 +25,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
     <section className="auth-card" aria-labelledby="register-title">
       <p className="eyebrow">AI Build Blocks Library</p>
       <h1 id="register-title">创建免费账号</h1>
-      <p className="muted">注册后即可保存收藏并继续浏览免费 Build Blocks。</p>
+      <p className="muted">注册后请到邮箱完成确认，随后即可保存收藏并继续浏览免费 Build Blocks。</p>
       {message ? <p className="form-error" id="register-error" role="alert">{message}</p> : null}
       <form action={register} className="auth-form">
         <input type="hidden" name="returnTo" value={returnTo} />
@@ -33,7 +33,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
         <input id="register-email" name="email" type="email" autoComplete="email" aria-describedby={message ? "register-error" : undefined} aria-invalid={message ? true : undefined} required />
         <PasswordField id="register-password" name="password" label="密码（至少 8 位）" autoComplete="new-password" minLength={8} describedBy={message ? "register-error" : undefined} invalid={Boolean(message)} />
         <PasswordField id="register-password-confirmation" name="passwordConfirmation" label="确认密码" autoComplete="new-password" minLength={8} describedBy={message ? "register-error" : undefined} invalid={Boolean(message)} />
-        <button type="submit" className="button button-primary">创建账号</button>
+        <button type="submit" className="button button-primary">创建账号并发送确认邮件</button>
       </form>
       <p className="auth-switch">已有账号？ <Link href={loginHref}>去登录</Link></p>
     </section>

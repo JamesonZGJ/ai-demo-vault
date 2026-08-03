@@ -24,7 +24,7 @@
 - Build Block 目录与详情：固定分类栏、即时中英文搜索、技术栈/难度/资料状态/最新筛选、在线 Preview 与真实源码同屏工作台，以及 Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
 - 已具备真实资料的 Build Block 均可在详情页免费查看源码、Prompt 和接入说明；支付、订单和打包下载仍关闭。
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
-- 生产账号注册提交后立即建立会话并进入明确的“账号创建成功”结果页；当前未配置自有 SMTP，因此 Launch 阶段不发送确认邮件，本地 Auth 测试仍保留确认邮件流程。
+- 生产账号通过 QQ SMTP 发送确认邮件；用户完成邮箱确认后进入明确的“账号创建成功”结果页，再返回注册前目标。SMTP 授权码只保存在 Supabase Auth 配置中，不进入 Vercel、仓库或客户端。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
 - 《每天拆一个 AI 产品》第001–017期已完成并同步为网站自研 Build Block，包括第003期“流式聊天回复”的本地流式文本、状态反馈和自动滚动演示。每一期均可从目录进入在线 Preview；有真实资料的模块免费查看源码、Prompt、README、参数、接入指南和许可证。视频口播、字幕、封面和平台文案位于 `video/ai-demo-vault-intro/episodes`。
 

@@ -105,13 +105,13 @@ Preview 构建命令使用项目默认的 `pnpm build`，Install Command 使用 
 
 ## 3. Auth 与邮件
 
-Supabase Auth 的密码最短长度固定为 8。生产环境必须配置自有 SMTP，不能依赖 Supabase 默认试用邮件服务。
+Supabase Auth 的密码最短长度固定为 8。生产环境必须配置可控 SMTP，不能依赖 Supabase 默认试用邮件服务。当前 Launch 使用 QQ SMTP：`smtp.qq.com:587`、TLS、发件地址与 SMTP 用户一致，授权码只保存在 Supabase Auth 配置中。
 
 在 Supabase Dashboard 明确完成并记录：
 
 - 服务端最短密码长度为 8，开启邮箱确认；不能只依赖网页表单校验。
-- 配置自有 SMTP 发件域，关闭会改写确认 URL 的邮件链接追踪。
-- SPF、DKIM、DMARC 验证通过；从目标用户常用邮箱服务实收一封确认邮件。
+- 开启邮箱确认，关闭会改写确认 URL 的邮件链接追踪。
+- Launch 阶段从目标用户常用邮箱服务实收一封确认邮件；扩大公开注册前迁移到自有域名邮件服务并完成 SPF、DKIM、DMARC。
 - 依据公开注册风险决定 CAPTCHA 和 Auth rate limit；决定与数值进入发布记录，不能保持未知默认值。
 
 允许的 Redirect URL 只登记实际 origin：
