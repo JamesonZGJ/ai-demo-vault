@@ -1,0 +1,26 @@
+{
+  "name": "Circular Theme Reveal",
+  "displayNameZh": "圆形主题切换",
+  "version": "0.1.0",
+  "props": {
+    "children": {
+      "type": "(theme: 'light' | 'dark') => ReactNode",
+      "required": true,
+      "description": "分别渲染浅色与深色内容"
+    },
+    "duration": {
+      "type": "number",
+      "default": 560,
+      "description": "圆形揭示动画时长，单位为毫秒"
+    },
+    "initialTheme": {
+      "type": "'light' | 'dark'",
+      "default": "light",
+      "description": "初始主题"
+    },
+    "onThemeChange": {
+      "type": "(theme: 'light' | 'dark') => void",
+      "description": "主题切换完成后的回调"
+    }
+  }
+}

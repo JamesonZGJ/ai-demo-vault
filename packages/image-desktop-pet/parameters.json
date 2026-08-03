@@ -1,0 +1,31 @@
+{
+  "name": "Image Desktop Pet",
+  "displayNameZh": "图片桌宠",
+  "version": "0.1.0",
+  "props": {
+    "alt": {
+      "type": "string",
+      "default": "图片桌宠",
+      "description": "角色图片说明和操作名称"
+    },
+    "initialPosition": {
+      "type": "{ x: number; y: number }",
+      "default": "{ x: 48, y: 180 }",
+      "description": "父容器内的初始像素坐标"
+    },
+    "onPositionChange": {
+      "type": "(position: PetPosition) => void",
+      "description": "角色位置变化后的回调"
+    },
+    "size": {
+      "type": "number",
+      "default": 156,
+      "description": "角色正方形交互区域尺寸，单位为像素"
+    },
+    "src": {
+      "type": "string",
+      "required": true,
+      "description": "PNG、JPG、WebP 或本地 Blob URL"
+    }
+  }
+}

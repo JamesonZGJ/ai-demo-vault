@@ -1,0 +1,22 @@
+{
+  "id": "ai-reasoning-panel",
+  "name": "AI Reasoning Panel",
+  "displayNameZh": "AI 思考过程面板",
+  "episode": 16,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/AIReasoningPanel.tsx",
+  "stylesheet": "src/ai-reasoning-panel.css",
+  "license": "MIT",
+  "dependencies": ["react", "react-dom"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

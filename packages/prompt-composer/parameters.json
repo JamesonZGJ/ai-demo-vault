@@ -1,0 +1,46 @@
+{
+  "name": "Prompt Composer",
+  "displayNameZh": "智能聊天输入框",
+  "version": "0.1.0",
+  "props": {
+    "attachments": {
+      "type": "PromptAttachment[]",
+      "default": [],
+      "description": "已经通过业务校验的附件"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否禁用输入和操作"
+    },
+    "maxLength": {
+      "type": "number",
+      "default": 2000,
+      "description": "最大字符数"
+    },
+    "onChange": {
+      "type": "(value: string) => void",
+      "required": true,
+      "description": "文本变化回调"
+    },
+    "onSubmit": {
+      "type": "(value: string) => void",
+      "required": true,
+      "description": "提交非空提示词"
+    },
+    "onStop": {
+      "type": "() => void",
+      "description": "停止当前生成任务"
+    },
+    "value": {
+      "type": "string",
+      "required": true,
+      "description": "受控输入文本"
+    },
+    "working": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否处于生成中状态"
+    }
+  }
+}

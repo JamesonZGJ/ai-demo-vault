@@ -1,0 +1,186 @@
+.morphing-dialog {
+  width: 100%;
+}
+
+.morphing-dialog-trigger {
+  align-items: stretch;
+  background: #172235;
+  border: 1px solid rgb(159 231 213 / 24%);
+  border-radius: 22px;
+  color: #f8fafc;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr) auto;
+  min-height: 176px;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.morphing-dialog.is-active .morphing-dialog-trigger {
+  opacity: 0;
+}
+
+.morphing-dialog-trigger-visual,
+.morphing-dialog-visual {
+  background: #22334d;
+  display: grid;
+  min-height: 100%;
+  overflow: hidden;
+  place-items: center;
+}
+
+.morphing-dialog-trigger-copy {
+  align-content: center;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 24px;
+}
+
+.morphing-dialog-trigger-copy small,
+.morphing-dialog-heading small {
+  color: #9fe7d5;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.morphing-dialog-trigger-copy strong {
+  font-size: 22px;
+}
+
+.morphing-dialog-trigger-copy > span,
+.morphing-dialog-heading p {
+  color: #9eabc0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.morphing-dialog-trigger-arrow {
+  align-self: center;
+  color: #9fe7d5;
+  font-size: 24px;
+  padding-right: 22px;
+}
+
+.morphing-dialog-backdrop {
+  background: rgb(4 8 15 / 0%);
+  inset: 0;
+  position: fixed;
+  transition: background-color 360ms ease;
+  z-index: 120;
+}
+
+.morphing-dialog-backdrop.is-open {
+  background: rgb(4 8 15 / 72%);
+}
+
+.morphing-dialog-surface {
+  background: #111a2a;
+  border: 1px solid rgb(159 231 213 / 28%);
+  border-radius: 22px;
+  box-shadow: 0 22px 70px rgb(0 0 0 / 12%);
+  color: #f8fafc;
+  display: grid;
+  grid-template-rows: minmax(130px, 42%) minmax(0, 1fr);
+  overflow: hidden;
+  position: fixed;
+  transition:
+    top 520ms cubic-bezier(.22, 1, .36, 1),
+    left 520ms cubic-bezier(.22, 1, .36, 1),
+    width 520ms cubic-bezier(.22, 1, .36, 1),
+    height 520ms cubic-bezier(.22, 1, .36, 1),
+    border-radius 520ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 520ms ease;
+}
+
+.morphing-dialog-surface.is-open {
+  border-radius: 30px;
+  box-shadow: 0 38px 110px rgb(0 0 0 / 45%);
+}
+
+.morphing-dialog-content {
+  background: #111a2a;
+  opacity: 0;
+  overflow: auto;
+  padding: 28px 30px 34px;
+  transition: opacity 180ms ease;
+}
+
+.morphing-dialog-surface.is-open .morphing-dialog-content {
+  opacity: 1;
+  transition-delay: 210ms;
+}
+
+.morphing-dialog-heading {
+  align-items: start;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.morphing-dialog-heading h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: -.045em;
+  line-height: 1.05;
+  margin: 7px 0 8px;
+}
+
+.morphing-dialog-heading p {
+  margin: 0;
+  max-width: 540px;
+}
+
+.morphing-dialog-close {
+  align-items: center;
+  background: rgb(255 255 255 / 7%);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 50%;
+  color: #f8fafc;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 24px;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.morphing-dialog-body {
+  color: #c4cede;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 24px;
+}
+
+@media (max-width: 560px) {
+  .morphing-dialog-trigger {
+    grid-template-columns: 108px minmax(0, 1fr);
+  }
+
+  .morphing-dialog-trigger-copy {
+    padding: 18px;
+  }
+
+  .morphing-dialog-trigger-copy strong {
+    font-size: 18px;
+  }
+
+  .morphing-dialog-trigger-arrow {
+    display: none;
+  }
+
+  .morphing-dialog-content {
+    padding: 22px 20px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morphing-dialog-backdrop,
+  .morphing-dialog-surface,
+  .morphing-dialog-content {
+    transition: none;
+  }
+}

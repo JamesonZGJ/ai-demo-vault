@@ -1,0 +1,21 @@
+{
+  "id": "toast-stack",
+  "name": "Toast Stack",
+  "displayNameZh": "堆叠通知",
+  "episode": 11,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/ToastStack.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

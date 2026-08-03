@@ -1,0 +1,42 @@
+{
+  "name": "Sortable List",
+  "displayNameZh": "拖拽排序列表",
+  "version": "0.1.0",
+  "props": {
+    "ariaLabel": {
+      "type": "string",
+      "default": "可排序列表",
+      "description": "提供给辅助技术的列表名称"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否禁用拖动和排序按钮"
+    },
+    "items": {
+      "type": "SortableListItem[]",
+      "required": true,
+      "description": "包含稳定 id、标题、说明和可选标签的项目数组"
+    },
+    "onChange": {
+      "type": "(items: SortableListItem[]) => void",
+      "required": true,
+      "description": "顺序提交后的回调"
+    }
+  },
+  "interactions": [
+    "Pointer drag",
+    "Touch drag",
+    "Move up button",
+    "Move down button",
+    "ArrowUp",
+    "ArrowDown"
+  ],
+  "accessibility": [
+    "Semantic ordered list",
+    "Single pointer alternative",
+    "Keyboard alternative",
+    "Live position announcement",
+    "Visible focus state"
+  ]
+}

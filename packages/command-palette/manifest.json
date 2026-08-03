@@ -1,0 +1,29 @@
+{
+  "capability": "command-palette",
+  "displayNameZh": "命令面板",
+  "series": "每天拆一个 AI 产品 · 第 005 期",
+  "version": "0.1.0-preview",
+  "source": "self_reimplemented",
+  "rightsStatus": "owned",
+  "reference": {
+    "name": "cmdk",
+    "author": "Paco Coursey",
+    "url": "https://github.com/dip/cmdk",
+    "license": "MIT",
+    "usage": "仅参考公开的命令菜单交互规律；源码、布局、中文内容和视觉均为本站重新实现"
+  },
+  "assets": {
+    "sourceCode": { "status": "ready", "path": "src/CommandPalette.tsx" },
+    "cursorPrompt": { "status": "ready", "path": "prompts/cursor.md" },
+    "claudePrompt": { "status": "ready", "path": "prompts/claude.md" },
+    "readme": { "status": "ready", "path": "README.md" },
+    "parameters": { "status": "ready", "path": "parameters.json" },
+    "integrationGuide": { "status": "ready", "path": "INTEGRATION_GUIDE.md" },
+    "license": { "status": "ready", "path": "LICENSE" }
+  },
+  "commerce": {
+    "accessStatus": "free_public",
+    "payment": "not_connected",
+    "download": "not_open"
+  }
+}

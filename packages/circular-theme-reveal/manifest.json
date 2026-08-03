@@ -1,0 +1,21 @@
+{
+  "id": "circular-theme-reveal",
+  "name": "Circular Theme Reveal",
+  "displayNameZh": "圆形主题切换",
+  "episode": 14,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/CircularThemeReveal.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

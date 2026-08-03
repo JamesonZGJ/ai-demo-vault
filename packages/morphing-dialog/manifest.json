@@ -1,0 +1,22 @@
+{
+  "id": "morphing-dialog",
+  "name": "Morphing Dialog",
+  "displayNameZh": "卡片变形弹窗",
+  "episode": 15,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/MorphingDialog.tsx",
+  "stylesheet": "src/morphing-dialog.css",
+  "license": "MIT",
+  "dependencies": ["react", "react-dom"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

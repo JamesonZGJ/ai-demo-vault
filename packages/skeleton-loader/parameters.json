@@ -1,0 +1,32 @@
+{
+  "name": "Skeleton Loader",
+  "displayNameZh": "骨架屏加载",
+  "version": "0.1.0",
+  "props": {
+    "children": {
+      "type": "ReactNode",
+      "required": true,
+      "description": "加载完成后展示的真实内容"
+    },
+    "label": {
+      "type": "string",
+      "default": "内容正在加载",
+      "description": "加载区域的可访问名称"
+    },
+    "loading": {
+      "type": "boolean",
+      "required": true,
+      "description": "是否显示骨架结构"
+    },
+    "rows": {
+      "type": "number",
+      "default": 3,
+      "description": "正文骨架行数，限制为 1 到 8"
+    },
+    "showAvatar": {
+      "type": "boolean",
+      "default": true,
+      "description": "是否展示头像或图标占位"
+    }
+  }
+}

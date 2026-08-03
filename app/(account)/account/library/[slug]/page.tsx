@@ -42,7 +42,7 @@ export default async function BlueprintLibraryDetailPage({
   if (!user) redirect(`/login?${new URLSearchParams({ returnTo: `/account/library/${product.slug}` })}`);
 
   const entry = await getBlueprintLibraryEntry(product.slug);
-  if (!entry) redirect(`/checkout/${product.slug}`);
+  if (!entry) redirect(`/blueprints/${product.slug}`);
   const resourceMap = new Map(entry.resources.map((resource) => [resource.kind, resource]));
 
   return (

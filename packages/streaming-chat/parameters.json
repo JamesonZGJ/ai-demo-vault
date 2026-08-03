@@ -1,0 +1,31 @@
+{
+  "name": "Streaming Chat",
+  "displayNameZh": "流式聊天回复",
+  "version": "0.1.0",
+  "props": {
+    "assistantName": {
+      "type": "string",
+      "default": "AI 助手",
+      "description": "助手展示名称"
+    },
+    "prompt": {
+      "type": "string",
+      "required": true,
+      "description": "用户消息"
+    },
+    "response": {
+      "type": "string",
+      "required": true,
+      "description": "当前完整回复文本"
+    },
+    "status": {
+      "type": "idle | waiting | streaming | complete | error",
+      "required": true,
+      "description": "当前生成状态"
+    },
+    "visibleCharacters": {
+      "type": "number",
+      "description": "当前已经到达并允许显示的字符数"
+    }
+  }
+}

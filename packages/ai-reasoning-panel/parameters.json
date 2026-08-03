@@ -1,0 +1,36 @@
+{
+  "name": "AI Reasoning Panel",
+  "displayNameZh": "AI 思考过程面板",
+  "version": "0.1.0",
+  "props": {
+    "autoCloseDelay": {
+      "type": "number",
+      "default": 1200,
+      "description": "完成或失败后自动收起的等待时间，单位为毫秒"
+    },
+    "children": {
+      "type": "ReactNode",
+      "required": true,
+      "description": "面板展开后展示的公开处理步骤"
+    },
+    "durationLabel": {
+      "type": "string",
+      "description": "可选的耗时文字"
+    },
+    "status": {
+      "type": "idle | waiting | streaming | complete | error",
+      "required": true,
+      "description": "当前处理状态"
+    },
+    "summary": {
+      "type": "string",
+      "required": true,
+      "description": "面向用户的公开过程摘要"
+    },
+    "title": {
+      "type": "string",
+      "default": "处理过程摘要",
+      "description": "面板标题"
+    }
+  }
+}

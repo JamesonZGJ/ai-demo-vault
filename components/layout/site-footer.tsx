@@ -5,14 +5,12 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-shell site-footer-grid">
         <div>
-          <Link className="brand" href="/">
-            <span aria-hidden="true" className="brand-mark">
-              BB
-            </span>
-            <span>AI 能力模块库</span>
+          <Link className="brand vault-brand" href="/">
+            <span aria-hidden="true" className="vault-brand-mark">DV</span>
+            <span><strong>AI Demo Vault</strong><small>AI 拆解局</small></span>
           </Link>
           <p>
-            搜索一个能力模块，在线预览，再把可复用的界面、提示词和代码带回自己的项目。
+            搜索一个 AI 产品能力，在线预览，再检查真实源码、Prompt 和接入资料。
           </p>
         </div>
         <nav aria-label="页脚导航">
@@ -27,7 +25,7 @@ export function SiteFooter() {
           <Link href="/privacy">隐私说明</Link>
         </nav>
         <p className="footer-disclaimer">
-          当前公开版本使用预览数据；价格仅用于展示，不扣款、不创建订单。没有自研实现和权利记录的内容不会显示为可售模块。
+          当前已有真实资料的模块全部免费开放，不设置价格，也不创建订单。没有自研实现和权利记录的内容只显示为准备中。
         </p>
       </div>
     </footer>

@@ -1,0 +1,21 @@
+{
+  "id": "streaming-chat",
+  "name": "Streaming Chat",
+  "displayNameZh": "流式聊天回复",
+  "episode": 3,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/StreamingChat.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

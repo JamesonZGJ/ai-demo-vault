@@ -1,0 +1,22 @@
+{
+  "id": "ai-action-approval-card",
+  "name": "AI Action Approval Card",
+  "displayNameZh": "AI 操作授权确认卡",
+  "episode": 17,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/AIActionApprovalCard.tsx",
+  "stylesheet": "src/ai-action-approval-card.css",
+  "license": "MIT",
+  "dependencies": ["react", "react-dom"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

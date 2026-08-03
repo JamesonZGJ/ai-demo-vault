@@ -1,6 +1,9 @@
 # dependencies
 /node_modules/
 **/node_modules/
+/.venv/
+/.auth/
+/.cheat-cache/
 
 # next.js
 /.next/
@@ -26,9 +29,11 @@
 /video/ai-demo-vault-intro/remotion/renders/qa-*
 /video/ai-demo-vault-intro/remotion/remotion-still-*
 /video/ai-demo-vault-intro/remotion/remotion-still*
+/video/ai-demo-vault-intro/remotion/render-*.log
+/video/ai-demo-vault-intro/remotion/renders/episode-*-check/
 /video/ai-demo-vault-intro/hyperframes/snapshots/
 **/colorsnap-blueprint.png
-/dev-episode001*.log
+/dev-episode*.log
 /supabase/.temp/
 /supabase/.branches/
 
@@ -49,3 +54,5 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+# 仅用于本地去背景处理的中间图
+public/assets/desktop-pet/*-chroma.png

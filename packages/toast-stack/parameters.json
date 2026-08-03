@@ -1,0 +1,36 @@
+{
+  "name": "Toast Stack",
+  "displayNameZh": "堆叠通知",
+  "version": "0.1.0",
+  "props": {
+    "expanded": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否展开查看完整通知列表"
+    },
+    "items": {
+      "type": "ToastStackItem[]",
+      "required": true,
+      "description": "受控通知队列，新通知应放在数组开头"
+    },
+    "label": {
+      "type": "string",
+      "default": "通知中心",
+      "description": "通知区域的可访问名称"
+    },
+    "maxVisible": {
+      "type": "number",
+      "default": 4,
+      "description": "同时可见的通知数量，限制为 1 到 6"
+    },
+    "onAction": {
+      "type": "(id: string) => void",
+      "description": "触发通知内操作按钮"
+    },
+    "onDismiss": {
+      "type": "(id: string) => void",
+      "required": true,
+      "description": "关闭指定通知"
+    }
+  }
+}

@@ -63,11 +63,11 @@ export function MobileNavigation({
           </button>
         </div>
         <nav aria-label="移动端主导航">
-          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>能力模块</Link>
+          <Link href="/explore" onClick={() => closeForNavigation("/explore")}>浏览模块</Link>
           <Link href="/blueprints" onClick={() => closeForNavigation("/blueprints")}>产品蓝图</Link>
           <Link href="/bundles" onClick={() => closeForNavigation("/bundles")}>组合包</Link>
-          <Link href="/about" onClick={() => closeForNavigation("/about")}>资源</Link>
-          <Link href="/library" onClick={() => closeForNavigation("/library")}>我的资源</Link>
+          <Link href="/about" onClick={() => closeForNavigation("/about")}>内容说明</Link>
+          <Link href="/library" onClick={() => closeForNavigation("/library")}>资源库</Link>
           {loggedIn ? (
             <Link href="/favorites" onClick={() => closeForNavigation("/favorites")}>
               我的收藏

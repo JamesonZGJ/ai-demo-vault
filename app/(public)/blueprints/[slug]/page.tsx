@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { BlueprintScore } from "../../../../components/blueprint/blueprint-score";
 import { BuildTimeline } from "../../../../components/blueprint/build-timeline";
 import { ColorSnapProductPreview } from "../../../../components/blueprint/colorsnap-product-preview";
-import { getBlueprintBySlug, hasBlueprintAccess } from "../../../../lib/blueprints/catalog";
+import { getBlueprintBySlug } from "../../../../lib/blueprints/catalog";
 import type { BlueprintProduct } from "../../../../lib/blueprints/types";
 import { isLocalBlueprintPilot } from "../../../../lib/env";
 
@@ -49,8 +49,7 @@ export default async function BlueprintDetailPage({ params }: BlueprintPageProps
   const { slug } = await params;
   const product = await getBlueprintBySlug(slug);
   if (!product) notFound();
-  const hasAccess = await hasBlueprintAccess(product.id);
-  const actionHref = hasAccess ? `/account/library/${product.slug}` : `/checkout/${product.slug}`;
+  const actionHref = "#whats-included";
   const deliverable = (kind: BlueprintProduct["deliverables"][number]["kind"]) => product.deliverables.find((item) => item.kind === kind);
   const decisionSections = [
     { label: "Product Overview", title: "产品概览", body: product.productSections.productOverview },
@@ -81,7 +80,7 @@ export default async function BlueprintDetailPage({ params }: BlueprintPageProps
             <p className="blueprint-v2-tagline">{product.tagline}</p>
             <div className="blueprint-v2-opportunity-lead"><span>Market Opportunity · hypothesis</span><p>Turn a one-off color capture into a repeatable collectible workflow for people who think visually.</p></div>
             <div className="hero-actions">
-              <Link className="button button-primary button-large" href={actionHref}>{hasAccess ? "Open Launch Dashboard" : "Buy Blueprint"} <span aria-hidden="true">↗</span></Link>
+              <Link className="button button-primary button-large" href={actionHref}>查看免费蓝图内容 <span aria-hidden="true">↘</span></Link>
               <Link className="button button-secondary button-large" href="/demos/colorsnap">Preview Demo</Link>
             </div>
             <div className="blueprint-v2-hero-meta"><span>Blueprint Score <strong>{product.blueprintScore.overall}/100</strong></span><span>7 launch assets</span><span>Build estimate · 3–7 days</span></div>
@@ -144,8 +143,8 @@ export default async function BlueprintDetailPage({ params }: BlueprintPageProps
             <p className="blueprint-v2-purchase-copy">A focused product blueprint for founders who want a sharper first build.</p>
             <div className="blueprint-v2-purchase-score"><strong>{product.blueprintScore.overall}</strong><span>Blueprint Score<br /><small>editorial estimate</small></span></div>
             <ul><li>12 product decision layers</li><li>7 launch asset samples</li><li>Build timeline with estimates</li><li>Launch Dashboard after access</li></ul>
-            <Link className="button button-primary button-large" href={actionHref}>{hasAccess ? "Open Launch Dashboard" : "Buy Blueprint"} <span aria-hidden="true">↗</span></Link>
-            <p className="blueprint-v2-purchase-note">当前为本地无扣款预览，不创建订单或支付交易。正式价格尚未决定。</p>
+            <Link className="button button-primary button-large" href={actionHref}>查看免费蓝图内容 <span aria-hidden="true">↘</span></Link>
+            <p className="blueprint-v2-purchase-note">当前内容免费公开浏览，不设置价格，也不创建订单或支付交易。</p>
           </aside>
         </div>
       </div>

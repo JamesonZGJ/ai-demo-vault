@@ -1,0 +1,25 @@
+{
+  "component": "ConnectionBeam",
+  "version": "0.1.0-preview",
+  "defaults": {
+    "curvature": 0.45,
+    "duration": 2.4,
+    "reverse": false,
+    "color": "#a7f3d0",
+    "pathColor": "rgba(148, 163, 184, 0.28)",
+    "pathWidth": 1.5,
+    "beamWidth": 3
+  },
+  "ranges": {
+    "curvature": { "min": 0, "max": 0.8, "unit": "ratio", "description": "连接路径的弯曲程度" },
+    "duration": { "min": 0.8, "max": 5, "unit": "s", "description": "一束高光完成一次路径移动的时间" },
+    "pathWidth": { "min": 1, "max": 4, "unit": "px", "description": "静态连接路径宽度" },
+    "beamWidth": { "min": 2, "max": 8, "unit": "px", "description": "流动高光宽度" }
+  },
+  "interaction": {
+    "resizeObserver": true,
+    "directionControl": true,
+    "responsiveRecalculation": true,
+    "reducedMotion": "keep_static_path_and_disable_beam"
+  }
+}

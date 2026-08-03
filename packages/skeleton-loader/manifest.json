@@ -1,0 +1,21 @@
+{
+  "id": "skeleton-loader",
+  "name": "Skeleton Loader",
+  "displayNameZh": "骨架屏加载",
+  "episode": 8,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/SkeletonLoader.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

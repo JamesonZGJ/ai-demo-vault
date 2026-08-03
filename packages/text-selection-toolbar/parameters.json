@@ -1,0 +1,26 @@
+{
+  "name": "Text Selection Toolbar",
+  "displayNameZh": "文本选区工具栏",
+  "version": "0.1.0",
+  "props": {
+    "actions": {
+      "type": "SelectionToolbarAction[]",
+      "required": true,
+      "description": "工具栏操作列表"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "可编辑示例文稿",
+      "description": "可编辑区域的辅助说明"
+    },
+    "children": {
+      "type": "ReactNode",
+      "required": true,
+      "description": "可选择和编辑的内容"
+    },
+    "onAction": {
+      "type": "(event: SelectionToolbarActionEvent) => void",
+      "description": "点击操作后返回操作 ID 与原选区文字"
+    }
+  }
+}

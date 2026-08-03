@@ -1,0 +1,14 @@
+{
+  "component": "AIActionApprovalCard",
+  "displayNameZh": "AI 操作授权确认卡",
+  "parameters": [
+    { "name": "action", "type": "string", "required": true, "description": "即将执行的具体动作" },
+    { "name": "target", "type": "string", "required": true, "description": "会被影响的对象或范围" },
+    { "name": "risk", "type": "string", "required": true, "description": "用户需要知道的真实风险" },
+    { "name": "status", "type": "ApprovalStatus", "required": true, "description": "由业务层控制的当前状态" },
+    { "name": "description", "type": "string", "required": false, "description": "确认卡的补充说明" },
+    { "name": "result", "type": "string", "required": false, "description": "执行结果或错误摘要" },
+    { "name": "onApprove", "type": "() => void", "required": false, "description": "点击允许一次时触发" },
+    { "name": "onReject", "type": "() => void", "required": false, "description": "点击拒绝时触发" }
+  ]
+}

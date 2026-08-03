@@ -1,0 +1,31 @@
+{
+  "component": "FileUploadDropzone",
+  "version": "0.1.0-preview",
+  "defaults": {
+    "accept": "image/*,.pdf",
+    "acceptLabel": "支持图片和 PDF",
+    "maxFiles": 1,
+    "maxSizeBytes": 10485760,
+    "multiple": false,
+    "state": "idle",
+    "progress": 0
+  },
+  "states": ["默认", "拖入目标", "处理中", "完成", "错误"],
+  "validation": {
+    "fileType": "按扩展名、精确 MIME 或 MIME 通配符检查",
+    "fileSize": "按字节检查单个文件上限",
+    "fileCount": "超过 maxFiles 时拒绝多余文件"
+  },
+  "interaction": {
+    "select": ["点击选择", "键盘聚焦按钮后确认", "拖拽放下"],
+    "feedback": ["目标高亮", "文件名", "文件大小", "处理进度", "完成状态"],
+    "remove": ["重新选择"]
+  },
+  "accessibility": {
+    "nativeFileInput": true,
+    "dragAlternative": "点击和键盘选择",
+    "liveStatus": true,
+    "progressbar": true,
+    "focusVisible": true
+  }
+}

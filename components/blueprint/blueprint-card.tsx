@@ -16,7 +16,7 @@ export function BlueprintCard({
   return (
     <article className="blueprint-card">
       <Link
-        aria-label={`查看《${product.name}》商品详情`}
+        aria-label={`查看《${product.name}》蓝图详情`}
         className="blueprint-card-media"
         href={href}
       >

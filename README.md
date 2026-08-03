@@ -1,42 +1,43 @@
 # AI Build Blocks Marketplace
 
-这是一个以 **Build Block Package（能力模块包）**为中心的 AI Build Blocks Marketplace。用户搜索一个 Hover、动画、取色、AI 状态或 Prompt 工作流，先在线体验 Demo Preview，再获取自研源码、Cursor/Claude Prompt、README、参数、License 和 Integration Guide。完整 App Blueprint 保留为高级商品类型，不再主导首页。
+这是一个以 **Build Block Package（能力模块包）**为中心的 AI Build Blocks Marketplace。用户搜索一个 Hover、动画、取色、AI 状态或 Prompt 工作流，先在线体验 Demo Preview，再免费查看自研源码、Cursor/Claude Prompt、README、参数、License 和 Integration Guide。完整 App Blueprint 保留为高级内容类型，不再主导首页。
 
-产品边界：`Build Block = 能力定义`，`Demo Preview = 免费预览`，`Build Block Package = 独立能力模块商品`，`Bundle = 模块组合商品`，`App Blueprint = 完整产品高级商品`，`Library Item = 用户已获取的版本化资产`。首阶段只做本站自营精选商品，不做第三方卖家、分账或提现。
+产品边界：`Build Block = 能力定义`，`Demo Preview = 在线预览`，`Build Block Package = 免费可复用资料包`，`Bundle = 模块组合内容`，`App Blueprint = 完整产品高级内容`。当前只做本站自研内容，不做第三方卖家、分账或提现。
 
-当前状态：**Launch Version 已完成公开演示闭环。** 首页和 `/explore` 已围绕 Build Block 搜索、Preview、Mock Price 和 Package 状态组织；Color Extraction 的自研 Package 资产已加入仓库。旧 `/demos` 与 Blueprint 路由保留兼容。真实支付、订单、会员和生产下载均未开放。
+当前状态：**Launch Version 已完成公开演示闭环。** 首页、`/explore` 和详情页已经按 Galaxy / Uiverse 的成熟组件市场骨架重构：搜索优先、AI 能力分类、高密度真实预览网格、预览/源码同屏工作台。27 个 Build Block 使用本地静态目录；已有真实资料的模块全部免费开放，不显示价格或购买入口。
 
 ## 最新产品决定
 
 - 首页默认入口改为搜索优先的 Build Blocks Marketplace，优先发现一个个可复制能力模块。
+- 首页和目录采用 Galaxy / Uiverse 的结构密度：64px 导航、搜索主入口、横向分类、桌面 4～5 列真实预览、目录侧栏与即时筛选；不复制其品牌、文案、源码或社区数据。
 - 首页转化原则是首屏只有搜索这一个核心动作；分类用于检索，Featured/New 用于建立内容可信度，Bundle/Blueprint 只作为组合层入口。
-- Demo 永远只是免费 Preview；Build Block Package 才是商品和价格的承载对象。
-- 单个模块主价格带为 ¥1.9–9.9；Bundle 后续单独设计。
-- Build Block 详情页展示在线 Demo、Mock Price、Package Included 清单、Cursor Prompt、Claude Prompt、README、参数、License 和 Integration Guide。
-- ColorSnap Blueprint #001 拆为多个独立 Capability，完整 Blueprint 只作为高级组合商品。
-- 本轮先改信息架构，不新增第二个商品，不接支付、会员或后台。
-- Launch Version 只保证可信展示、搜索、Preview、商品化详情、Mock Price、Library 空状态、SEO 和移动端；支付、会员、评论、排行榜、推荐和复杂后台延期。
+- Demo Preview 用于确认效果；Build Block Package 免费公开真实源码、Prompt 和接入资料。
+- 所有公开模块不显示价格、购买按钮或 checkout 链接；未完成内容只显示“准备中”。
+- Build Block 详情页展示在线 Demo、Package Included 清单、Cursor Prompt、Claude Prompt、README、参数、License 和 Integration Guide。
+- ColorSnap Blueprint #001 拆为多个独立 Capability，完整 Blueprint 只作为高级组合内容。
+- 当前不新增支付、会员、订单、下载或后台。
+- Launch Version 只保证可信展示、搜索、Preview、免费资料详情、Library 说明、SEO 和移动端。
 
 ## Launch Version 已实现
 
-- 搜索优先首页：Popular Searches、UI/Animation/AI/Image 等开发者分类、Featured/Newest/Free/Popular Build Blocks、Why Build Blocks、Bundle 和最后的 Blueprint 入口。
-- Build Block 目录与详情：在线 Preview、用途、问题、技术栈、源码状态、Mock Price、Included 清单、Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
-- Color Extraction 与 Glass Surface 已具备完整的自研 Package 资产；本系列第001期指定为 Glass Surface（展示名“玻璃拟态卡片”），支付、订单、下载仍关闭。
+- 搜索优先首页：短 Hero、大搜索、真实热门关键词、AI 对话/多模态/Agent 等能力分类、精选/最近完成网格，以及最后的 Bundle/Blueprint 组合层入口。
+- Build Block 目录与详情：固定分类栏、即时中英文搜索、技术栈/难度/资料状态/最新筛选、在线 Preview 与真实源码同屏工作台，以及 Prompt、README、参数、License、Integration Guide 和真实 Package 状态。
+- 已具备真实资料的 Build Block 均可在详情页免费查看源码、Prompt 和接入说明；支付、订单和打包下载仍关闭。
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
-- 《每天拆一个 AI 产品》第001期已完成：Build Block #001“玻璃拟态卡片”包含在线交互预览、自研源码、Cursor/Claude Prompt、README、参数、接入说明和 License；视频、字幕、封面与三平台文案位于 `video/ai-demo-vault-intro/episodes/001-glass-card`。
+- 《每天拆一个 AI 产品》第001–017期已完成并同步为网站自研 Build Block，包括第003期“流式聊天回复”的本地流式文本、状态反馈和自动滚动演示。每一期均可从目录进入在线 Preview；有真实资料的模块免费查看源码、Prompt、README、参数、接入指南和许可证。视频口播、字幕、封面和平台文案位于 `video/ai-demo-vault-intro/episodes`。
 
-当前代码尚未实现真实支付、订单、客户权益、付费下载、会员、自动爬虫、管理后台、用户评论和社区。页面不会伪造购买成功、下载完成、拥有源码或真实热度；Mock Price 和统计均明确标注。新的 Build Block 商品结构见 `MARKETPLACE_IA.md`；未来商品、支付、权益和交付遵守 `COMMERCE_SPEC.md`。
+当前代码尚未实现真实支付、订单、客户权益、打包下载、会员、自动爬虫、管理后台、用户评论和社区。页面不显示本站商品价格或购买入口，也不会伪造下载完成、拥有源码或真实热度。未来如重新验证商业化，再遵守 `COMMERCE_SPEC.md`。
 
 ## 当前本地闭环与目标交易结构
 
 ```text
-当前本地：Landing → Search Build Blocks → Demo Preview → Build Block 商品详情 → Mock Price / Get Block（未连接）→ Library 空状态
+当前本地：Landing → Search Build Blocks → Demo Preview → Build Block 详情 → 免费查看源码 / Prompt / 接入说明
 目标生产：搜索 Build Block → Demo Preview → Build Block Package 详情 → 精确价格结账 → 支付确认 → 订单与权益 → My Library → 私有资产 → 退款与对账
-兼容预览：免费 Demo → App Blueprint 详情 → 本地不扣款试用（仅 local）
+兼容预览：免费 Demo → App Blueprint 详情 → 免费查看现有内容
 ```
 
-模拟闭环只验证信息架构和获取路径，不能作为成交证据。公共商城上线前，仍须用一个自营 Capability Package、一个固定版本、一个精确价格、一个币种和一个支付商跑通真实购买、授权、交付、退款和对账。
+旧模拟交易结构只保留为未来研究资料，公开入口已经关闭。当前阶段以免费内容积累、搜索和真实复用反馈为目标。
 
 ## 技术架构
 
@@ -47,7 +48,7 @@
 - Vercel Web Analytics，只统计公开页面的匿名聚合访问与来源。
 - Vitest、Playwright、pgTAP 验证。
 
-详细职责与调用关系见 `ARCHITECTURE.md`；目标商品信息架构见 `MARKETPLACE_IA.md`；日常内容生产 SOP 见 `CONTENT_PIPELINE.md`；Launch 交付门槛见 `LAUNCH_CHECKLIST.md`；当前免费基础层页面见 `UI_SPEC.md`；首发证据见 `LAUNCH_CONTENT.md`；发现渠道见 `SOURCE_REGISTRY.md`；内容发布门槛见 `EDITORIAL_GUIDE.md`；完整路线见 `ROADMAP.md`；逐项终局验收见 `GOAL_COVERAGE.md`；商品、订单、权益、下载和支付共同遵守 `COMMERCE_SPEC.md`。产品介绍视频工程见 `video/ai-demo-vault-intro/README.md`。
+详细职责与调用关系见 `ARCHITECTURE.md`；本轮竞品审计与结构映射见 `reports/uiverse-audit/AUDIT.md`；目标商品信息架构见 `MARKETPLACE_IA.md`；日常内容生产 SOP 见 `CONTENT_PIPELINE.md`；Launch 交付门槛见 `LAUNCH_CHECKLIST.md`；当前免费基础层页面见 `UI_SPEC.md`；首发证据见 `LAUNCH_CONTENT.md`；发现渠道见 `SOURCE_REGISTRY.md`；内容发布门槛见 `EDITORIAL_GUIDE.md`；完整路线见 `ROADMAP.md`；逐项终局验收见 `GOAL_COVERAGE.md`；商品、订单、权益、下载和支付共同遵守 `COMMERCE_SPEC.md`。产品介绍视频工程见 `video/ai-demo-vault-intro/README.md`。
 
 ## 本地运行方法
 
@@ -88,7 +89,7 @@ Supabase Local、Postgres 和 Mailpit 启动后运行完整验证：
 pnpm verify
 ```
 
-第一次验证或 migration/seed 变化后，必须先明确执行 `pnpm exec supabase db reset`；该操作会清空 Supabase Local 数据，因此 `pnpm verify` 不会暗中代替你执行。Launch Version 已通过 142 个单元测试、3 条 Launch E2E（Chrome）、代码检查、类型检查和无 Supabase Mock Mode 43 个路由构建；旧数据库契约仍通过 148 项便携 pgTAP、161 项正式 pgTAP。浏览器进程不会收到 Service Role Key。未安装 Playwright Chromium 时，可设置 `$env:PLAYWRIGHT_CHANNEL='chrome'` 使用本机 Chrome。便携 pgTAP 只是快速前置检查，正式结果以 Supabase Local PostgreSQL 为准。
+第一次验证或 migration/seed 变化后，必须先明确执行 `pnpm exec supabase db reset`；该操作会清空 Supabase Local 数据，因此 `pnpm verify` 不会暗中代替你执行。当前 Launch Version 已通过 189 个单元测试、17 条 Build Block / Launch E2E（Chrome）、代码检查、类型检查和无 Supabase 的 59 项静态页面构建；移动端覆盖 360/390/430px。旧数据库契约仍通过 148 项便携 pgTAP、161 项正式 pgTAP。浏览器进程不会收到 Service Role Key。
 
 部署后只读验收使用：
 
@@ -112,6 +113,7 @@ pnpm test:production:public
 - [Vercel AI Templates](https://vercel.com/templates?type=ai)：用于确认案例来源与模板分类，不复制其代码或页面。
 - [Lovable Templates](https://lovable.dev/templates)：参考 Apps、SaaS、Internal Tools 等分类方式。
 - [Framer AI Marketplace](https://www.framer.com/marketplace/templates/category/ai/)：仅参考视觉呈现和商业展示。
+- [Uiverse](https://uiverse.io/) / [Galaxy](https://github.com/uiverse-io/galaxy)：已审计首页、目录、详情与移动端的稳定骨架，并映射为本站导航、搜索、侧栏、五列网格和预览/源码工作台；不复制品牌、素材、文案、社区数据或组件源码。
 - [Product Hunt AI](https://www.producthunt.com/topics/artificial-intelligence)：作为后续人工选题入口，不抓取虚假热度。
 - [Hugging Face Spaces](https://huggingface.co/spaces)：作为可体验 AI Demo 来源。
 - [v0 AI Templates](https://v0.app/templates/top/ai)：参考模板卡片字段和分类。
@@ -128,7 +130,7 @@ pnpm test:production:public
 
 ## 已完成
 
-- Build Blocks Marketplace 视觉与信息架构：首页 Hero、单一搜索 CTA、Popular Searches、6 个核心分类、Featured/New、商品卡片 Included/Preview Price、商品详情 Get Block、Bundles、Blueprints、Library 已改为 Marketplace-first。
+- Galaxy / Uiverse 同类成熟产品骨架：首页搜索优先、AI 能力分类、真实 Preview 高密度网格；目录固定分类栏和即时筛选；详情 Preview/源码同屏；移动端按 360/390/430px 独立排布。
 - ColorSnap Blueprint #001 本地商品闭环：免费 Demo、商品目录/详情、12 个决策区块、Market Opportunity、评分、Build Timeline、What's Included、模拟获取、Launch Dashboard 和样品导出。
 - 生产双闸门：应用非 `local` 时路由关闭；数据库 migration 默认关闭试用且不写入商品数据。
 - RLS 与 RPC：匿名只能读取本地开放的商品摘要；资料和访问权仅本人可读；客户端不能直接写访问权。

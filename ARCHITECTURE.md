@@ -1,26 +1,28 @@
 # 架构说明
 
-当前代码包含经过验证的免费 Demo 基础层，以及仅限本地的 ColorSnap Blueprint #001 Marketplace MVP。产品目标已进一步明确为 AI Demo Marketplace：`Capability` 是能力定义，`DemoPreview` 是免费预览，`CapabilityPackage` 是主商品，Bundle 和完整 App Blueprint 是组合/高级商品。目标信息架构记录在 `MARKETPLACE_IA.md`，本轮尚未迁移运行代码；因此首页、路由和数据查询仍是上一阶段的 Blueprint-first 实现。旧版本地试用访问权与未来订单、付款和客户权益严格分开。
+当前代码是搜索优先的 AI Build Blocks Marketplace：`Capability` 是能力定义，`DemoPreview` 是免费预览，`CapabilityPackage` 是主商品，Bundle 和完整 App Blueprint 是组合/高级商品。首页、`/explore`、详情页和 Library 已迁移到 Build Block 主路径；旧 Demo 与仅限本地的 ColorSnap Blueprint #001 路由继续兼容。旧版本地试用访问权与未来订单、付款和客户权益严格分开。
 
 ## 模块职责
 
 | 模块 | 职责 |
 |---|---|
-| `app/(public)` | 当前代码的 Blueprint-first 首页（Featured/Popular/Latest/Categories/搜索）、免费案例库、ColorSnap Demo、Blueprint 目录/详情、本地模拟购买和隐私说明；目标模块市场见 `MARKETPLACE_IA.md` |
+| `app/(public)` | 搜索优先的 Build Block 首页、目录、商品详情、免费 Demo Preview、Bundle/Blueprint 兼容入口和公开说明页面 |
 | `app/(account)` | 登录后收藏页，以及本地 Blueprint Launch Dashboard、启动清单、时间线和资料样品 |
 | `app/(account)/account/library/[slug]/download` | 仅本人可读的本地 Markdown 资料样品导出；不读取存储对象 |
 | `app/(auth)` | `/login` 与 `/register` 页面 |
 | `app/auth` | `/auth/check-email` 邮件提示、`/auth/confirm` 回调和退出流程 |
 | `components/analytics` | 仅在成功渲染的首页、案例库和已发布详情页挂载匿名统计，并校验事件路径 |
 | `components/blueprint` | 当前 ColorSnap 商品视觉、商品卡、Blueprint Score、Build Timeline、免费 Demo 入口和 Demo→Blueprint 转化组件；尚未拆出 Capability、DemoPreview 和 CapabilityPackage 组件 |
-| `components/capabilities` | Launch Version 的 Capability 卡片、可交互 Demo Preview、Package 资产状态和详情展示 |
+| `components/capabilities` | Launch Version 的高密度 Capability 卡片、可交互 Demo Preview、即时目录筛选、真实源码/Prompt 标签和 Package 状态 |
 | `components/demo` | 使用真实产品预览的案例卡片、商业潜力编辑判断、逐区块主要主张和源码状态 |
 | `components/demo/favorite-form.tsx` | 局部提交收藏/取消收藏并就地显示失败，不让单次请求错误击穿整页 |
 | `components/media` | 只展示已批准图片/GIF/视频；支持海报、显式播放/停止、字幕、失败说明与重试 |
 | `components/filters` | 把搜索与筛选条件同步到 URL |
 | `lib/demos` | 参数校验、真实产品预览、主要主张与公开案例只读查询 |
 | `lib/blueprints` | 校验 12 个公开决策区块与七类资料完整性，查询本地可见商品、本人的试用访问权和本人资料正文 |
-| `lib/capabilities` | Launch Version 的 Capability 静态目录、搜索过滤和分类/技术栈索引；不伪造购买权益 |
+| `lib/capabilities` | Capability 静态目录、AI 能力分类、双语搜索索引，以及只读取仓库真实 Package 文件的详情资料服务；不伪造购买权益 |
+| `app/marketplace-system.css` | Galaxy / Uiverse 结构级重构的独立 Design Tokens、栅格、目录侧栏、卡片、详情工作台和响应式规则 |
+| `reports/uiverse-audit` | 记录竞品结构审计、关键布局参数、对应实现与不可复制边界 |
 | `lib/favorites` | 明确执行收藏或取消收藏，不做盲切换 |
 | `lib/supabase` | 浏览器端、服务端、公开匿名查询和会话代理客户端 |
 | `proxy.ts` | 在页面流式渲染前规范化查询，并对不存在的动态分类/工具返回真实 307 |
@@ -33,7 +35,7 @@
 | `supabase/seed_content.sql` | 12 个首发案例、来源、发布方、主张、证据、工具和素材关系 |
 | `supabase/seed_blueprint_pilot.sql` | 仅供 Supabase Local reset 的 ColorSnap 商品、七类资料与开启本地试用标记 |
 | `content/*.json` | 原创封面和真实产品预览的权属、来源、许可与 SHA-256 清单 |
-| `packages/color-extraction` | 第一个自研 Capability Package 的源码、Prompt、README、参数、Integration Guide 和 manifest；支付/下载未开放 |
+| `packages/color-extraction`、`packages/glass-surface`、`packages/magic-card`、`packages/streaming-chat`、`packages/connection-beam`、`packages/command-palette`、`packages/file-upload-dropzone`、`packages/sortable-list`、`packages/skeleton-loader`、`packages/prompt-composer`、`packages/collapsible-sidebar`、`packages/toast-stack`、`packages/image-desktop-pet`、`packages/text-selection-toolbar`、`packages/circular-theme-reveal`、`packages/morphing-dialog`、`packages/ai-reasoning-panel`、`packages/ai-action-approval-card` | 已完成的自研 Capability Package：源码、Prompt、README、参数、Integration Guide、License 和 manifest；支付/下载未开放 |
 | `scripts/validate-content-seed.mjs` | 在 PGlite 中执行 schema/生产内容 migrations，再重放两份 seed，验证镜像一致、发布门禁、媒体权属和幂等性 |
 | `scripts/validate-db-contract-portable.mjs` | 在 PGlite 中运行除真实 `dblink` 并发外的 pgTAP 契约，提前暴露 SQL、RLS 和夹具错误 |
 | `scripts/run-with-local-supabase.mjs` | 从 Supabase Local 状态只提取公开 URL/密钥与 Mailpit URL，移除服务端秘密后运行 E2E 或本地生产构建 |
@@ -74,7 +76,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    H["当前 Blueprint-first 首页"] --> D["ColorSnap 免费 Demo"]
+    H["本地 Blueprint 兼容入口"] --> D["ColorSnap 免费 Demo"]
     D --> B["Blueprint #001 商品页"]
     B --> C["不扣款确认"]
     C --> R["claim_blueprint_pilot RPC"]
@@ -119,6 +121,8 @@ flowchart LR
 | 商业数据库对象 | Blueprint 商品基础与本地试用授权已存在；不可变版本、Offer、Price、订单、支付、真实权益、下载、退款和对账 | 后半部分未实现 |
 
 ## 关键设计决定
+
+- 首页、目录和详情采用“搜索 → AI 能力分类 → 高密度真实预览 → Preview/源码工作台”的工具型浏览骨架；布局比例与浏览节奏对齐 Galaxy / Uiverse，但不引入其组件、品牌、素材和社区数据，Capability 数据模型与 Package 真实性边界保持不变。
 
 | 决定 | 原因 |
 |---|---|

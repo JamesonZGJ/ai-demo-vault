@@ -1,0 +1,27 @@
+{
+  "capability": "connection-beam",
+  "displayNameZh": "连接光束",
+  "series": "每天拆一个 AI 产品 · 第 004 期",
+  "version": "0.1.0-preview",
+  "source": "self_reimplemented",
+  "rightsStatus": "owned",
+  "reference": {
+    "name": "Magic UI Animated Beam",
+    "url": "https://magicui.design/docs/components/animated-beam",
+    "usage": "仅参考公开交互规律，未复制第三方源码或素材"
+  },
+  "assets": {
+    "sourceCode": { "status": "ready", "path": "src/ConnectionBeam.tsx" },
+    "cursorPrompt": { "status": "ready", "path": "prompts/cursor.md" },
+    "claudePrompt": { "status": "ready", "path": "prompts/claude.md" },
+    "readme": { "status": "ready", "path": "README.md" },
+    "parameters": { "status": "ready", "path": "parameters.json" },
+    "integrationGuide": { "status": "ready", "path": "INTEGRATION_GUIDE.md" },
+    "license": { "status": "ready", "path": "LICENSE" }
+  },
+  "commerce": {
+    "accessStatus": "free_public",
+    "payment": "not_connected",
+    "download": "not_open"
+  }
+}

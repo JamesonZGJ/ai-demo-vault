@@ -1,0 +1,29 @@
+{
+  "capability": "file-upload-dropzone",
+  "displayNameZh": "智能文件上传区",
+  "series": "每天拆一个 AI 产品 · 第 006 期",
+  "version": "0.1.0-preview",
+  "source": "self_reimplemented",
+  "rightsStatus": "owned",
+  "reference": {
+    "name": "MDN File drag and drop",
+    "author": "MDN contributors",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop",
+    "license": "CC BY-SA 2.5",
+    "usage": "仅参考浏览器标准能力和公开技术说明；源码、布局、中文内容和视觉均为本站重新实现"
+  },
+  "assets": {
+    "sourceCode": { "status": "ready", "path": "src/FileUploadDropzone.tsx" },
+    "cursorPrompt": { "status": "ready", "path": "prompts/cursor.md" },
+    "claudePrompt": { "status": "ready", "path": "prompts/claude.md" },
+    "readme": { "status": "ready", "path": "README.md" },
+    "parameters": { "status": "ready", "path": "parameters.json" },
+    "integrationGuide": { "status": "ready", "path": "INTEGRATION_GUIDE.md" },
+    "license": { "status": "ready", "path": "LICENSE" }
+  },
+  "commerce": {
+    "accessStatus": "free_public",
+    "payment": "not_connected",
+    "download": "not_open"
+  }
+}

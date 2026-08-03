@@ -71,9 +71,9 @@ export default async function DemosPage({
     <main className="site-shell catalog-page" id="main-content" tabIndex={-1}>
       <header className="catalog-header">
         <span className="eyebrow">免费 Demo 发现入口</span>
-        <h1>先看产品证据，再决定是否购买复刻资料</h1>
+        <h1>先看产品证据，再判断是否值得复刻</h1>
         <p>
-          公开案例继续用于发现方向；只有存在本站合法 Blueprint 的案例，才会出现商品入口。
+          公开案例用于发现方向；已有合法自研资料的内容会直接提供免费查看入口。
         </p>
       </header>
 

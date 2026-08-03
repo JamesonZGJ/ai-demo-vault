@@ -12,7 +12,7 @@
     "integrationGuide": { "status": "ready", "path": "INTEGRATION_GUIDE.md" }
   },
   "commerce": {
-    "priceStatus": "display_strategy_only",
+    "accessStatus": "free_public",
     "payment": "not_connected",
     "download": "not_open"
   }

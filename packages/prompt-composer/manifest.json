@@ -1,0 +1,21 @@
+{
+  "id": "prompt-composer",
+  "name": "Prompt Composer",
+  "displayNameZh": "智能聊天输入框",
+  "episode": 9,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/PromptComposer.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

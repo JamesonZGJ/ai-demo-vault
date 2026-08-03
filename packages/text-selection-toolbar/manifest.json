@@ -1,0 +1,21 @@
+{
+  "id": "text-selection-toolbar",
+  "name": "Text Selection Toolbar",
+  "displayNameZh": "文本选区工具栏",
+  "episode": 13,
+  "version": "0.1.0",
+  "status": "preview-ready",
+  "accessStatus": "free_public",
+  "entry": "src/TextSelectionToolbar.tsx",
+  "license": "MIT",
+  "dependencies": ["react"],
+  "assets": [
+    "source",
+    "cursor-prompt",
+    "claude-prompt",
+    "readme",
+    "parameters",
+    "integration-guide",
+    "license"
+  ]
+}

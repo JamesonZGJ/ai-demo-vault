@@ -1,0 +1,41 @@
+{
+  "name": "Morphing Dialog",
+  "displayNameZh": "卡片变形弹窗",
+  "version": "0.1.0",
+  "props": {
+    "children": {
+      "type": "ReactNode",
+      "required": true,
+      "description": "弹窗展开后的正文内容"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "description": "卡片和弹窗共用的说明"
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": "DETAIL",
+      "description": "标题上方的短标签"
+    },
+    "maxHeight": {
+      "type": "number",
+      "default": 620,
+      "description": "弹窗最大高度，单位为像素"
+    },
+    "maxWidth": {
+      "type": "number",
+      "default": 760,
+      "description": "弹窗最大宽度，单位为像素"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "卡片和弹窗共用的标题"
+    },
+    "visual": {
+      "type": "ReactNode",
+      "description": "卡片和弹窗顶部共用的视觉内容，不应包含交互控件"
+    }
+  }
+}

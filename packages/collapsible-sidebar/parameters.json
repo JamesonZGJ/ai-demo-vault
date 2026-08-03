@@ -1,0 +1,42 @@
+{
+  "name": "Collapsible Sidebar",
+  "displayNameZh": "可折叠侧边栏",
+  "version": "0.1.0",
+  "props": {
+    "activeId": {
+      "type": "string",
+      "required": true,
+      "description": "当前页面对应的导航项"
+    },
+    "collapsed": {
+      "type": "boolean",
+      "required": true,
+      "description": "桌面侧栏是否收起"
+    },
+    "items": {
+      "type": "SidebarItem[]",
+      "required": true,
+      "description": "带稳定 id、图标、标题和可选徽标的导航项"
+    },
+    "mobileOpen": {
+      "type": "boolean",
+      "required": true,
+      "description": "移动端抽屉是否打开"
+    },
+    "onCollapsedChange": {
+      "type": "(collapsed: boolean) => void",
+      "required": true,
+      "description": "桌面收起状态变化"
+    },
+    "onMobileOpenChange": {
+      "type": "(open: boolean) => void",
+      "required": true,
+      "description": "移动端抽屉状态变化"
+    },
+    "onSelect": {
+      "type": "(id: string) => void",
+      "required": true,
+      "description": "选择导航项"
+    }
+  }
+}

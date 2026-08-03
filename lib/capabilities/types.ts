@@ -25,7 +25,6 @@ export interface Capability {
   name: string;
   packageAssets: CapabilityAssetStatus[];
   packageStatus: PackageStatus;
-  priceDisplay?: string;
   problem: string;
   previewStatus: CapabilityStatus;
   slug: string;

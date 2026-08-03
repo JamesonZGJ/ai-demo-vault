@@ -6,7 +6,7 @@ import { getBlueprintCatalog } from "../../../lib/blueprints/catalog";
 import { isLocalBlueprintPilot } from "../../../lib/env";
 
 export const metadata: Metadata = {
-  description: "本地预发布的产品 Blueprint 商品样品与 AI 升级候选。",
+  description: "本地预发布的产品 Blueprint 内容样品与 AI 升级候选。",
   robots: { follow: false, index: false },
   title: "Blueprint Marketplace 预发布",
 };
@@ -60,8 +60,8 @@ export default async function BlueprintsPage({
       </nav>
 
       <section className="pilot-notice" role="note">
-        <strong>本地预发布</strong>
-        <p>当前只有 ColorSnap Blueprint #001 资料样品。正式价格未决定，模拟购买不会扣款或创建支付交易。</p>
+        <strong>免费内容预览</strong>
+        <p>当前只有 ColorSnap Blueprint #001 资料样品，内容免费公开浏览，不设置价格，也不创建支付或订单。</p>
       </section>
 
       {filteredProducts.length > 0 ? (
