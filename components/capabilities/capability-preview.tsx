@@ -48,6 +48,14 @@ import {
   type ApprovalStatus,
 } from "../../packages/ai-action-approval-card/src/AIActionApprovalCard";
 import {
+  AgentTaskInbox,
+  type AgentTaskItem,
+} from "../../packages/agent-task-inbox/src/AgentTaskInbox";
+import {
+  WEEKLY_AI_INTERACTION_SLUGS,
+  WeeklyAIInteractionPreview,
+} from "./weekly-ai-interaction-previews";
+import {
   StreamingChat,
   type StreamingChatStatus,
 } from "../../packages/streaming-chat/src/StreamingChat";
@@ -1020,7 +1028,82 @@ function AIActionApprovalCardPreview() {
   );
 }
 
+const agentTaskInboxPreviewItems: AgentTaskItem[] = [
+  {
+    actionLabel: "处理冲突",
+    attentionReason: "需要确认是否覆盖同名文件",
+    context: "品牌网站 · 资源同步",
+    id: "sync-assets",
+    status: "needs_attention",
+    summary: "发现 2 个同名图标，任务已暂停等待选择。",
+    title: "同步首页设计资源",
+    updatedAt: "刚刚",
+  },
+  {
+    actionLabel: "查看进度",
+    context: "组件库 · 自动测试",
+    id: "run-tests",
+    progress: 68,
+    status: "in_progress",
+    summary: "正在运行响应式和键盘操作检查。",
+    title: "验证任务收件箱组件",
+    updatedAt: "1 分钟前",
+  },
+  {
+    actionLabel: "开始审查",
+    context: "发布任务 · 页面更新",
+    id: "review-page",
+    status: "in_review",
+    summary: "页面改动已经完成，等待你查看差异。",
+    title: "审查产品详情页改动",
+    updatedAt: "3 分钟前",
+  },
+  {
+    context: "内容任务 · 中文文案",
+    id: "complete-copy",
+    status: "completed",
+    summary: "标题、简介和标签已经整理完成。",
+    title: "整理本期发布文案",
+    updatedAt: "8 分钟前",
+  },
+];
+
+function AgentTaskInboxPreview() {
+  const [selectedTaskId, setSelectedTaskId] = useState("sync-assets");
+  const selectedTask = agentTaskInboxPreviewItems.find(
+    ({ id }) => id === selectedTaskId,
+  );
+
+  return (
+    <div className="capability-preview capability-preview-agent-inbox">
+      <div className="capability-preview-heading">
+        <span>AI Agent 任务收件箱 · Agent Task Inbox</span>
+        <span>本地任务演示</span>
+      </div>
+      <div className="agent-task-inbox-preview-stage">
+        <AgentTaskInbox
+          onSelectTask={(task) => setSelectedTaskId(task.id)}
+          selectedTaskId={selectedTaskId}
+          tasks={agentTaskInboxPreviewItems}
+        />
+        <div aria-live="polite" className="agent-task-inbox-preview-detail">
+          <span>当前任务</span>
+          <strong>{selectedTask?.title}</strong>
+          <p>{selectedTask?.attentionReason ?? selectedTask?.summary}</p>
+          <small>打开任务后应回到原来的执行现场，而不是重新开始。</small>
+        </div>
+      </div>
+      <p className="agent-task-inbox-preview-note">
+        当前页面只演示本地静态任务，不连接真实 Agent 或代码仓库。
+      </p>
+    </div>
+  );
+}
+
 export function CapabilityPreview({ slug }: { slug: string }) {
+  if (WEEKLY_AI_INTERACTION_SLUGS.has(slug)) {
+    return <WeeklyAIInteractionPreview slug={slug} />;
+  }
   if (slug === "color-extraction") return <ColorExtractionPreview />;
   if (slug === "glass-surface") return <GlassSurfacePreview />;
   if (slug === "card-highlight") return <CardHighlightPreview />;
@@ -1040,6 +1123,7 @@ export function CapabilityPreview({ slug }: { slug: string }) {
   if (slug === "morphing-dialog") return <MorphingDialogPreview />;
   if (slug === "ai-reasoning-panel") return <AIReasoningPanelPreview />;
   if (slug === "ai-action-approval-card") return <AIActionApprovalCardPreview />;
+  if (slug === "agent-task-inbox") return <AgentTaskInboxPreview />;
   if (slug === "flip-card") return <FlipCardPreview />;
   return <div className="capability-preview capability-preview-planned"><span className="state-kicker">预览准备中</span><strong>这个能力模块已经加入内容目录。</strong><p>完成自研实现和验证后，会补充在线交互预览。</p></div>;
 }

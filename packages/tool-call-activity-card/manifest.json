@@ -1,0 +1,1 @@
+{"id":"tool-call-activity-card","name":"Tool Call Activity Card","displayNameZh":"AI 工具调用状态卡","episode":21,"version":"0.1.0","status":"preview-ready","accessStatus":"free_public","entry":"src/ToolCallActivityCard.tsx","license":"MIT","dependencies":["react","react-dom"],"assets":["source","cursor-prompt","claude-prompt","readme","parameters","integration-guide","license"]}

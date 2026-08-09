@@ -1,0 +1,1 @@
+{"component":"MultimodalAttachmentQueue","displayNameZh":"多模态附件队列","parameters":[{"name":"items","type":"AttachmentItem[]","required":true,"description":"附件元数据与状态"},{"name":"onItemsChange","type":"(items: AttachmentItem[]) => void","required":false,"description":"排序或移除附件"},{"name":"onRetry","type":"(id: string) => void","required":false,"description":"失败重试"}]}

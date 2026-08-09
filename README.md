@@ -26,7 +26,7 @@
 - My Library 空状态、Bundles、About、License、Copyright、Privacy、404、favicon、Open Graph、sitemap、robots 和移动端布局已具备。
 - 生产账号通过 QQ SMTP 发送确认邮件；用户完成邮箱确认后进入明确的“账号创建成功”结果页，再返回注册前目标。SMTP 授权码只保存在 Supabase Auth 配置中，不进入 Vercel、仓库或客户端。
 - 旧 `/demos`、账号、收藏和 Blueprint 路由保留为兼容或本地预览，不作为 Launch 首页主路径。
-- 《每天拆一个 AI 产品》第001–017期已完成并同步为网站自研 Build Block，包括第003期“流式聊天回复”的本地流式文本、状态反馈和自动滚动演示。每一期均可从目录进入在线 Preview；有真实资料的模块免费查看源码、Prompt、README、参数、接入指南和许可证。视频口播、字幕、封面和平台文案位于 `video/ai-demo-vault-intro/episodes`。
+- 《每天拆一个 AI 产品》第001–025期已完成并同步为网站自研 Build Block；第019–025期集中覆盖引用来源、成果预览、工具调用、代码审查、记忆控制、多模态附件和 Agent 执行时间线。每一期均可从目录进入在线 Preview；有真实资料的模块免费查看源码、Prompt、README、参数、接入指南和许可证。视频口播、字幕、封面和平台文案位于 `video/ai-demo-vault-intro/episodes`。
 
 当前代码尚未实现真实支付、订单、客户权益、打包下载、会员、自动爬虫、管理后台、用户评论和社区。页面不显示本站商品价格或购买入口，也不会伪造下载完成、拥有源码或真实热度。未来如重新验证商业化，再遵守 `COMMERCE_SPEC.md`。
 

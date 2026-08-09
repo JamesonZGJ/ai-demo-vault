@@ -1,0 +1,1 @@
+{"id":"ai-diff-review","name":"AI Diff Review","displayNameZh":"AI 代码差异审查","episode":22,"version":"0.1.0","status":"preview-ready","accessStatus":"free_public","entry":"src/AIDiffReview.tsx","license":"MIT","dependencies":["react","react-dom"],"assets":["source","cursor-prompt","claude-prompt","readme","parameters","integration-guide","license"]}

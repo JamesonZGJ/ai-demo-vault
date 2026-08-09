@@ -1,0 +1,12 @@
+{
+  "component": "AgentTaskInbox",
+  "displayNameZh": "AI Agent 任务收件箱",
+  "parameters": [
+    { "name": "tasks", "type": "AgentTaskItem[]", "required": true, "description": "需要集中展示的任务列表" },
+    { "name": "selectedTaskId", "type": "string", "required": false, "description": "当前选中的任务编号" },
+    { "name": "onSelectTask", "type": "(task: AgentTaskItem) => void", "required": false, "description": "用户打开任务时触发" },
+    { "name": "defaultFilter", "type": "AgentTaskFilter", "required": false, "description": "首次显示的任务筛选" },
+    { "name": "title", "type": "string", "required": false, "description": "收件箱标题" },
+    { "name": "className", "type": "string", "required": false, "description": "外部样式类名" }
+  ]
+}

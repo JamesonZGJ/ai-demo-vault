@@ -1,0 +1,1 @@
+{"component":"AgentExecutionTimeline","displayNameZh":"AI 执行时间线","parameters":[{"name":"steps","type":"TimelineStep[]","required":true,"description":"按顺序排列的执行步骤"},{"name":"onContinue","type":"() => void","required":false,"description":"等待状态后继续"},{"name":"onStop","type":"() => void","required":false,"description":"停止当前任务"}]}

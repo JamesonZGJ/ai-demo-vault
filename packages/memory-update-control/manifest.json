@@ -1,0 +1,1 @@
+{"id":"memory-update-control","name":"Memory Update Control","displayNameZh":"AI 记忆更新提示","episode":23,"version":"0.1.0","status":"preview-ready","accessStatus":"free_public","entry":"src/MemoryUpdateControl.tsx","license":"MIT","dependencies":["react","react-dom"],"assets":["source","cursor-prompt","claude-prompt","readme","parameters","integration-guide","license"]}

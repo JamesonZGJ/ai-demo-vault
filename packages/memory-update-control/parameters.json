@@ -1,0 +1,1 @@
+{"component":"MemoryUpdateControl","displayNameZh":"AI 记忆更新提示","parameters":[{"name":"memories","type":"MemoryItem[]","required":true,"description":"明确保存的记忆"},{"name":"temporary","type":"boolean","required":false,"description":"临时会话状态"},{"name":"onMemoriesChange","type":"(items: MemoryItem[]) => void","required":false,"description":"修改或删除记忆"}]}

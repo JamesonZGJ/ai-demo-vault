@@ -1,0 +1,1 @@
+{"id":"agent-execution-timeline","name":"Agent Execution Timeline","displayNameZh":"AI 执行时间线","episode":25,"version":"0.1.0","status":"preview-ready","accessStatus":"free_public","entry":"src/AgentExecutionTimeline.tsx","license":"MIT","dependencies":["react","react-dom"],"assets":["source","cursor-prompt","claude-prompt","readme","parameters","integration-guide","license"]}

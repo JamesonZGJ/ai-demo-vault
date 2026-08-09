@@ -35,7 +35,7 @@
 | `supabase/seed_content.sql` | 12 个首发案例、来源、发布方、主张、证据、工具和素材关系 |
 | `supabase/seed_blueprint_pilot.sql` | 仅供 Supabase Local reset 的 ColorSnap 商品、七类资料与开启本地试用标记 |
 | `content/*.json` | 原创封面和真实产品预览的权属、来源、许可与 SHA-256 清单 |
-| `packages/color-extraction`、`packages/glass-surface`、`packages/magic-card`、`packages/streaming-chat`、`packages/connection-beam`、`packages/command-palette`、`packages/file-upload-dropzone`、`packages/sortable-list`、`packages/skeleton-loader`、`packages/prompt-composer`、`packages/collapsible-sidebar`、`packages/toast-stack`、`packages/image-desktop-pet`、`packages/text-selection-toolbar`、`packages/circular-theme-reveal`、`packages/morphing-dialog`、`packages/ai-reasoning-panel`、`packages/ai-action-approval-card` | 已完成的自研 Capability Package：源码、Prompt、README、参数、Integration Guide、License 和 manifest；支付/下载未开放 |
+| `packages/*` | 第001–025期已完成的自研 Capability Package：源码、Prompt、README、参数、Integration Guide、License 和 manifest；第019–025期新增引用来源、成果双栏、工具调用、代码差异、记忆控制、多模态附件和执行时间线，支付/下载未开放 |
 | `scripts/validate-content-seed.mjs` | 在 PGlite 中执行 schema/生产内容 migrations，再重放两份 seed，验证镜像一致、发布门禁、媒体权属和幂等性 |
 | `scripts/validate-db-contract-portable.mjs` | 在 PGlite 中运行除真实 `dblink` 并发外的 pgTAP 契约，提前暴露 SQL、RLS 和夹具错误 |
 | `scripts/run-with-local-supabase.mjs` | 从 Supabase Local 状态只提取公开 URL/密钥与 Mailpit URL，移除服务端秘密后运行 E2E 或本地生产构建 |

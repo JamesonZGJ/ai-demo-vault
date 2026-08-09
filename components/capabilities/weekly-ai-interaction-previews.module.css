@@ -1,0 +1,113 @@
+.preview {
+  min-height: 420px;
+  padding: clamp(18px, 4vw, 38px);
+  color: #e8eef8;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(89, 234, 199, 0.13), transparent 34%),
+    #09111e;
+}
+
+.preview :global(button),
+.preview :global(input) {
+  font: inherit;
+}
+
+.preview :global(button) {
+  color: inherit;
+  cursor: pointer;
+}
+
+.preview :global(.source-citation-block),
+.preview :global(.tool-call-block),
+.preview :global(.memory-control-block),
+.preview :global(.attachment-queue-block),
+.preview :global(.execution-timeline-block),
+.preview :global(.artifact-split-block),
+.preview :global(.ai-diff-review-block) {
+  width: 100%;
+  border: 1px solid rgba(154, 178, 210, 0.17);
+  border-radius: 24px;
+  background: rgba(11, 21, 36, 0.92);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.preview :global(.source-citation-block),
+.preview :global(.tool-call-block),
+.preview :global(.memory-control-block),
+.preview :global(.attachment-queue-block),
+.preview :global(.execution-timeline-block) {
+  max-width: 760px;
+  margin: 28px auto;
+  padding: clamp(20px, 4vw, 32px);
+}
+
+.preview :global(.source-citation-answer) { margin: 0; font-size: clamp(22px, 4vw, 34px); line-height: 1.65; }
+.preview :global(.source-citation-marker) { margin: 0 4px; border: 0; border-radius: 999px; padding: 2px 9px; background: #5eeac7; color: #07130f; font-weight: 800; }
+.preview :global(.source-citation-popover) { margin-top: 24px; padding: 20px; border-radius: 18px; background: #101d30; display: grid; gap: 8px; }
+.preview :global(.source-citation-popover span),
+.preview :global(.source-citation-popover p),
+.preview :global(.tool-call-block > p),
+.preview :global(.memory-control-block small),
+.preview :global(.attachment-queue-block small),
+.preview :global(.execution-timeline-block p) { color: #9fb0c6; }
+.preview :global(.source-citation-popover button),
+.preview :global(.tool-call-block button),
+.preview :global(.ai-diff-review-block button),
+.preview :global(.attachment-queue-block button),
+.preview :global(.execution-timeline-block button) { border: 1px solid rgba(154,178,210,.2); border-radius: 10px; padding: 8px 12px; background: #16243a; }
+
+.preview :global(.artifact-split-block),
+.preview :global(.ai-diff-review-block) { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); overflow: hidden; }
+.preview :global(.artifact-chat-pane),
+.preview :global(.artifact-preview-pane),
+.preview :global(.ai-diff-review-block > aside),
+.preview :global(.ai-diff-review-block > div) { padding: 24px; min-width: 0; }
+.preview :global(.artifact-chat-pane),
+.preview :global(.ai-diff-review-block > aside) { border-right: 1px solid rgba(154,178,210,.17); }
+.preview :global(.artifact-chat-pane p) { padding: 13px 15px; border-radius: 14px; background: #101e31; }
+.preview :global(.artifact-chat-pane p[data-author="user"]) { background: rgba(94,234,199,.12); }
+.preview :global(.artifact-version-bar),
+.preview :global(.tool-call-block header),
+.preview :global(.memory-control-block header),
+.preview :global(.attachment-queue-block header),
+.preview :global(.execution-timeline-block header),
+.preview :global(.ai-diff-review-block header) { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.preview :global(.artifact-version-bar button[aria-pressed="true"]) { background: #5eeac7; color: #07130f; }
+.preview :global(.artifact-version-bar button) { border: 0; border-radius: 9px; padding: 7px 10px; background: #16243a; }
+.preview :global(.artifact-preview-pane article) { min-height: 210px; margin-top: 20px; padding: 22px; border-radius: 18px; background: linear-gradient(150deg, #f7fafc, #dfe9f4); color: #122033; }
+
+.preview :global(.tool-call-block header > div),
+.preview :global(.memory-control-block header > div) { display: grid; gap: 4px; }
+.preview :global(progress) { width: 100%; accent-color: #5eeac7; }
+.preview :global(.tool-call-block dl) { display: grid; gap: 8px; padding: 16px; border-radius: 14px; background: #101d30; }
+.preview :global(.tool-call-block dl div) { display: grid; grid-template-columns: 70px 1fr; }
+
+.preview :global(.ai-diff-review-block > aside) { display: grid; align-content: start; gap: 10px; }
+.preview :global(.ai-diff-review-block > aside button) { display: grid; gap: 4px; text-align: left; }
+.preview :global(.ai-diff-review-block > aside button[aria-pressed="true"]) { border-color: #5eeac7; }
+.preview :global(.ai-diff-review-block pre) { display: grid; overflow-x: auto; padding: 16px; border-radius: 14px; background: #07101d; }
+.preview :global(.ai-diff-review-block code) { padding: 5px 8px; }
+.preview :global(.ai-diff-review-block code[data-line-type="add"]) { background: rgba(94,234,199,.12); color: #8ef3d7; }
+.preview :global(.ai-diff-review-block code[data-line-type="remove"]) { background: rgba(255,111,126,.12); color: #ff9aaa; }
+.preview :global(.ai-diff-review-block footer) { display: flex; justify-content: flex-end; gap: 10px; }
+
+.preview :global(.memory-control-block > div),
+.preview :global(.attachment-queue-block ol),
+.preview :global(.execution-timeline-block ol) { display: grid; gap: 12px; padding: 0; }
+.preview :global(.memory-control-block article),
+.preview :global(.attachment-queue-block li),
+.preview :global(.execution-timeline-block li) { list-style: none; display: grid; gap: 10px; padding: 16px; border: 1px solid rgba(154,178,210,.14); border-radius: 14px; background: #0e1a2b; }
+.preview :global(.memory-control-block input) { width: 100%; border: 0; background: transparent; color: #e8eef8; font-weight: 700; }
+.preview :global(.memory-control-block article button) { justify-self: start; border: 0; background: transparent; color: #ff9aaa; }
+.preview :global(.attachment-queue-block li > div:last-child) { display: flex; flex-wrap: wrap; gap: 6px; }
+.preview :global(.execution-timeline-block li) { grid-template-columns: 14px 1fr auto; align-items: start; }
+.preview :global(.execution-timeline-block li > span) { width: 10px; height: 10px; margin-top: 7px; border-radius: 50%; background: #60718a; }
+.preview :global(.execution-timeline-block li[data-status="current"] > span) { background: #5eeac7; box-shadow: 0 0 0 6px rgba(94,234,199,.12); }
+.preview :global(.execution-timeline-block li[data-status="completed"] > span) { background: #7aa8ff; }
+
+@media (max-width: 720px) {
+  .preview :global(.artifact-split-block),
+  .preview :global(.ai-diff-review-block) { grid-template-columns: 1fr; }
+  .preview :global(.artifact-chat-pane),
+  .preview :global(.ai-diff-review-block > aside) { border-right: 0; border-bottom: 1px solid rgba(154,178,210,.17); }
+}

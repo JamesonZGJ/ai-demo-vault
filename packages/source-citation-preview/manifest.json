@@ -1,0 +1,1 @@
+{"id":"source-citation-preview","name":"Source Citation Preview","displayNameZh":"AI 引用来源卡片","episode":19,"version":"0.1.0","status":"preview-ready","accessStatus":"free_public","entry":"src/SourceCitationPreview.tsx","license":"MIT","dependencies":["react","react-dom"],"assets":["source","cursor-prompt","claude-prompt","readme","parameters","integration-guide","license"]}
